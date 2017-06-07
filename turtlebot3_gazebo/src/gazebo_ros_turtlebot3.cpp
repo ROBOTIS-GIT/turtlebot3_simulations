@@ -44,14 +44,16 @@ bool GazeboRosTurtleBot3::init()
   if (!robot_model.compare("burger"))
   {
     turning_radius_ = 0.08;
+    rotate_angle_ = 50.0 * DEG2RAD;
     front_distance_limit_ = 0.7;
     side_distance_limit_  = 0.4;
   }
   else if (!robot_model.compare("waffle"))
   {
     turning_radius_ = 0.1435;
+    rotate_angle_ = 40.0 * DEG2RAD;
     front_distance_limit_ = 0.7;
-    side_distance_limit_  = 0.7;
+    side_distance_limit_  = 0.6;
   }
   ROS_INFO("robot_model : %s", robot_model.c_str());
   ROS_INFO("turning_radius_ : %lf", turning_radius_);
@@ -112,7 +114,7 @@ bool GazeboRosTurtleBot3::controlLoop()
   double wheel_radius = 0.033;
   double turtlebot3_rotation = 0.0;
 
-  turtlebot3_rotation = ((100.0 * DEG2RAD) * turning_radius_ / wheel_radius);
+  turtlebot3_rotation = (rotate_angle_ * turning_radius_ / wheel_radius);
 
   switch(turtlebot3_state_num)
   {
