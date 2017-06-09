@@ -36,7 +36,7 @@ find_package(gazebo REQUIRED
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES turtlebot3_gazebo
-  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp sensor_msgs std_msgs tf
+  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp sensor_msgs std_msgs tf gazebo_ros
  )
 
 ################################################################################
