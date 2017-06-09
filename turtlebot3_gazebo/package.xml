@@ -19,6 +19,7 @@
   <build_depend>sensor_msgs</build_depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>tf</build_depend>
+  <build_depend>gazebo_ros</build_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>nav_msgs</run_depend>
   <run_depend>roscpp</run_depend>
@@ -26,4 +27,5 @@
   <run_depend>sensor_msgs</run_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>tf</run_depend>
+  <run_depend>gazebo_ros</run_depend>
 </package>
