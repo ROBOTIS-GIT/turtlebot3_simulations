@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.6 (2017-08-14)
+-----------
+* updated rviz and add static tf publisher for depth camera
+* Contributors: Darby Lim
+
 0.1.5 (2017-06-09)
 -----------
 * none
