@@ -28,4 +28,7 @@
   <run_depend>geometry_msgs</run_depend>
   <run_depend>tf</run_depend>
   <run_depend>gazebo_ros</run_depend>
+  <export>
+    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/models"/>
+  </export>
 </package>
