@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.1.7 (2017-08-16)
+-----------
+* renamed missed the install rule (worlds -> models)
+* Contributors: Darby Lim, Tully Foote
+
 0.1.6 (2017-08-14)
 -----------
 * updated rviz and add static tf publisher for depth camera
