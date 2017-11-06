@@ -25,12 +25,10 @@
 #include <math.h>
 #include <limits.h>
 
-#include <std_msgs/String.h>
-#include <sensor_msgs/JointState.h>
 #include <sensor_msgs/LaserScan.h>
-#include <geometry_msgs/Twist.h>
+#include <sensor_msgs/Imu.h>
+#include <geometry_msgs/Pose.h>
 #include <tf/tf.h>
-#include <nav_msgs/Odometry.h>
 
 #define DEG2RAD (M_PI / 180.0)
 #define RAD2DEG (180.0 / M_PI)
@@ -39,13 +37,13 @@
 #define LEFT   1
 #define RIGHT  2
 
-#define LINEAR_VELOCITY  0.3
-#define ANGULAR_VELOCITY 1.5
-
-#define GET_TB3_DIRECTION 0
-#define TB3_DRIVE_FORWARD 1
-#define TB3_RIGHT_TURN    2
-#define TB3_LEFT_TURN     3
+typedef struct
+{
+  double angle;
+  double mag;
+  float x;
+  float y;
+} ScanVector;
 
 class GazeboRosTurtleBot3
 {
@@ -70,21 +68,14 @@ class GazeboRosTurtleBot3
 
   // ROS Topic Subscribers
   ros::Subscriber laser_scan_sub_;
-  ros::Subscriber joint_state_sub_;
+  ros::Subscriber imu_sub_;
 
-  double turning_radius_;
-  double rotate_angle_;
-  double front_distance_limit_;
-  double side_distance_limit_;
-
-  double direction_vector_[3] = {0.0, 0.0, 0.0};
-
-  double right_joint_encoder_;
-  double priv_right_joint_encoder_;
+  double scan_data_[360];
+  double tb3_theta_;
 
   // Function prototypes
   void updatecommandVelocity(double linear, double angular);
   void laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg);
-  void jointStateMsgCallBack(const sensor_msgs::JointState::ConstPtr &msg);
+  void imuMsgCallBack(const sensor_msgs::Imu::ConstPtr &msg);
 };
 #endif // GAZEBO_ROS_TURTLEBOT3_H_
