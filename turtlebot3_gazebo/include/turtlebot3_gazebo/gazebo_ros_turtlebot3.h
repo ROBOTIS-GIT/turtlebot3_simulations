@@ -28,6 +28,7 @@
 #include <sensor_msgs/LaserScan.h>
 #include <sensor_msgs/Imu.h>
 #include <geometry_msgs/Pose.h>
+#include <nav_msgs/Odometry.h>
 #include <tf/tf.h>
 
 #define DEG2RAD (M_PI / 180.0)
@@ -69,7 +70,9 @@ class GazeboRosTurtleBot3
   // ROS Topic Subscribers
   ros::Subscriber laser_scan_sub_;
   ros::Subscriber imu_sub_;
+  ros::Subscriber odom_sub_;
 
+  geometry_msgs::Pose pose_;
   double scan_data_[360];
   double tb3_theta_;
 
@@ -77,5 +80,6 @@ class GazeboRosTurtleBot3
   void updatecommandVelocity(double linear, double angular);
   void laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg);
   void imuMsgCallBack(const sensor_msgs::Imu::ConstPtr &msg);
+  void odomMsgCallBack(const nav_msgs::Odometry::ConstPtr & msg);
 };
 #endif // GAZEBO_ROS_TURTLEBOT3_H_
