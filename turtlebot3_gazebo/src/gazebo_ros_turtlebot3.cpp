@@ -48,7 +48,7 @@ bool GazeboRosTurtleBot3::init()
     front_distance_limit_ = 0.7;
     side_distance_limit_  = 0.4;
   }
-  else if (!robot_model.compare("waffle"))
+  else if (!robot_model.compare("waffle") || !robot_model.compare("waffle_pi"))
   {
     turning_radius_ = 0.1435;
     rotate_angle_ = 40.0 * DEG2RAD;
