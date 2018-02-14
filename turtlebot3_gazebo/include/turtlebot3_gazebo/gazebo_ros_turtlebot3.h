@@ -75,6 +75,12 @@ class GazeboRosTurtleBot3
   geometry_msgs::Pose pose_;
   double scan_data_[360];
   double tb3_theta_;
+  double side_distance_limit_;
+  double right_joint_encoder_;
+  double priv_right_joint_encoder_;
+  double turning_radius_;
+  double rotate_angle_;
+  double front_distance_limit_;
 
   // Function prototypes
   void updatecommandVelocity(double linear, double angular);

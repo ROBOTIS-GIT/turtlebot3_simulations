@@ -38,6 +38,7 @@ GazeboRosTurtleBot3::~GazeboRosTurtleBot3()
 bool GazeboRosTurtleBot3::init()
 {
   // initialize ROS parameter
+  std::string robot_model = nh_.param<std::string>("tb3_model", "");
   nh_.param("is_debug", is_debug_, is_debug_);
   tb3_theta_ = 0.0;
   scan_data_[360] = {0.0, };
