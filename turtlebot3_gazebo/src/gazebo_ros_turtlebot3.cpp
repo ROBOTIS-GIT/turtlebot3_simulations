@@ -39,8 +39,7 @@ bool GazeboRosTurtleBot3::init()
 {
   // initialize ROS parameter
   nh_.param("is_debug", is_debug_, is_debug_);
-  tb3_theta_ = 0.0;
-  scan_data_[360] = {0.0, };
+  std::string robot_model = nh_.param<std::string>("tb3_model", "");
 
   if (!robot_model.compare("burger"))
   {
@@ -64,46 +63,35 @@ bool GazeboRosTurtleBot3::init()
   // initialize variables
   right_joint_encoder_ = 0.0;
   priv_right_joint_encoder_ = 0.0;
-
   // initialize publishers
   cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
   // initialize subscribers
   laser_scan_sub_  = nh_.subscribe("/scan", 10, &GazeboRosTurtleBot3::laserScanMsgCallBack, this);
-  imu_sub_         = nh_.subscribe("/imu", 10, &GazeboRosTurtleBot3::imuMsgCallBack, this);
-  odom_sub_        = nh_.subscribe("/odom", 10, &GazeboRosTurtleBot3::odomMsgCallBack, this);
+  joint_state_sub_ = nh_.subscribe("/joint_states", 10, &GazeboRosTurtleBot3::jointStateMsgCallBack, this);
 
   return true;
 }
 
-void GazeboRosTurtleBot3::odomMsgCallBack(const nav_msgs::Odometry::ConstPtr &msg)
+void GazeboRosTurtleBot3::jointStateMsgCallBack(const sensor_msgs::JointState::ConstPtr &msg)
 {
-  pose_ = msg->pose.pose;
-}
-
-void GazeboRosTurtleBot3::imuMsgCallBack(const sensor_msgs::Imu::ConstPtr &msg)
-{
-  float q[4] = {0.0, };
-
-  q[0] = msg->orientation.w;
-  q[1] = msg->orientation.x;
-  q[2] = msg->orientation.y;
-  q[3] = msg->orientation.z;
-
-  tb3_theta_ = atan2f(q[1]*q[2] + q[0]*q[3],
-                        0.5f - q[2]*q[2] - q[3]*q[3]);
-
-  tb3_theta_ = tb3_theta_ + 1.57;
+  right_joint_encoder_ = msg->position.at(0);
 }
 
 void GazeboRosTurtleBot3::laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg)
 {
-  for (int angle = 0; angle < 360; angle++)
+  uint16_t scan_angle[3] = {0, 30, 330};
+
+  for (int num = 0; num < 3; num++)
   {
-    if (std::isinf(msg->ranges.at(angle)))
-      scan_data_[angle] = 1.0;
+    if (std::isinf(msg->ranges.at(scan_angle[num])))
+    {
+      direction_vector_[num] = msg->range_max;
+    }
     else
-      scan_data_[angle] = (double)(msg->ranges.at(angle) / msg->range_max);
+    {
+      direction_vector_[num] = msg->ranges.at(scan_angle[num]);
+    }
   }
 }
 
@@ -122,154 +110,77 @@ void GazeboRosTurtleBot3::updatecommandVelocity(double linear, double angular)
 *******************************************************************************/
 bool GazeboRosTurtleBot3::controlLoop()
 {
-  double lin_vel = 0.2, ang_vel = 0.0;
+  static uint8_t turtlebot3_state_num = 0;
+  double wheel_radius = 0.033;
+  double turtlebot3_rotation = 0.0;
 
-  ScanVector scanVector[3];
+  turtlebot3_rotation = (rotate_angle_ * turning_radius_ / wheel_radius);
 
-  ScanVector maxVector = {0.0, 1.0, 0.0, 0.0};
-
-  uint16_t index = 0, calc_angle = 0;
-
-//  double error = 0.0;
-//  static double pre_error = 0.0;
-
-  // find center max vector
-  for (index = 2; index <= 88; index++)
+  switch(turtlebot3_state_num)
   {
-    double mag_ave = 0.0;
-    for (int i = -2; i <= 2; i++)
-    {
-      mag_ave += scan_data_[index+i];
-    }
-    mag_ave = mag_ave / 5.0f;
+    case GET_TB3_DIRECTION:
+      if (direction_vector_[CENTER] > front_distance_limit_)
+      {
+        turtlebot3_state_num = TB3_DRIVE_FORWARD;
+      }
 
-    if (maxVector.mag > mag_ave)
-    {
-      maxVector.mag   = mag_ave;
-      maxVector.angle = 90 + index;
-    }
+      if (direction_vector_[CENTER] < front_distance_limit_ || direction_vector_[LEFT] < side_distance_limit_)
+      {
+        priv_right_joint_encoder_ = right_joint_encoder_ - turtlebot3_rotation;
+        turtlebot3_state_num = TB3_RIGHT_TURN;
+      }
+      else if (direction_vector_[RIGHT] < side_distance_limit_)
+      {
+        priv_right_joint_encoder_ = right_joint_encoder_ + turtlebot3_rotation;
+        turtlebot3_state_num = TB3_LEFT_TURN;
+      }
+      break;
+
+    case TB3_DRIVE_FORWARD:
+      updatecommandVelocity(LINEAR_VELOCITY, 0.0);
+      turtlebot3_state_num = GET_TB3_DIRECTION;
+      break;
+
+    case TB3_RIGHT_TURN:
+      if (priv_right_joint_encoder_ == 0.0)
+      {
+        turtlebot3_state_num = GET_TB3_DIRECTION;
+      }
+      else
+      {
+        if (fabs(priv_right_joint_encoder_ - right_joint_encoder_) < 0.1)
+        {
+          turtlebot3_state_num = GET_TB3_DIRECTION;
+        }
+        else
+        {
+          updatecommandVelocity(0.0, -1 * ANGULAR_VELOCITY);
+        }
+      }
+      break;
+
+    case TB3_LEFT_TURN:
+      if (priv_right_joint_encoder_ == 0.0)
+      {
+        turtlebot3_state_num = GET_TB3_DIRECTION;
+      }
+      else
+      {
+        if (fabs(priv_right_joint_encoder_ - right_joint_encoder_) < 0.1)
+        {
+          turtlebot3_state_num = GET_TB3_DIRECTION;
+        }
+        else
+        {
+          updatecommandVelocity(0.0, ANGULAR_VELOCITY);
+        }
+      }
+      break;
+
+    default:
+      turtlebot3_state_num = GET_TB3_DIRECTION;
+      break;
   }
-
-//  for (index = 330; index < 360; index++)
-//  {
-//    if (maxVector.mag < scan_data_[index])
-//    {
-//      maxVector.mag = scan_data_[index];
-//      maxVector.angle = index - 270;
-//    }
-//  }
-
-//  if (maxVector.angle >= 90)
-//  {
-//    calc_angle = maxVector.angle - 90;
-//    maxVector.x = -1 * sin(calc_angle * DEG2RAD);
-//    maxVector.y = cos(calc_angle * DEG2RAD);
-//  }
-//  else
-//  {
-//    maxVector.x = cos(maxVector.angle * DEG2RAD);
-//    maxVector.y = sin(maxVector.angle * DEG2RAD);
-//  }
-
-  calc_angle = maxVector.angle - 90;
-  maxVector.x = -1 * sin(calc_angle * DEG2RAD);
-  maxVector.y = cos(calc_angle * DEG2RAD);
-  scanVector[LEFT] = maxVector;
-
-  // find left max vector
-//  maxVector = {0.0, 0.0, 0.0, 0.0};
-//  for (index = 30; index < 90; index++)
-//  {
-//    if (maxVector.mag < scan_data_[index])
-//    {
-//      maxVector.mag = scan_data_[index];
-//      maxVector.angle = 90 + index;
-//    }
-//  }
-
-//  calc_angle = maxVector.angle - 90;
-//  maxVector.x = -1 * sin(calc_angle * DEG2RAD);
-//  maxVector.y = cos(calc_angle * DEG2RAD);
-//  scanVector[LEFT] = maxVector;
-
-  // find right max vector
-  maxVector = {0.0, 1.0, 0.0, 0.0};
-//  for (index = 270; index < 330; index++)
-//  {
-//    if (maxVector.mag < scan_data_[index])
-//    {
-//      maxVector.mag = scan_data_[index];
-//      maxVector.angle = index - 270;
-//    }
-//  }
-
-  for (index = 357; index >= 272; index--)
-  {
-    double mag_ave = 0.0;
-    for (int i = -2; i <= 2; i++)
-    {
-      mag_ave += scan_data_[index+i];
-    }
-    mag_ave = mag_ave / 5.0f;
-
-    if (maxVector.mag > mag_ave)
-    {
-      maxVector.mag   = mag_ave;
-      maxVector.angle = index - 270;
-    }
-  }
-
-  maxVector.x = cos(maxVector.angle * DEG2RAD);
-  maxVector.y = sin(maxVector.angle * DEG2RAD);
-  scanVector[RIGHT] = maxVector;
-
-  ROS_INFO("angle : %.2f, %.2f, %.2f, mag : %.2f, %.2f, %.2f", scanVector[LEFT].angle, 0.0, scanVector[RIGHT].angle,
-                                                               scanVector[LEFT].mag, 0.0, scanVector[RIGHT].mag);
-
-//  ROS_INFO("angle : %.2f, %.2f, %.2f, x : %.2f, %.2f, %.2f, y : %.2f, %.2f, %.2f",
-//                                                         scanVector[LEFT].angle, scanVector[CENTER].angle, scanVector[RIGHT].angle,
-//                                                         scanVector[LEFT].x, scanVector[CENTER].x, scanVector[RIGHT].x,
-//                                                         scanVector[LEFT].y, scanVector[CENTER].y, scanVector[RIGHT].y);
-
-  // find main vector
-//  maxVector = {0.0, 0.0, 0.0, 0.0};
-//  for (index = 0; index < 2; index++)
-//  {
-//    maxVector.x += scanVector[index].x;
-//    maxVector.y += scanVector[index].y;
-//  }
-
-//  maxVector.angle = atan2(maxVector.y, maxVector.x);
-
-//  double odom_orientation = tf::getYaw(pose_.orientation);
-//  odom_orientation = odom_orientation + 1.57;
-
-//  error = (tb3_theta_ + 1.57) - maxVector.angle;
-//  error = maxVector.angle - odom_orientation;
-
-//  ang_vel = 1.5 * error +
-//            0.0 * (error - pre_error) / 0.008;
-
-//  pre_error = error;
-
-//  maxVector.angle = 1.57 - maxVector.angle;
-
-//  ang_vel = -1 * (maxVector.angle * RAD2DEG) * 0.06f;
-
-//  ROS_INFO("vector angle : %.2f, robot ori : %.2f, odom ori : %.2f, ang_vel : %.2f",
-//           maxVector.angle * RAD2DEG, tb3_theta_ * RAD2DEG, odom_orientation * RAD2DEG, ang_vel);
-
-//  ROS_INFO("vector angle : %.2f, ang_vel : %.2f",
-//           maxVector.angle * RAD2DEG, ang_vel);
-
-  if (scanVector[LEFT].mag < 0.2)
-    ang_vel = -2.0;
-  else if (scanVector[RIGHT].mag < 0.2)
-    ang_vel = 2.0;
-  else
-    ang_vel = 0.0;
-
-  updatecommandVelocity(lin_vel, ang_vel);
 
   return true;
 }
@@ -282,7 +193,7 @@ int main(int argc, char* argv[])
   ros::init(argc, argv, "gazebo_ros_turtlebot3");
   GazeboRosTurtleBot3 gazeboRosTurtleBot3;
 
-  ros::Rate loop_rate(250);
+  ros::Rate loop_rate(125);
 
   while (ros::ok())
   {
