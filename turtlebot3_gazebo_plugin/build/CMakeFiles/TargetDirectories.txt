@@ -1,0 +1,3 @@
+/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/edit_cache.dir
+/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/rebuild_cache.dir
+/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/burger.dir

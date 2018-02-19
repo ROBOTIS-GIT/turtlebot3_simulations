@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_07629/fast"
+/usr/bin/make -f CMakeFiles/cmTC_07629.dir/build.make CMakeFiles/cmTC_07629.dir/build
+make[1]: Entering directory '/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_07629.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_07629.dir/CheckSymbolExists.c.o   -c /home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_07629
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07629.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_07629.dir/CheckSymbolExists.c.o  -o cmTC_07629 -rdynamic 
+CMakeFiles/cmTC_07629.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_07629.dir/build.make:97: recipe for target 'cmTC_07629' failed
+make[1]: *** [cmTC_07629] Error 1
+make[1]: Leaving directory '/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_07629/fast' failed
+make: *** [cmTC_07629/fast] Error 2
+
+File /home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_815ea/fast"
+/usr/bin/make -f CMakeFiles/cmTC_815ea.dir/build.make CMakeFiles/cmTC_815ea.dir/build
+make[1]: Entering directory '/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_815ea.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_815ea.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_815ea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_815ea.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_815ea.dir/CheckFunctionExists.c.o  -o cmTC_815ea -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_815ea.dir/build.make:97: recipe for target 'cmTC_815ea' failed
+make[1]: *** [cmTC_815ea] Error 1
+make[1]: Leaving directory '/home/darby/gazebo/turtlebot3_plugin/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_815ea/fast' failed
+make: *** [cmTC_815ea/fast] Error 2
+
+

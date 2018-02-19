@@ -38,40 +38,40 @@ GazeboRosTurtleBot3::~GazeboRosTurtleBot3()
 bool GazeboRosTurtleBot3::init()
 {
   // initialize ROS parameter
-  nh_.param("is_debug", is_debug_, is_debug_);
-  tb3_theta_ = 0.0;
-  scan_data_[360] = {0.0, };
+  // nh_.param("is_debug", is_debug_, is_debug_);
+  // tb3_theta_ = 0.0;
+  // scan_data_[360] = {0.0, };
 
-  if (!robot_model.compare("burger"))
-  {
-    turning_radius_ = 0.08;
-    rotate_angle_ = 50.0 * DEG2RAD;
-    front_distance_limit_ = 0.7;
-    side_distance_limit_  = 0.4;
-  }
-  else if (!robot_model.compare("waffle") || !robot_model.compare("waffle_pi"))
-  {
-    turning_radius_ = 0.1435;
-    rotate_angle_ = 40.0 * DEG2RAD;
-    front_distance_limit_ = 0.7;
-    side_distance_limit_  = 0.6;
-  }
-  ROS_INFO("robot_model : %s", robot_model.c_str());
-  ROS_INFO("turning_radius_ : %lf", turning_radius_);
-  ROS_INFO("front_distance_limit_ = %lf", front_distance_limit_);
-  ROS_INFO("side_distance_limit_ = %lf", side_distance_limit_);
+  // if (!robot_model.compare("burger"))
+  // {
+  //   turning_radius_ = 0.08;
+  //   rotate_angle_ = 50.0 * DEG2RAD;
+  //   front_distance_limit_ = 0.7;
+  //   side_distance_limit_  = 0.4;
+  // }
+  // else if (!robot_model.compare("waffle") || !robot_model.compare("waffle_pi"))
+  // {
+  //   turning_radius_ = 0.1435;
+  //   rotate_angle_ = 40.0 * DEG2RAD;
+  //   front_distance_limit_ = 0.7;
+  //   side_distance_limit_  = 0.6;
+  // }
+  // ROS_INFO("robot_model : %s", robot_model.c_str());
+  // ROS_INFO("turning_radius_ : %lf", turning_radius_);
+  // ROS_INFO("front_distance_limit_ = %lf", front_distance_limit_);
+  // ROS_INFO("side_distance_limit_ = %lf", side_distance_limit_);
 
-  // initialize variables
-  right_joint_encoder_ = 0.0;
-  priv_right_joint_encoder_ = 0.0;
+  // // initialize variables
+  // right_joint_encoder_ = 0.0;
+  // priv_right_joint_encoder_ = 0.0;
 
-  // initialize publishers
-  cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+  // // initialize publishers
+  // cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
-  // initialize subscribers
-  laser_scan_sub_  = nh_.subscribe("/scan", 10, &GazeboRosTurtleBot3::laserScanMsgCallBack, this);
-  imu_sub_         = nh_.subscribe("/imu", 10, &GazeboRosTurtleBot3::imuMsgCallBack, this);
-  odom_sub_        = nh_.subscribe("/odom", 10, &GazeboRosTurtleBot3::odomMsgCallBack, this);
+  // // initialize subscribers
+  // laser_scan_sub_  = nh_.subscribe("/scan", 10, &GazeboRosTurtleBot3::laserScanMsgCallBack, this);
+  // imu_sub_         = nh_.subscribe("/imu", 10, &GazeboRosTurtleBot3::imuMsgCallBack, this);
+  // odom_sub_        = nh_.subscribe("/odom", 10, &GazeboRosTurtleBot3::odomMsgCallBack, this);
 
   return true;
 }

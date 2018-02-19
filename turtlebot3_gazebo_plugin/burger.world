@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <model name="turtlebot3_burger">
+      <include>
+        <uri>model://turtlebot3_burger</uri>
+      </include>
+
+      <plugin name="burger" filename="libburger.so"/>
+    </model>
+
+  </world>
+</sdf>
