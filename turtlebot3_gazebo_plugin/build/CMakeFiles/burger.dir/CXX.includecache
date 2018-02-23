@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/darby/gazebo/turtlebot3_plugin/burger.cc
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/burger.cc
+fcntl.h
+-
+termios.h
+-
 gazebo/gazebo.hh
-/home/darby/gazebo/turtlebot3_plugin/gazebo/gazebo.hh
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/gazebo/gazebo.hh
 gazebo/physics/physics.hh
-/home/darby/gazebo/turtlebot3_plugin/gazebo/physics/physics.hh
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/gazebo/physics/physics.hh
+boost/bind.hpp
+-
 
 /usr/include/gazebo-7/gazebo/Master.hh
 string

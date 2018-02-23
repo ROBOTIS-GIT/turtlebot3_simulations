@@ -1,4 +1,4 @@
-# Install script for directory: /home/darby/gazebo/turtlebot3_plugin
+# Install script for directory: /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/darby/gazebo/turtlebot3_plugin/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
