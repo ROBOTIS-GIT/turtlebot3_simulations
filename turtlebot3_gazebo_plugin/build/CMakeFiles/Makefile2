@@ -60,39 +60,39 @@ CMAKE_SOURCE_DIR = /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_g
 CMAKE_BINARY_DIR = /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/burger.dir
+# Target rules for target CMakeFiles/turtlebot3.dir
 
 # All Build rule for target.
-CMakeFiles/burger.dir/all:
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/depend
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles --progress-num=1,2 "Built target burger"
-.PHONY : CMakeFiles/burger.dir/all
+CMakeFiles/turtlebot3.dir/all:
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/depend
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles --progress-num=1,2 "Built target turtlebot3"
+.PHONY : CMakeFiles/turtlebot3.dir/all
 
 # Include target in all.
-all: CMakeFiles/burger.dir/all
+all: CMakeFiles/turtlebot3.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/burger.dir/rule: cmake_check_build_system
+CMakeFiles/turtlebot3.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/burger.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/turtlebot3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles 0
-.PHONY : CMakeFiles/burger.dir/rule
+.PHONY : CMakeFiles/turtlebot3.dir/rule
 
 # Convenience name for target.
-burger: CMakeFiles/burger.dir/rule
+turtlebot3: CMakeFiles/turtlebot3.dir/rule
 
-.PHONY : burger
-
-# clean rule for target.
-CMakeFiles/burger.dir/clean:
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/clean
-.PHONY : CMakeFiles/burger.dir/clean
+.PHONY : turtlebot3
 
 # clean rule for target.
-clean: CMakeFiles/burger.dir/clean
+CMakeFiles/turtlebot3.dir/clean:
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/clean
+.PHONY : CMakeFiles/turtlebot3.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/turtlebot3.dir/clean
 
 .PHONY : clean
 

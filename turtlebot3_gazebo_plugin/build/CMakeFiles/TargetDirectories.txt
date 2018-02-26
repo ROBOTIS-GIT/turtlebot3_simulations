@@ -1,3 +1,3 @@
 /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles/edit_cache.dir
 /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles/rebuild_cache.dir
-/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles/burger.dir
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles/turtlebot3.dir

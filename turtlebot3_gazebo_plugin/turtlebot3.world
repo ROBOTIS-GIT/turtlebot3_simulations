@@ -9,12 +9,14 @@
       <uri>model://sun</uri>
     </include>
 
-    <model name="turtlebot3_burger">
+    <model name="turtlebot3_waffle">
       <include>
-        <uri>model://turtlebot3_burger</uri>
+        <uri>model://turtlebot3_waffle</uri>
       </include>
 
-      <plugin name="burger" filename="libburger.so"/>
+      <plugin name="turtlebot3" filename="libturtlebot3.so">
+        <tb3_model>waffle</tb3_model>
+      </plugin>      
     </model>
 
   </world>

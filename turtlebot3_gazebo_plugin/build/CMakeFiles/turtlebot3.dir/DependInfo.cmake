@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/burger.cc" "/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles/burger.dir/burger.cc.o"
+  "/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/turtlebot3.cc" "/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles/turtlebot3.dir/turtlebot3.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

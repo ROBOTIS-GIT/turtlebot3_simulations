@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named burger
+# Target rules for targets named turtlebot3
 
 # Build rule for target.
-burger: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 burger
-.PHONY : burger
+turtlebot3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3
+.PHONY : turtlebot3
 
 # fast build rule for target.
-burger/fast:
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/build
-.PHONY : burger/fast
+turtlebot3/fast:
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/build
+.PHONY : turtlebot3/fast
 
-burger.o: burger.cc.o
+turtlebot3.o: turtlebot3.cc.o
 
-.PHONY : burger.o
+.PHONY : turtlebot3.o
 
 # target to build an object file
-burger.cc.o:
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/burger.cc.o
-.PHONY : burger.cc.o
+turtlebot3.cc.o:
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/turtlebot3.cc.o
+.PHONY : turtlebot3.cc.o
 
-burger.i: burger.cc.i
+turtlebot3.i: turtlebot3.cc.i
 
-.PHONY : burger.i
+.PHONY : turtlebot3.i
 
 # target to preprocess a source file
-burger.cc.i:
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/burger.cc.i
-.PHONY : burger.cc.i
+turtlebot3.cc.i:
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/turtlebot3.cc.i
+.PHONY : turtlebot3.cc.i
 
-burger.s: burger.cc.s
+turtlebot3.s: turtlebot3.cc.s
 
-.PHONY : burger.s
+.PHONY : turtlebot3.s
 
 # target to generate assembly for a file
-burger.cc.s:
-	$(MAKE) -f CMakeFiles/burger.dir/build.make CMakeFiles/burger.dir/burger.cc.s
-.PHONY : burger.cc.s
+turtlebot3.cc.s:
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/turtlebot3.cc.s
+.PHONY : turtlebot3.cc.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... burger"
-	@echo "... burger.o"
-	@echo "... burger.i"
-	@echo "... burger.s"
+	@echo "... turtlebot3"
+	@echo "... turtlebot3.o"
+	@echo "... turtlebot3.i"
+	@echo "... turtlebot3.s"
 .PHONY : help
 
 
