@@ -24,12 +24,15 @@
 
 #include "gazebo/gazebo.hh"
 #include "gazebo/physics/physics.hh"
+#include "gazebo/sensors/sensors.hh"
 
 #include <string>
 #include <boost/bind.hpp>
 
 #define LEFT_WHEEL_JOINT  0
 #define RIGHT_WHEEL_JOINT 1
+
+#define LIDAR_SENSOR 1
 
 #define ESC_ASCII_VALUE   0x1b
 
@@ -86,6 +89,8 @@ class Turtlebot3 : public ModelPlugin
   physics::JointPtr left_wheel_joint_;
   physics::JointPtr right_wheel_joint_;
 
+  sensors::SensorPtr lidar_sensor_;
+
   double wheel_separation_;
 
   common::PID pid_;
@@ -99,12 +104,33 @@ class Turtlebot3 : public ModelPlugin
  public: 
   virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   {
-    model_ = _model;
-    std::cerr << "The turtlebot3 plugin is attach to model : " << _model->GetName() << "\n";
+    getModel(_model);
+    
+    if (isTurtlebot3Model(_sdf) != true)
+      return;
 
-    if (_sdf->HasElement("tb3_model"))
+    getJoints(_model);
+
+    getSensors(_model);
+
+    initWheel();
+
+    updateConnection_ = event::Events::ConnectWorldUpdateBegin(boost::bind(&Turtlebot3::OnUpdate, this, _1));
+  }
+
+ public:
+  void getModel(physics::ModelPtr model)
+  {
+    model_ = model;
+    std::cerr << "The turtlebot3 plugin is attach to model : " << model_->GetName() << "\n";
+  }
+
+ public:
+  bool isTurtlebot3Model(sdf::ElementPtr sdf)
+  {
+    if (sdf->HasElement("tb3_model"))
     {
-      get_tb3_model_ = _sdf->Get<std::string>("tb3_model");
+      get_tb3_model_ = sdf->Get<std::string>("tb3_model");
 
       if (get_tb3_model_ == "burger")
       {
@@ -117,21 +143,35 @@ class Turtlebot3 : public ModelPlugin
       else
       {
         std::cerr << "Invalid model name, TB3 plugin not loaded\n";
-        return;
+        return false;
       }
     }
     else
     {
       std::cerr << "Please put a tb3 model(burger, waffle or waffle_pi) in turtlebot3_.world file, TB3 plugin not loaded\n";
-      return;
+      return false;
     }
 
-    left_wheel_joint_  = _model->GetJoints()[LEFT_WHEEL_JOINT];
-    right_wheel_joint_ = _model->GetJoints()[RIGHT_WHEEL_JOINT];
+    return true;
+  }
 
-    writePIDparamForJointControl(1.0, 0, 0);
+ public:
+  void getJoints(physics::ModelPtr model)
+  {
+    left_wheel_joint_  = model->GetJoints()[LEFT_WHEEL_JOINT];
+    right_wheel_joint_ = model->GetJoints()[RIGHT_WHEEL_JOINT];
 
-    updateConnection_ = event::Events::ConnectWorldUpdateBegin(boost::bind(&Turtlebot3::OnUpdate, this, _1));
+    std::cerr << "Find Joint : " << left_wheel_joint_->GetName()  << "\n";
+    std::cerr << "Find Joint : " << right_wheel_joint_->GetName() << "\n";
+  }
+
+ public:
+  void getSensors(physics::ModelPtr model)
+  {
+    physics::LinkPtr link = model->GetLinks()[LIDAR_SENSOR];
+    std::cerr << "Find Sensor : " << link->GetScopedName() << "\n";
+
+    sensors::SensorPtr = link->GetSensors()[0];
   }
 
  public:
@@ -141,6 +181,14 @@ class Turtlebot3 : public ModelPlugin
 
     model_->GetJointController()->SetVelocityPID(left_wheel_joint_->GetScopedName(), pid_);
     model_->GetJointController()->SetVelocityPID(right_wheel_joint_->GetScopedName(), pid_);
+  }
+
+ public:
+  void initWheel()
+  {
+    writePIDparamForJointControl(1.0, 0, 0);
+
+    writeVelocityToJoint(0.0, 0.0);
   }
 
  public:
@@ -163,6 +211,18 @@ class Turtlebot3 : public ModelPlugin
   {
     model_->GetJointController()->SetVelocityTarget(left_wheel_joint_->GetScopedName(), left_wheel_vel);
     model_->GetJointController()->SetVelocityTarget(right_wheel_joint_->GetScopedName(), right_wheel_vel);
+  }
+ 
+ public:
+  double getLeftJointPosition()
+  {
+    return left_wheel_joint_->GetAngle(0).Radian();
+  }
+
+ public:
+  double getRightJointPosition()
+  {
+    return right_wheel_joint_->GetAngle(0).Radian();
   }
 
  public: 
