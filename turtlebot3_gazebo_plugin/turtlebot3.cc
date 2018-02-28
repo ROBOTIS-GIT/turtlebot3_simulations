@@ -28,11 +28,13 @@
 
 #include <string>
 #include <boost/bind.hpp>
+#include <iostream>
 
 #define LEFT_WHEEL_JOINT  0
 #define RIGHT_WHEEL_JOINT 1
 
-#define LIDAR_SENSOR 1
+#define LIDAR_SENSOR  1
+#define CAMERA_SENSOR 2
 
 #define ESC_ASCII_VALUE   0x1b
 
@@ -82,14 +84,10 @@ int kbhit(void)
 class Turtlebot3 : public ModelPlugin
 {
  private:
-  std::string get_tb3_model_;
-
   physics::ModelPtr model_;
 
   physics::JointPtr left_wheel_joint_;
   physics::JointPtr right_wheel_joint_;
-
-  sensors::SensorPtr lidar_sensor_;
 
   double wheel_separation_;
 
@@ -119,41 +117,7 @@ class Turtlebot3 : public ModelPlugin
   }
 
  public:
-  void getModel(physics::ModelPtr model)
-  {
-    model_ = model;
-    std::cerr << "The turtlebot3 plugin is attach to model : " << model_->GetName() << "\n";
-  }
-
- public:
-  bool isTurtlebot3Model(sdf::ElementPtr sdf)
-  {
-    if (sdf->HasElement("tb3_model"))
-    {
-      get_tb3_model_ = sdf->Get<std::string>("tb3_model");
-
-      if (get_tb3_model_ == "burger")
-      {
-        wheel_separation_ = 0.160;
-      }
-      else if (get_tb3_model_ == "waffle" || get_tb3_model_ == "waffle_pi")
-      {
-        wheel_separation_ = 0.287;
-      }
-      else
-      {
-        std::cerr << "Invalid model name, TB3 plugin not loaded\n";
-        return false;
-      }
-    }
-    else
-    {
-      std::cerr << "Please put a tb3 model(burger, waffle or waffle_pi) in turtlebot3_.world file, TB3 plugin not loaded\n";
-      return false;
-    }
-
-    return true;
-  }
+  void getModel(physics::ModelPtr model){ model_ = model; }
 
  public:
   void getJoints(physics::ModelPtr model)
@@ -161,17 +125,55 @@ class Turtlebot3 : public ModelPlugin
     left_wheel_joint_  = model->GetJoints()[LEFT_WHEEL_JOINT];
     right_wheel_joint_ = model->GetJoints()[RIGHT_WHEEL_JOINT];
 
-    std::cerr << "Find Joint : " << left_wheel_joint_->GetName()  << "\n";
-    std::cerr << "Find Joint : " << right_wheel_joint_->GetName() << "\n";
+    std::cout << "Find Joint : " << left_wheel_joint_->GetName()  << std::endl;
+    std::cout << "Find Joint : " << right_wheel_joint_->GetName() << std::endl;
   }
 
  public:
   void getSensors(physics::ModelPtr model)
   {
-    physics::LinkPtr link = model->GetLinks()[LIDAR_SENSOR];
-    std::cerr << "Find Sensor : " << link->GetScopedName() << "\n";
+    physics::LinkPtr lidar_link  = model->GetLinks()[LIDAR_SENSOR];
+    std::cerr << "Find Sensor : " << lidar_link->GetScopedName() << std::endl;
 
-    sensors::SensorPtr = link->GetSensors()[0];
+    if (model_->GetName() != "burger")
+    {
+      physics::LinkPtr camera_link = model->GetLinks()[CAMERA_SENSOR];
+      std::cerr << "Find Sensor : " << camera_link->GetScopedName() << std::endl;
+    }
+  }
+
+ public:
+  bool isTurtlebot3Model(sdf::ElementPtr sdf)
+  {
+    std::string get_tb3_model;
+
+    if (sdf->HasElement("tb3_model"))
+    {
+      get_tb3_model = sdf->Get<std::string>("tb3_model");
+
+      if (get_tb3_model == "burger")
+      {
+        wheel_separation_ = 0.160;
+      }
+      else if (get_tb3_model == "waffle" || get_tb3_model == "waffle_pi")
+      {
+        wheel_separation_ = 0.287;
+      }
+      else
+      {
+        std::cerr << "Invalid model name, TB3 plugin is not loaded" << std::endl;
+        return false;
+      }
+    }
+    else
+    {
+      std::cerr << "Please put a tb3 model(burger, waffle or waffle_pi) in turtlebot3_.world file, TB3 plugin is not loaded" << std::endl;
+      return false;
+    }
+
+    std::cout << "The turtlebot3 plugin is attach to model : " << model_->GetName() << "/turtlebot3_" << get_tb3_model << std::endl;
+
+    return true;
   }
 
  public:
@@ -258,8 +260,8 @@ class Turtlebot3 : public ModelPlugin
       }
 
       // This velocities are not reliable yet due to frinction. It will be updated
-      std::cerr << "\rlin_vel : " << lin_vel_cmd << ",  ";
-      std::cerr << "ang_vel : " << ang_vel_cmd << "\n";
+      std::cout << "\rlin_vel : " << lin_vel_cmd << ",  ";
+      std::cout << "ang_vel : " << ang_vel_cmd << std::endl;
 
       controlTB3(wheel_separation_, lin_vel_cmd, ang_vel_cmd); 
     }

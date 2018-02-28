@@ -1,22 +1,23 @@
 <?xml version="1.0"?>
 <sdf version="1.4">
   <world name="default">
+
     <include>
       <uri>model://ground_plane</uri>
     </include>
 
-    <include>
+    <!-- <include>
       <uri>model://sun</uri>
-    </include>
+    </include> -->
 
-    <model name="turtlebot3_burger">
+    <model name="user">
       <include>
-        <uri>model://turtlebot3_burger</uri>
+        <uri>model://turtlebot3_waffle</uri>
       </include>
 
       <plugin name="turtlebot3" filename="libturtlebot3.so">
-        <tb3_model>burger</tb3_model>
-      </plugin>      
+        <tb3_model>waffle</tb3_model>
+      </plugin> 
     </model>
 
   </world>

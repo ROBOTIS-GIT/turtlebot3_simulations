@@ -7,3 +7,9 @@ list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 add_library(turtlebot3 SHARED turtlebot3.cc)
 target_link_libraries(turtlebot3 ${GAZEBO_LIBRARIES})
+
+add_executable(lidar_listener lidar_listener.cc)
+target_link_libraries(lidar_listener ${GAZEBO_LIBRARIES} pthread)
+
+add_executable(image_listener image_listener.cc)
+target_link_libraries(image_listener ${GAZEBO_LIBRARIES} pthread)
