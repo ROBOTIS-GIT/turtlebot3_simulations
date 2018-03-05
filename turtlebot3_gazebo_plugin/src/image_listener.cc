@@ -35,17 +35,13 @@ void imageCallbackMsg(ConstImageStampedPtr &msg)
 
   memcpy(data, msg->image().data().c_str(), msg->image().data().length());
 
-  std::cout << "image data : [";
+  // std::cout << "image data : [";
 
-  for (uint16_t height = 0; height < msg->image().height(); height++)
-  {
-    for (uint16_t width = 0; width < msg->image().width(); width++)
-    {
-      std::cout << data[height, width] << ", ";
-    }
-    std::cout << std::endl;
-  }
-  std::cout << "]";
+  // for (uint32_t img_len = 0; img_len < msg->image().data().length() + 1; img_len++)
+  // {
+  //   std::cout << data[0];
+  // }
+  // std::cout << "]" << std::endl;
 
   delete data;
 }
