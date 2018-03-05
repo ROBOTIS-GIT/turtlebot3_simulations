@@ -15,7 +15,7 @@ $ make
 # Excute
 
 $ cd ${turtlebot3_gazebo_plugin}
-$ gazebo turtlebot3_${TB3_MODEL}.world
+$ gazebo world/turtlebot3_${TB3_MODEL}.world
 
   - TB3_MODEL = `burger`, `waffle`, `waffle_pi`
 
@@ -34,6 +34,18 @@ $ gz topic -l
 
 ## Subscribe scan data
 $ gz topic -e /gazebo/default/user/turtlebot3_${TB3_MODEL}/lidar/hls_lfcd_lds/scan
+
+## Subscribe image data
+
+**Waffle**
+
+$ gz topic -e /gazebo/default/user/turtlebot3_waffle/image/intel_realsense_r200/image
+
+or
+
+**Waffle Pi**
+
+$ gz topic -e /gazebo/default/user/turtlebot3_waffle_pi/image/raspberry_pi_cam/image
 
 ## Excute listener
 
@@ -56,3 +68,5 @@ $ ./image_listener ${TB3_MODEL}
 [Tutorial for making sensor plugin](http://gazebosim.org/tutorials?tut=contact_sensor)
 
 [Tutorial for topic subscription](http://gazebosim.org/tutorials?tut=topics_subscribed)
+
+[Example of Wide-Angle Camera](http://gazebosim.org/tutorials?tut=wide_angle_camera&branch=wideanglecamera)

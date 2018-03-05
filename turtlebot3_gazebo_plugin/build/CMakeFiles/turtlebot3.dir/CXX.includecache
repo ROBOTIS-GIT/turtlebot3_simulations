@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/turtlebot3.cc
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/turtlebot3.cc
 fcntl.h
 -
 termios.h
 -
 gazebo/gazebo.hh
-/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/gazebo/gazebo.hh
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/gazebo/gazebo.hh
 gazebo/physics/physics.hh
-/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/gazebo/physics/physics.hh
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/gazebo/physics/physics.hh
 gazebo/sensors/sensors.hh
-/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/gazebo/sensors/sensors.hh
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/gazebo/sensors/sensors.hh
 string
 -
 boost/bind.hpp

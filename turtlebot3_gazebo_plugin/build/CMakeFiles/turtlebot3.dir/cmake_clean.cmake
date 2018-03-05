@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/turtlebot3.dir/turtlebot3.cc.o"
+  "CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o"
   "libturtlebot3.pdb"
   "libturtlebot3.so"
 )

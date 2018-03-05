@@ -5,11 +5,11 @@ include_directories(${GAZEBO_INCLUDE_DIRS})
 link_directories(${GAZEBO_LIBRARY_DIRS})
 list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
-add_library(turtlebot3 SHARED turtlebot3.cc)
+add_library(turtlebot3 SHARED src/turtlebot3.cc)
 target_link_libraries(turtlebot3 ${GAZEBO_LIBRARIES})
 
-add_executable(lidar_listener lidar_listener.cc)
+add_executable(lidar_listener src/lidar_listener.cc)
 target_link_libraries(lidar_listener ${GAZEBO_LIBRARIES} pthread)
 
-add_executable(image_listener image_listener.cc)
+add_executable(image_listener src/image_listener.cc)
 target_link_libraries(image_listener ${GAZEBO_LIBRARIES} pthread)

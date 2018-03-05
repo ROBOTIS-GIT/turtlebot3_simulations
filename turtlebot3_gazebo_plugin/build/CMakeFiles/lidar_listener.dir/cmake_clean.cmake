@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/lidar_listener.dir/lidar_listener.cc.o"
+  "CMakeFiles/lidar_listener.dir/src/lidar_listener.cc.o"
   "lidar_listener.pdb"
   "lidar_listener"
 )

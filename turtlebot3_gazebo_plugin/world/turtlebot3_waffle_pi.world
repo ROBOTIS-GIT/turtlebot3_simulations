@@ -6,17 +6,17 @@
       <uri>model://ground_plane</uri>
     </include>
 
-    <!-- <include>
+    <include>
       <uri>model://sun</uri>
-    </include> -->
+    </include>
 
     <model name="user">
       <include>
-        <uri>model://turtlebot3_waffle</uri>
+        <uri>model://turtlebot3_waffle_pi</uri>
       </include>
 
       <plugin name="turtlebot3" filename="libturtlebot3.so">
-        <tb3_model>waffle</tb3_model>
+        <tb3_model>waffle_pi</tb3_model>
       </plugin> 
     </model>
 

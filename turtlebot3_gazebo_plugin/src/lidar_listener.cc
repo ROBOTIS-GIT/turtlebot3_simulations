@@ -15,6 +15,8 @@
  *
 */
 
+/* Authors: Taehun Lim (Darby) */
+
 #include <gazebo/transport/transport.hh>
 #include <gazebo/msgs/msgs.hh>
 #include <gazebo/gazebo_client.hh>
@@ -23,10 +25,17 @@
 
 /////////////////////////////////////////////////
 // Function is called everytime a message is received.
-void imageCallbackMsg(ConstWorldStatisticsPtr &_msg)
+void laserScanCallbackMsg(ConstLaserScanStampedPtr &msg)
 {
-  // Dump the message contents to stdout.
-  std::cout << _msg->DebugString();
+  std::cout << "min angle : " << msg->scan().angle_min() << std::endl;
+  std::cout << "max angle : " << msg->scan().angle_max() << std::endl;
+  std::cout << "min range : " << msg->scan().range_min() << std::endl;
+  std::cout << "max range : " << msg->scan().range_max() << std::endl;
+
+  for (int angle = 0; angle < msg->scan().ranges_size(); angle++)
+  {
+    std::cout << "scan data[" << angle << "] = " << msg->scan().ranges(angle) << std::endl;
+  }
 }
 
 /////////////////////////////////////////////////
@@ -39,13 +48,19 @@ int main(int _argc, char **_argv)
   gazebo::transport::NodePtr node(new gazebo::transport::Node());
   node->Init();
 
+  if (_argc < 2)
+  {
+    std::cerr << "Please put a tb3 model(`burger`, `waffle` or `waffle_pi`)" << std::endl;
+    exit(0);
+  }
+
   char* tb3_model = _argv[1];
   std::string topic_name = "/gazebo/default/user/turtlebot3_" + std::string(tb3_model) + "/lidar/hls_lfcd_lds/scan";
 
   std::cout << "topic name is " << topic_name << std::endl;
 
   // Listen to Gazebo world_stats topic
-  gazebo::transport::SubscriberPtr sub = node->Subscribe(topic_name, imageCallbackMsg);
+  gazebo::transport::SubscriberPtr sub = node->Subscribe(topic_name, laserScanCallbackMsg);
 
   // Busy wait loop...replace with your own code as needed.
   while (true)

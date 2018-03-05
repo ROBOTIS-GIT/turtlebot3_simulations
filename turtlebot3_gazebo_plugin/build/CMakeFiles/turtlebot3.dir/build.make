@@ -57,38 +57,38 @@ include CMakeFiles/turtlebot3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/turtlebot3.dir/flags.make
 
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.o: CMakeFiles/turtlebot3.dir/flags.make
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.o: ../turtlebot3.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/turtlebot3.dir/turtlebot3.cc.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/turtlebot3.dir/turtlebot3.cc.o -c /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/turtlebot3.cc
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o: CMakeFiles/turtlebot3.dir/flags.make
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o: ../src/turtlebot3.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o -c /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/turtlebot3.cc
 
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/turtlebot3.dir/turtlebot3.cc.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/turtlebot3.cc > CMakeFiles/turtlebot3.dir/turtlebot3.cc.i
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/turtlebot3.cc > CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.i
 
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/turtlebot3.dir/turtlebot3.cc.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/turtlebot3.cc -o CMakeFiles/turtlebot3.dir/turtlebot3.cc.s
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/turtlebot3.cc -o CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.s
 
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.requires:
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.requires:
 
-.PHONY : CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.requires
+.PHONY : CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.requires
 
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.provides: CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.requires
-	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.provides.build
-.PHONY : CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.provides
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.provides: CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.requires
+	$(MAKE) -f CMakeFiles/turtlebot3.dir/build.make CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.provides.build
+.PHONY : CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.provides
 
-CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.provides.build: CMakeFiles/turtlebot3.dir/turtlebot3.cc.o
+CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.provides.build: CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o
 
 
 # Object files for target turtlebot3
 turtlebot3_OBJECTS = \
-"CMakeFiles/turtlebot3.dir/turtlebot3.cc.o"
+"CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o"
 
 # External object files for target turtlebot3
 turtlebot3_EXTERNAL_OBJECTS =
 
-libturtlebot3.so: CMakeFiles/turtlebot3.dir/turtlebot3.cc.o
+libturtlebot3.so: CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o
 libturtlebot3.so: CMakeFiles/turtlebot3.dir/build.make
 libturtlebot3.so: /usr/lib/x86_64-linux-gnu/libgazebo.so
 libturtlebot3.so: /usr/lib/x86_64-linux-gnu/libgazebo_client.so
@@ -155,7 +155,7 @@ CMakeFiles/turtlebot3.dir/build: libturtlebot3.so
 
 .PHONY : CMakeFiles/turtlebot3.dir/build
 
-CMakeFiles/turtlebot3.dir/requires: CMakeFiles/turtlebot3.dir/turtlebot3.cc.o.requires
+CMakeFiles/turtlebot3.dir/requires: CMakeFiles/turtlebot3.dir/src/turtlebot3.cc.o.requires
 
 .PHONY : CMakeFiles/turtlebot3.dir/requires
 

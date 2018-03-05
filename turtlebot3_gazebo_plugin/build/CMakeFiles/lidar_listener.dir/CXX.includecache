@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/lidar_listener.cc
+/home/darby/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo_plugin/src/lidar_listener.cc
 gazebo/transport/transport.hh
 -
 gazebo/msgs/msgs.hh

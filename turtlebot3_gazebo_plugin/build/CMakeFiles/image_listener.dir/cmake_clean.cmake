@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/image_listener.dir/image_listener.cc.o"
+  "CMakeFiles/image_listener.dir/src/image_listener.cc.o"
   "image_listener.pdb"
   "image_listener"
 )

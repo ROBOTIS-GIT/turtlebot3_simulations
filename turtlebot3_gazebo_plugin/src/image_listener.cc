@@ -25,17 +25,29 @@
 
 /////////////////////////////////////////////////
 // Function is called everytime a message is received.
-void laserScanCallbackMsg(ConstLaserScanStampedPtr &msg)
+void imageCallbackMsg(ConstImageStampedPtr &msg)
 {
-  std::cout << "min angle : " << msg->scan().angle_min() << std::endl;
-  std::cout << "max angle : " << msg->scan().angle_max() << std::endl;
-  std::cout << "min range : " << msg->scan().range_min() << std::endl;
-  std::cout << "max range : " << msg->scan().range_max() << std::endl;
+  std::cout << "image width : "  << msg->image().width()  << std::endl;
+  std::cout << "image height : " << msg->image().height() << std::endl;
 
-  for (int angle = 0; angle < msg->scan().ranges_size(); angle++)
+  char *data;
+  data = new char[msg->image().data().length() + 1];
+
+  memcpy(data, msg->image().data().c_str(), msg->image().data().length());
+
+  std::cout << "image data : [";
+
+  for (uint16_t height = 0; height < msg->image().height(); height++)
   {
-    std::cout << "scan data[" << angle << "] = " << msg->scan().ranges(angle) << std::endl;
+    for (uint16_t width = 0; width < msg->image().width(); width++)
+    {
+      std::cout << data[height, width] << ", ";
+    }
+    std::cout << std::endl;
   }
+  std::cout << "]";
+
+  delete data;
 }
 
 /////////////////////////////////////////////////
@@ -48,13 +60,29 @@ int main(int _argc, char **_argv)
   gazebo::transport::NodePtr node(new gazebo::transport::Node());
   node->Init();
 
+  if (_argc < 2)
+  {
+    std::cerr << "Please put a tb3 model(`waffle` or `waffle_pi`)" << std::endl;
+    exit(0);
+  }
+
   char* tb3_model = _argv[1];
-  std::string topic_name = "/gazebo/default/user/turtlebot3_" + std::string(tb3_model) + "/lidar/hls_lfcd_lds/scan";
+  std::string topic_name = "";
+
+  if (std::string(tb3_model) == "waffle")
+    topic_name = "/gazebo/default/user/turtlebot3_waffle/image/intel_realsense_r200/image";
+  else if (std::string(tb3_model) == "waffle_pi")
+    topic_name = "/gazebo/default/user/turtlebot3_waffle_pi/image/raspberry_pi_cam/image";
+  else 
+  {
+    std::cerr << "Please put a tb3 model(`waffle` or `waffle_pi`)" << std::endl;
+    exit(0);
+  }
 
   std::cout << "topic name is " << topic_name << std::endl;
 
   // Listen to Gazebo world_stats topic
-  gazebo::transport::SubscriberPtr sub = node->Subscribe(topic_name, laserScanCallbackMsg);
+  gazebo::transport::SubscriberPtr sub = node->Subscribe(topic_name, imageCallbackMsg);
 
   // Busy wait loop...replace with your own code as needed.
   while (true)
