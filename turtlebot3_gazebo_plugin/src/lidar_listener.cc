@@ -36,6 +36,8 @@ void laserScanCallbackMsg(ConstLaserScanStampedPtr &msg)
   {
     std::cout << "scan data[" << angle << "] = " << msg->scan().ranges(angle) << std::endl;
   }
+
+  // Add your code
 }
 
 /////////////////////////////////////////////////
