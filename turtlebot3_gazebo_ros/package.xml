@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-  <name>turtlebot3_gazebo</name>
+  <name>turtlebot3_gazebo_ros</name>
   <version>0.1.7</version>
   <description>
-    Gazebo simulation package for the TurtleBot3
+    Gazebo-ROS simulation package for the TurtleBot3
   </description>
   <license>Apache License 2.0</license>
   <author email="pyo@robotis.com">Pyo</author>

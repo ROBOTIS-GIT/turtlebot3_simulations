@@ -9,5 +9,5 @@
     <param name="publish_frequency" type="double" value="50.0" />
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_gazebo)/rviz/turtlebot3_gazebo_model.rviz"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_gazebo_ros)/rviz/turtlebot3_gazebo_model.rviz"/>
 </launch>

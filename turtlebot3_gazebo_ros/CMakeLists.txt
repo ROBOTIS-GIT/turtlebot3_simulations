@@ -2,7 +2,7 @@
 # CMake
 ################################################################################
 cmake_minimum_required(VERSION 2.8.3)
-project(turtlebot3_gazebo)
+project(turtlebot3_gazebo_ros)
 
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
 
@@ -50,14 +50,14 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
-add_executable(gazebo_ros_turtlebot3 src/gazebo_ros_turtlebot3.cpp)
-target_link_libraries(gazebo_ros_turtlebot3 ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
-add_dependencies(gazebo_ros_turtlebot3 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
+target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS gazebo_ros_turtlebot3
+install(TARGETS turtlebot3_drive
        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
        RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -72,10 +72,6 @@ install(DIRECTORY launch
 )
 
 install(DIRECTORY rviz
-       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-install(DIRECTORY models
        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

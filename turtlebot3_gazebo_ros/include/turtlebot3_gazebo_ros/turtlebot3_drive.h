@@ -14,10 +14,10 @@
 * limitations under the License.
 *******************************************************************************/
 
-/* Authors: Taehoon Lim (Darby) */
+/* Authors: Taehun Lim (Darby) */
 
-#ifndef GAZEBO_ROS_TURTLEBOT3_H_
-#define GAZEBO_ROS_TURTLEBOT3_H_
+#ifndef TURTLEBOT3_DRIVE_H_
+#define TURTLEBOT3_DRIVE_H_
 
 #include <ros/ros.h>
 #include <ros/time.h>
@@ -47,11 +47,11 @@
 #define TB3_RIGHT_TURN    2
 #define TB3_LEFT_TURN     3
 
-class GazeboRosTurtleBot3
+class Turtlebot3Drive
 {
  public:
-  GazeboRosTurtleBot3();
-  ~GazeboRosTurtleBot3();
+  Turtlebot3Drive();
+  ~Turtlebot3Drive();
   bool init();
   bool controlLoop();
 
@@ -87,4 +87,4 @@ class GazeboRosTurtleBot3
   void laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg);
   void jointStateMsgCallBack(const sensor_msgs::JointState::ConstPtr &msg);
 };
-#endif // GAZEBO_ROS_TURTLEBOT3_H_
+#endif // TURTLEBOT3_DRIVE_H_

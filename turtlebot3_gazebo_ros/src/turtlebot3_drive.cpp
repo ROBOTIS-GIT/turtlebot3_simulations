@@ -16,9 +16,9 @@
 
 /* Authors: Taehoon Lim (Darby) */
 
-#include "turtlebot3_gazebo/gazebo_ros_turtlebot3.h"
+#include "turtlebot3_gazebo_ros/turtlebot3_drive.h"
 
-GazeboRosTurtleBot3::GazeboRosTurtleBot3()
+Turtlebot3Drive::Turtlebot3Drive()
   : nh_priv_("~")
 {
   //Init gazebo ros turtlebot3 node
@@ -26,7 +26,7 @@ GazeboRosTurtleBot3::GazeboRosTurtleBot3()
   ROS_ASSERT(init());
 }
 
-GazeboRosTurtleBot3::~GazeboRosTurtleBot3()
+Turtlebot3Drive::~Turtlebot3Drive()
 {
   updatecommandVelocity(0.0, 0.0);
   ros::shutdown();
@@ -35,7 +35,7 @@ GazeboRosTurtleBot3::~GazeboRosTurtleBot3()
 /*******************************************************************************
 * Init function
 *******************************************************************************/
-bool GazeboRosTurtleBot3::init()
+bool Turtlebot3Drive::init()
 {
   // initialize ROS parameter
   nh_.param("is_debug", is_debug_, is_debug_);
@@ -67,18 +67,18 @@ bool GazeboRosTurtleBot3::init()
   cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
   // initialize subscribers
-  laser_scan_sub_  = nh_.subscribe("/scan", 10, &GazeboRosTurtleBot3::laserScanMsgCallBack, this);
-  joint_state_sub_ = nh_.subscribe("/joint_states", 10, &GazeboRosTurtleBot3::jointStateMsgCallBack, this);
+  laser_scan_sub_  = nh_.subscribe("/scan", 10, &Turtlebot3Drive::laserScanMsgCallBack, this);
+  joint_state_sub_ = nh_.subscribe("/joint_states", 10, &Turtlebot3Drive::jointStateMsgCallBack, this);
 
   return true;
 }
 
-void GazeboRosTurtleBot3::jointStateMsgCallBack(const sensor_msgs::JointState::ConstPtr &msg)
+void Turtlebot3Drive::jointStateMsgCallBack(const sensor_msgs::JointState::ConstPtr &msg)
 {
   right_joint_encoder_ = msg->position.at(0);
 }
 
-void GazeboRosTurtleBot3::laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg)
+void Turtlebot3Drive::laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg)
 {
   uint16_t scan_angle[3] = {0, 30, 330};
 
@@ -95,7 +95,7 @@ void GazeboRosTurtleBot3::laserScanMsgCallBack(const sensor_msgs::LaserScan::Con
   }
 }
 
-void GazeboRosTurtleBot3::updatecommandVelocity(double linear, double angular)
+void Turtlebot3Drive::updatecommandVelocity(double linear, double angular)
 {
   geometry_msgs::Twist cmd_vel;
 
@@ -108,7 +108,7 @@ void GazeboRosTurtleBot3::updatecommandVelocity(double linear, double angular)
 /*******************************************************************************
 * Control Loop function
 *******************************************************************************/
-bool GazeboRosTurtleBot3::controlLoop()
+bool Turtlebot3Drive::controlLoop()
 {
   static uint8_t turtlebot3_state_num = 0;
   double wheel_radius = 0.033;
@@ -190,14 +190,14 @@ bool GazeboRosTurtleBot3::controlLoop()
 *******************************************************************************/
 int main(int argc, char* argv[])
 {
-  ros::init(argc, argv, "gazebo_ros_turtlebot3");
-  GazeboRosTurtleBot3 gazeboRosTurtleBot3;
+  ros::init(argc, argv, "turtlebot3_drive");
+  Turtlebot3Drive turtlebot3_drive;
 
   ros::Rate loop_rate(125);
 
   while (ros::ok())
   {
-    gazeboRosTurtleBot3.controlLoop();
+    turtlebot3_drive.controlLoop();
     ros::spinOnce();
     loop_rate.sleep();
   }

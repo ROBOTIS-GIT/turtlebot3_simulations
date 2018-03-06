@@ -32,10 +32,13 @@ void laserScanCallbackMsg(ConstLaserScanStampedPtr &msg)
   std::cout << "min range : " << msg->scan().range_min() << std::endl;
   std::cout << "max range : " << msg->scan().range_max() << std::endl;
 
+  std::cout << "scan data : [";
   for (int angle = 0; angle < msg->scan().ranges_size(); angle++)
   {
-    std::cout << "scan data[" << angle << "] = " << msg->scan().ranges(angle) << std::endl;
+    std::cout << msg->scan().ranges(angle) << ", ";
   }
+
+  std::cout << "]" << std::endl;
 
   // Add your code
 }

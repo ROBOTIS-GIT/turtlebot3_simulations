@@ -1,14 +1,11 @@
 <?xml version="1.0" ?>
-<sdf version="1.4">
+<sdf version="1.5">
   <model name="turtlebot3_waffle">  
-
-    <link name="footprint">
-    </link>
 
     <link name="base">
 
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.064 0 0.048 0 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -17,7 +14,7 @@
           <iyz>0.000</iyz>
           <izz>0.001</izz>
         </inertia>
-        <mass>0.1</mass>
+        <mass>1.0</mass>
       </inertial>
 
       <collision name="base_collision">
@@ -49,8 +46,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
               <fdir1>0 0 0</fdir1>
               <slip1>0</slip1>
               <slip2>0</slip2>
@@ -69,8 +66,8 @@
         <surface>
           <friction>
             <ode>
-              <mu>0</mu>
-              <mu2>0</mu2>
+              <mu>100000.0</mu>
+              <mu2>100000.0</mu2>
               <fdir1>0 0 0</fdir1>
               <slip1>0</slip1>
               <slip2>0</slip2>
@@ -80,23 +77,9 @@
       </collision>
     </link>
 
-    <joint name="base_joint" type="revolute">
-      <parent>footprint</parent>
-      <child>base</child>
-      <pose>0.0 0.0 -0.010 0 0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0</upper>
-        </limit>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-
-    <link name="lds">    
+    <link name="lidar">    
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.052 0 0.111 0 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -105,10 +88,10 @@
           <iyz>0.000</iyz>
           <izz>0.001</izz>
         </inertia>
-        <mass>0.1</mass>
+        <mass>0.125</mass>
       </inertial>
 
-      <collision name="lds_sensor_collision">
+      <collision name="lidar_sensor_collision">
         <pose>-0.052 0 0.111 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -118,7 +101,7 @@
         </geometry>
       </collision>
 
-      <visual name="lds_sensor_visual">
+      <visual name="lidar_sensor_visual">
         <pose>-0.064 0 0.121 0 0 0</pose>
         <geometry>
           <mesh>
@@ -128,9 +111,9 @@
         </geometry>
       </visual>
 
-      <sensor name="laser" type="ray">
-        <always_on>true</always_on>
-        <visualize>true</visualize>
+      <sensor name="hls_lfcd_lds" type="ray">
+        <always_on>1</always_on>
+        <visualize>0</visualize>
         <pose>-0.064 0 0.121 0 0 0</pose>
         <update_rate>1800</update_rate>
         <ray>
@@ -153,23 +136,12 @@
             <stddev>0.01</stddev>
           </noise>
         </ray>
-        <plugin name="laser" filename="libRayPlugin.so" />
       </sensor>
     </link>
 
-    <joint name="lds_joint" type="fixed">
-      <parent>base</parent>
-      <child>lds</child>
-      <pose>-0.064 0 0.121 0 0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-
-    <link name="r200">
+    <link name="image">
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>-0.069 0 0.104 0 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -178,11 +150,11 @@
           <iyz>0.000</iyz>
           <izz>0.001</izz>
         </inertia>
-        <mass>0.1</mass>
+        <mass>0.035</mass>
       </inertial>
 
-      <collision name="r200_collision">
-        <pose>0.069 0 0.104 0 0 0</pose>
+      <collision name="image_collision">
+        <pose>-0.069 0 0.104 0 0 0</pose>
         <geometry>
           <box>
             <size>0.008 0.130 0.022</size>
@@ -191,39 +163,29 @@
       </collision>
 
       <sensor name="intel_realsense_r200" type="camera">
+        <always_on>1</always_on>
+        <visualize>0</visualize>
+        <update_rate>30</update_rate>
         <pose>0.064 -0.047 0.107 0 0 0</pose>
-        <always_on>true</always_on>
-        <visualize>true</visualize>
         <camera>
-            <horizontal_fov>1.02974</horizontal_fov>
-            <image>
-                <width>1920</width>
-                <height>1080</height>
-                <format>R8G8B8</format>
-            </image>
-            <depth_camera></depth_camera>
-            <clip>
-                <near>0.02</near>
-                <far>300</far>
-            </clip>
+          <horizontal_fov>1.02974</horizontal_fov>
+          <image>
+            <width>1920</width>
+            <height>1080</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
         </camera>
       </sensor>
     </link>
 
-    <joint name="r200_joint" type="fixed">
-      <parent>base</parent>
-      <child>r200</child>
-      <pose>0.064 -0.065 0.094 0 0 0</pose>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <link name="left_wheel">
 
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0 0.144 0.023 -1.57 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -246,8 +208,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>0.0</mu>
-                <mu2>0.0</mu2>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
                 <fdir1>0 0 0</fdir1>
                 <slip1>0.0</slip1>
                 <slip2>0.0</slip2>
@@ -267,20 +229,10 @@
       </visual>
     </link>
 
-    <joint name="left_wheel_joint" type="revolute">
-      <parent>base</parent>
-      <child>left_wheel</child>
-      <pose>0.0 0.144 0.023 -1.57 0 0</pose>
-      <axis>
-        <xyz>0 1 0</xyz>
-        <use_parent_model_frame>true</use_parent_model_frame>
-      </axis>
-    </joint>
-
     <link name="right_wheel">
 
       <inertial>
-        <pose>0 0 0 0 0 0</pose>
+        <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -303,8 +255,8 @@
           <surface>
             <friction>
               <ode>
-                <mu>0.0</mu>
-                <mu2>0.0</mu2>
+                <mu>100000.0</mu>
+                <mu2>100000.0</mu2>
                 <fdir1>0 0 0</fdir1>
                 <slip1>0.0</slip1>
                 <slip2>0.0</slip2>
@@ -324,12 +276,40 @@
       </visual>
     </link>
 
+    <joint name="left_wheel_joint" type="revolute">
+      <parent>base</parent>
+      <child>left_wheel</child>
+      <pose>0.0 0.144 0.023 -1.57 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
     <joint name="right_wheel_joint" type="revolute">
       <parent>base</parent>
       <child>right_wheel</child>
       <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="lidar_joint" type="fixed">
+      <parent>base</parent>
+      <child>lidar</child>
+      <pose>-0.064 0 0.121 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <joint name="image_joint" type="fixed">
+      <parent>base</parent>
+      <child>image</child>
+      <pose>0.064 -0.065 0.094 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>

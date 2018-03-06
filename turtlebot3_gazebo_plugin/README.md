@@ -6,6 +6,8 @@ $ sudo apt-get install libgazebo7-dev
 
 $ export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:${turtlebot3_gazebo_plugin}/build
 
+$ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:${turtlebot3_gazebo_plugin}/models
+
 # Make and Build
 
 $ cd ${turtlebot3_gazebo_plugin}/build
@@ -15,7 +17,7 @@ $ make
 # Excute
 
 $ cd ${turtlebot3_gazebo_plugin}
-$ gazebo world/turtlebot3_${TB3_MODEL}.world
+$ gazebo worlds/turtlebot3_${TB3_MODEL}.world
 
   - TB3_MODEL = `burger`, `waffle`, `waffle_pi`
 
