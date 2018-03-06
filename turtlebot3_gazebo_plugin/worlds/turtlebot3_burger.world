@@ -9,7 +9,7 @@
     <include>
       <uri>model://sun</uri>
     </include>
-
+    
     <model name="user">
       <include>
         <uri>model://turtlebot3_burger</uri>
