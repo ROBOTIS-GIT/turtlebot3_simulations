@@ -14,7 +14,7 @@
 * limitations under the License.
 *******************************************************************************/
 
-/* Authors: Taehoon Lim (Darby) */
+/* Authors: Taehun Lim (Darby) */
 
 #include "turtlebot3_gazebo_ros/turtlebot3_drive.h"
 
@@ -56,6 +56,7 @@ bool Turtlebot3Drive::init()
     front_distance_limit_ = 0.7;
     side_distance_limit_  = 0.6;
   }
+
   ROS_INFO("robot_model : %s", robot_model.c_str());
   ROS_INFO("turning_radius_ : %lf", turning_radius_);
   ROS_INFO("front_distance_limit_ = %lf", front_distance_limit_);
