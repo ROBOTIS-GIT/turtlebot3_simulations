@@ -39,7 +39,8 @@ bool Turtlebot3Drive::init()
 {
   // initialize ROS parameter
   nh_.param("is_debug", is_debug_, is_debug_);
-  std::string robot_model = nh_.param<std::string>("tb3_model", "");
+  std::string robot_model  = nh_.param<std::string>("tb3_model", "");
+  std::string cmd_vel_topic_name = nh_.param<std::string>("cmd_vel_topic_name", "");
 
   if (!robot_model.compare("burger"))
   {
@@ -64,7 +65,7 @@ bool Turtlebot3Drive::init()
   right_joint_encoder_ = 0.0;
   priv_right_joint_encoder_ = 0.0;
   // initialize publishers
-  cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
+  cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>(cmd_vel_topic_name, 10);
 
   // initialize subscribers
   laser_scan_sub_  = nh_.subscribe("/scan", 10, &Turtlebot3Drive::laserScanMsgCallBack, this);
