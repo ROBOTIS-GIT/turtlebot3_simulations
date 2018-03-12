@@ -1,7 +1,7 @@
 ################################################################################
 # CMake
 ################################################################################
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 2.8.3)
 project(turtlebot3_gazebo_plugin)
 
 ################################################################################
@@ -44,6 +44,19 @@ target_link_libraries(image_listener ${GAZEBO_LIBRARIES} pthread)
 ################################################################################
 # Install
 ################################################################################
+install(TARGETS lidar_listener image_listener
+       ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+       LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+       RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY models
+       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+install(DIRECTORY worlds
+       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 ################################################################################
 # Test
