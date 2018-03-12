@@ -113,6 +113,8 @@ class Turtlebot3 : public ModelPlugin
 
     initWheel();
 
+    showMsg();
+
     updateConnection_ = event::Events::ConnectWorldUpdateBegin(boost::bind(&Turtlebot3::OnUpdate, this, _1));
   }
 
@@ -192,10 +194,24 @@ class Turtlebot3 : public ModelPlugin
 
     writeVelocityToJoint(0.0, 0.0);
   }
+ 
+ public:
+  void showMsg()
+  {
+    std::cout << " " <<std::endl;
+    std::cout << "Control Your TurtleBot3!"       << std::endl;
+    std::cout << "---------------------------"    << std::endl;
+    std::cout << "w - set linear velocity up"     << std::endl;
+    std::cout << "x - set linear velocity down"   << std::endl;
+    std::cout << "d - set angular velocity up"    << std::endl;
+    std::cout << "a - set angular velocity down"  << std::endl;
+    std::cout << "s - set all velocity to zero"   << std::endl;
+  }
 
  public:
   void controlTB3(const float wheel_separation, double lin_vel, double ang_vel)
   {
+    // This velocities are not reliable yet due to frinction. It will be updated
     double _lin_vel = lin_vel;
     double _ang_vel = ang_vel;
 
@@ -230,11 +246,22 @@ class Turtlebot3 : public ModelPlugin
  public: 
   void OnUpdate(const common::UpdateInfo &)
   {
+    static uint8_t hit_cnt = 0;
     static double lin_vel_cmd = 0;
     static double ang_vel_cmd = 0;
 
     if (kbhit())
     {
+      std::cout << " is pressed" << std::endl;
+      
+      if (hit_cnt > 10)
+      {
+        showMsg();
+        hit_cnt = 0;
+      }
+      else
+        hit_cnt++;
+
       int c = getch();
 
       if (c == ESC_ASCII_VALUE)
@@ -258,10 +285,6 @@ class Turtlebot3 : public ModelPlugin
         lin_vel_cmd = lin_vel_cmd;
         ang_vel_cmd = ang_vel_cmd;
       }
-
-      // This velocities are not reliable yet due to frinction. It will be updated
-      std::cout << "\rlin_vel : " << lin_vel_cmd << ",  ";
-      std::cout << "ang_vel : " << ang_vel_cmd << std::endl;
 
       controlTB3(wheel_separation_, lin_vel_cmd, ang_vel_cmd); 
     }
