@@ -1,8 +1,0 @@
-<launch>
-    <node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key" name="turtlebot3_teleop_keyboard"/>
-
-    <node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key_1" name="turtlebot3_teleop_keyboard_1"/>
-
-    <node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key_2" name="turtlebot3_teleop_keyboard_2"/>
-
-</launch>
