@@ -22,6 +22,18 @@ Changelog for package turtlebot3_simulations
 * modified folder name
 * Contributors: Darby Lim
 
+0.2.0 (2018-03-13)
+-----------
+* added slam with multiple tb3
+* added multi example
+* added turtlebot3_house
+* modified cmake file
+* modified spwn model name
+* modified multi slam param
+* modified camera position
+* modified folder name
+* Contributors: Darby Lim
+
 0.1.7 (2017-08-16)
 -----------
 * renamed missed the install rule (worlds -> models)
