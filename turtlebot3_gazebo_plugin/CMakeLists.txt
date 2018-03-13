@@ -7,6 +7,9 @@ project(turtlebot3_gazebo_plugin)
 ################################################################################
 # Packages
 ################################################################################
+find_package(catkin REQUIRED COMPONENTS
+)
+
 find_package(gazebo REQUIRED
 )
 
@@ -23,7 +26,7 @@ find_package(gazebo REQUIRED
 ################################################################################
 catkin_package(
   LIBRARIES turtlebot3_gazebo_plugin
-)
+ )
 
 ################################################################################
 # Build
@@ -47,10 +50,8 @@ target_link_libraries(image_listener ${GAZEBO_LIBRARIES} pthread)
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS lidar_listener image_listener
-       ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+install(DIRECTORY src
+       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 install(DIRECTORY models
