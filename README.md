@@ -1,11 +1,14 @@
 <img src="https://raw.githubusercontent.com/ROBOTIS-GIT/ROBOTIS-Documents/master/wiki-images/Turtlebot3/Turtlebot3_logo.jpg" width="300">
 
-# Turtlebot3
+# TurtleBot3 Simulations Package
+[![GitHub version](https://badge.fury.io/gh/ROBOTIS-GIT%2Fturtlebot3_simulations.svg)](https://badge.fury.io/gh/ROBOTIS-GIT%2Fturtlebot3_simulations) [![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=master)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)
 
-TurtleBot3 is a small, low cost, fully programmable, ROS­ based mobile robot. It is intended to be used for the purpose of education, research, product prototyping, and hobby application.
+# TurtleBot3 Packages
+- [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
+- [turtlebot3_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_msgs)
+- [turtlebot3_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
+- [turtlebot3_applications](https://github.com/ROBOTIS-GIT/turtlebot3_applications)
 
-The goal of the TurtleBot3 is to drastically reduce the size and the price of the platform without sacrificing capability, functionality, and quality. Since the additional options, such as the chassis, the computers, and the sensors, are available, the TurtleBot3 can be customized in various ways. The TurtleBot3 is willing to be in the center of the maker movement by applying the latest technical advances of the SBC(Single­Board Computer), the Depth sensor, and the 3D printing.
-
-# Documents
-
+# TurtleBot3 Documents
 - http://turtlebot3.robotis.com/
+- http://www.turtlebot.com/

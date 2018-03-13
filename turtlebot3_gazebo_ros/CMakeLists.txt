@@ -10,17 +10,16 @@ set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
 # Packages
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  sensor_msgs
   geometry_msgs
   nav_msgs
-  roscpp
-  sensor_msgs
-  std_msgs
   tf
   gazebo_ros
 )
 
-find_package(gazebo REQUIRED
-)
+find_package(gazebo REQUIRED)
 
 ################################################################################
 # Declare ROS messages, services and actions
@@ -35,14 +34,14 @@ find_package(gazebo REQUIRED
 ################################################################################
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES turtlebot3_gazebo
-  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp sensor_msgs std_msgs tf gazebo_ros
+  CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
  )
 
 ################################################################################
 # Build
 ################################################################################
 link_directories(${GAZEBO_LIBRARY_DIRS})
+
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
@@ -51,28 +50,22 @@ include_directories(
 )
 
 add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
-target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(turtlebot3_drive ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 ################################################################################
 # Install
 ################################################################################
 install(TARGETS turtlebot3_drive
-       ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(DIRECTORY include/${PROJECT_NAME}/
-       DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
 
-install(DIRECTORY launch
-       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-install(DIRECTORY rviz
-       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+install(DIRECTORY launch rviz
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 install(DIRECTORY worlds
