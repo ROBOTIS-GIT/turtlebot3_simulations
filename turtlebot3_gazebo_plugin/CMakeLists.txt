@@ -7,11 +7,9 @@ project(turtlebot3_gazebo_plugin)
 ################################################################################
 # Packages
 ################################################################################
-find_package(catkin REQUIRED COMPONENTS
-)
+find_package(catkin REQUIRED)
 
-find_package(gazebo REQUIRED
-)
+find_package(gazebo REQUIRED)
 
 ################################################################################
 # Declare ROS messages, services and actions
@@ -32,6 +30,7 @@ catkin_package(
 # Build
 ################################################################################
 link_directories(${GAZEBO_LIBRARY_DIRS})
+
 include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
@@ -50,12 +49,8 @@ target_link_libraries(image_listener ${GAZEBO_LIBRARIES} pthread)
 ################################################################################
 # Install
 ################################################################################
-install(DIRECTORY models
-       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
-
-install(DIRECTORY worlds
-       DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+install(DIRECTORY models worlds
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
 ################################################################################
