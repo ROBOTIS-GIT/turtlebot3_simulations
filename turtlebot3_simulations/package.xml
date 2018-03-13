@@ -14,6 +14,7 @@
   <url type="website">http://turtlebot3.robotis.com</url>
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>turtlebot3_fake</run_depend>
-  <run_depend>turtlebot3_gazebo</run_depend>
+  <run_depend>turtlebot3_gazebo_ros</run_depend>
+  <run_depend>turtlebot3_gazebo_plugin</run_depend>
   <export><metapackage/></export>
 </package>
