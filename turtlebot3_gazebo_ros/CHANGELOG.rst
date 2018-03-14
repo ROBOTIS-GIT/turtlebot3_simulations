@@ -1,33 +1,24 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package turtlebot3_simulations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package turtlebot3_gazebo_ros
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+0.2.3 (2018-03-14)
+-----------
+* solved DuplicateVersionsException error
+* Contributors: Pyo
 
 0.2.2 (2018-03-14)
 -----------
 * none
 
+Forthcoming
+-----------
+* updated the CHANGELOG and version to release binary packages
+* Contributors: Pyo
+
 0.2.1 (2018-03-14)
 -----------
 * added worlds for gazebo and turtlebot3
-* Contributors: Darby Lim
-
-0.2.0 (2018-03-13)
------------
-* added TurtleBot3 Waffle Pi
-* added slam with multiple tb3
-* added multi example
-* added turtlebot3_house
-* added msg function
-* modified gazebo plugin
-* modified tb3 control
-* modified sensor param
-* modified camera position
-* modified image_listener
-* modified cmake file
-* modified spwn model name
-* modified multi slam param
-* modified camera position
-* modified folder name
 * Contributors: Darby Lim
 
 0.2.0 (2018-03-13)

@@ -2,9 +2,19 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.3 (2018-03-14)
+-----------
+* solved DuplicateVersionsException error
+* Contributors: Pyo
+
 0.2.2 (2018-03-14)
 -----------
 * added line feed into metapackage
+* Contributors: Pyo
+
+Forthcoming
+-----------
+* updated the CHANGELOG and version to release binary packages
 * Contributors: Pyo
 
 0.2.1 (2018-03-14)
