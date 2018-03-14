@@ -2,6 +2,10 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.1 (2018-03-14)
+-----------
+* none
+
 0.2.0 (2018-03-13)
 -----------
 * added TurtleBot3 Waffle Pi

@@ -2,12 +2,16 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.1 (2018-03-14)
+-----------
+* added worlds for gazebo and turtlebot3
+* Contributors: Darby Lim
+
 0.2.0 (2018-03-13)
 -----------
 * added TurtleBot3 Waffle Pi
 * added slam with multiple tb3
 * added multi example
-* added turtlebot3_house
 * added turtlebot3_house
 * added msg function
 * modified gazebo plugin
