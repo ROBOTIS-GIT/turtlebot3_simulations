@@ -2,6 +2,27 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.2.4 (2018-03-14)
+-----------
+* solved DuplicateVersionsException error
+* Contributors: Pyo
+
+0.2.3 (2018-03-14)
+-----------
+* solved DuplicateVersionsException error
+* Contributors: Pyo
+
+0.2.2 (2018-03-14)
+-----------
+* added line feed into metapackage
+* Contributors: Pyo
+
+0.2.1 (2018-03-14)
+-----------
+* added worlds for gazebo and turtlebot3
+* deleted turtlebot3_gazebo_plugin and merged into turtlebot3_gazebo_ros package
+* Contributors: Darby Lim
+
 0.2.0 (2018-03-13)
 -----------
 * added TurtleBot3 Waffle Pi
