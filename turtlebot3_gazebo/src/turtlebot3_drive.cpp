@@ -16,7 +16,7 @@
 
 /* Authors: Taehun Lim (Darby) */
 
-#include "turtlebot3_gazebo_ros/turtlebot3_drive.h"
+#include "turtlebot3_gazebo/turtlebot3_drive.h"
 
 Turtlebot3Drive::Turtlebot3Drive()
   : nh_priv_("~")
