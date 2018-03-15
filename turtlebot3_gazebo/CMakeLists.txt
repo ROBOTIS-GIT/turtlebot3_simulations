@@ -68,13 +68,10 @@ install(DIRECTORY launch rviz worlds
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-<<<<<<< HEAD:turtlebot3_gazebo/CMakeLists.txt
 install(DIRECTORY worlds models
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
-=======
->>>>>>> e39150b67af3342e3e485c47e02cc44ff1ae541e:turtlebot3_gazebo_ros/CMakeLists.txt
 ################################################################################
 # Test
 ################################################################################

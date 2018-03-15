@@ -1,12 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
-<<<<<<< HEAD:turtlebot3_gazebo/package.xml
   <name>turtlebot3_gazebo</name>
-  <version>0.2.0</version>
-=======
-  <name>turtlebot3_gazebo_ros</name>
   <version>0.2.4</version>
->>>>>>> e39150b67af3342e3e485c47e02cc44ff1ae541e:turtlebot3_gazebo_ros/package.xml
   <description>
     Gazebo simulation package for the TurtleBot3
   </description>
