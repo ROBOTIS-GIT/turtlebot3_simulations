@@ -6,5 +6,5 @@
   <param name="tb3_model" value="$(arg model)"/>
   <param name="cmd_vel_topic_name" value="$(arg cmd_vel)"/>
 
-  <node name="$(arg name)_drive" pkg="turtlebot3_gazebo_ros" type="turtlebot3_drive" required="true" output="screen"/>
+  <node name="$(arg name)_drive" pkg="turtlebot3_gazebo" type="turtlebot3_drive" required="true" output="screen"/>
 </launch>
