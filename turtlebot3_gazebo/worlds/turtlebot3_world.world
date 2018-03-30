@@ -31,7 +31,7 @@
       </ode>
     </physics>
 
-    <!-- A turtlebot symbol -->
+    <!-- Load world -->
     <include>
       <uri>model://turtlebot3_world</uri>
     </include>
