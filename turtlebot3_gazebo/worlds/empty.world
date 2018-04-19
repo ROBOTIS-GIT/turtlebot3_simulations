@@ -31,4 +31,11 @@
       </ode>
     </physics>
   </world>
+
+  <scene>
+    <ambient>0.8 0.8 0.8 1</ambient>
+    <background>0.7 0.7 0.7 1</background>
+    <shadows>true</shadows>
+  </scene>
+
 </sdf>
