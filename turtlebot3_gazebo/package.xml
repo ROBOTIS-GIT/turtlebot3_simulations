@@ -21,6 +21,6 @@
   <depend>tf</depend>
   <depend>gazebo_ros</depend>
   <export>
-    <gazebo_ros plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/models"/>
+    <gazebo_ros plugin_path="${prefix}/lib:${prefix}/models/turtlebot3_autorace/gazebo_traffic_plugin" gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/models:${prefix}/models/turtlebot3_autorace"/>
   </export>
 </package>
