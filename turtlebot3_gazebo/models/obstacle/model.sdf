@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='turtlebot3_obstacle'>
+  <model name='obstacle'>
     <pose frame=''>0 0 0 0 -0 0</pose>
     <link name='obstacle'>
         <collision name='obstacle_1'>

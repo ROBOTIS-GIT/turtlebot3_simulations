@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='turtlebot3_goalbox'>
+  <model name='goal_box'>
     <pose frame=''>0 0 0 0 -0 -1.5708</pose>
-    <link name='turtlebot3_goalbox'>
-      <visual name='turtlebot3_goalbox'>
+    <link name='goal_box'>
+      <visual name='goal_box'>
         <pose frame=''>0 0 0.0005 0 -0 0</pose>
         <geometry>
           <box>

@@ -36,7 +36,7 @@
       <uri>model://turtlebot3_square</uri>
     </include>
     <include>
-      <uri>model://turtlebot3_obstacle</uri>
+      <uri>model://obstacle</uri>
     </include>    
 
     <scene>
