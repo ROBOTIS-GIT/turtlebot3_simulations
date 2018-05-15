@@ -48,6 +48,14 @@ include_directories(
   ${Boost_INCLUDE_DIR}
   ${GAZEBO_INCLUDE_DIRS}
 )
+add_library(moving_obstacle SHARED src/moving_obstacle.cc)
+target_link_libraries(moving_obstacle ${GAZEBO_LIBRARIES})
+
+add_library(obstacle_1 SHARED src/obstacle_1.cc)
+target_link_libraries(obstacle_1 ${GAZEBO_LIBRARIES})
+
+add_library(obstacle_2 SHARED src/obstacle_2.cc)
+target_link_libraries(obstacle_2 ${GAZEBO_LIBRARIES})
 
 add_executable(turtlebot3_drive src/turtlebot3_drive.cpp)
 add_dependencies(turtlebot3_drive ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
