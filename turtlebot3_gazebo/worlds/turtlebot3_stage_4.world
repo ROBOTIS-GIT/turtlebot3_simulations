@@ -31,12 +31,12 @@
       </ode>
     </physics>
 
-    <!-- Load world -->
+    <!-- Load model --> 
     <include>
       <uri>model://turtlebot3_plaza</uri>
     </include>
 
-    <!-- Load model -->    
+   
     <model name="obstacle_1">
       <pose>2 2 0.5 0 0 0</pose>
       <link name="link">
@@ -58,7 +58,7 @@
           </geometry>
         </visual>
       </link>
-      <plugin name="push_animate" filename="libobstacle_1.so"/>
+      <plugin name="obstacle_1" filename="libobstacle_1.so"/>
     </model>        
 
     <model name="obstacle_2">
@@ -82,7 +82,7 @@
           </geometry>
         </visual>
       </link>
-      <plugin name="push_animate" filename="libobstacle_2.so"/>
+      <plugin name="obstacle_2" filename="libobstacle_2.so"/>
     </model>  
 
     <scene>

@@ -23,7 +23,7 @@
 
 namespace gazebo
 {
-  class Moving_obstacle : public ModelPlugin
+  class RotataionObstacle : public ModelPlugin
   {
     public: void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
     {
@@ -71,6 +71,6 @@ namespace gazebo
   };
 
   // Register this plugin with the simulator
-  GZ_REGISTER_MODEL_PLUGIN(Moving_obstacle)
+  GZ_REGISTER_MODEL_PLUGIN(RotataionObstacle)
 }
 
