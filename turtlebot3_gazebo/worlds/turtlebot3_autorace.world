@@ -1133,8 +1133,8 @@
           </geometry>
           <material>
             <script>
-              <uri>model://traffic_bar_burger/materials/scripts</uri>
-              <uri>model://traffic_bar_burger/materials/textures</uri>
+              <uri>model://traffic_bar/materials/scripts</uri>
+              <uri>model://traffic_bar/materials/textures</uri>
               <name>traffic_bar</name>
             </script>
           </material>
