@@ -36,7 +36,7 @@
       <uri>model://turtlebot3_square</uri>
     </include>
     <include>
-      <uri>model://obstacle</uri>
+      <uri>model://turtlebot3_square/obstacle</uri>
       <plugin name="push_animate" filename="libmoving_obstacle.so"/>
     </include>  
     
