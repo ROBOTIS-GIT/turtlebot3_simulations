@@ -2,29 +2,38 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.0 (2018-05-29)
+------------------
+* added world for turtlebot3_autorace
+* added world for turtlebot3_machine_learning
+* merged pull request `#46 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/46>`_ from AuTURBO/develop
+  add turtlebot3_autorace world'
+* merged pull request `#48 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/48>`_ `#47 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/47>`_ `#44 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/44>`_ `#42 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/42>`_ `#41 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/41>`_
+* Contributors: Darby Lim, Gilbert, hyunoklee, Pyo
+
 0.2.4 (2018-03-14)
------------
+------------------
 * solved DuplicateVersionsException error
 * Contributors: Pyo
 
 0.2.3 (2018-03-14)
------------
+------------------
 * solved DuplicateVersionsException error
 * Contributors: Pyo
 
 0.2.2 (2018-03-14)
------------
+------------------
 * added line feed into metapackage
 * Contributors: Pyo
 
 0.2.1 (2018-03-14)
------------
+------------------
 * added worlds for gazebo and turtlebot3
 * deleted turtlebot3_gazebo_plugin and merged into turtlebot3_gazebo_ros package
 * Contributors: Darby Lim
 
 0.2.0 (2018-03-13)
------------
+------------------
 * added TurtleBot3 Waffle Pi
 * added slam with multiple tb3
 * added multi example
@@ -44,24 +53,24 @@ Changelog for package turtlebot3_simulations
 * Contributors: Darby Lim
 
 0.1.7 (2017-08-16)
------------
+------------------
 * renamed missed the install rule (worlds -> models)
 * Contributors: Darby Lim, Tully Foote
 
 0.1.6 (2017-08-14)
------------
+------------------
 * modified folder name and model path
 * updated rviz and add static tf publisher for depth camera
 * Contributors: Darby Lim
 
 0.1.5 (2017-06-09)
------------
+------------------
 * modified make files for dependencies
 * updated turtlebot3 sim
 * updated world config
 * Contributors: Darby Lim
 
 0.1.4 (2017-05-23)
------------
+------------------
 * added as new meta-packages and version update (0.1.4)
 * Contributors: Darby Lim, Pyo

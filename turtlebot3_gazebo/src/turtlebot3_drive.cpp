@@ -69,8 +69,8 @@ bool Turtlebot3Drive::init()
   cmd_vel_pub_   = nh_.advertise<geometry_msgs::Twist>(cmd_vel_topic_name, 10);
 
   // initialize subscribers
-  laser_scan_sub_  = nh_.subscribe("/scan", 10, &Turtlebot3Drive::laserScanMsgCallBack, this);
-  joint_state_sub_ = nh_.subscribe("/joint_states", 10, &Turtlebot3Drive::jointStateMsgCallBack, this);
+  laser_scan_sub_  = nh_.subscribe("scan", 10, &Turtlebot3Drive::laserScanMsgCallBack, this);
+  joint_state_sub_ = nh_.subscribe("joint_states", 10, &Turtlebot3Drive::jointStateMsgCallBack, this);
 
   return true;
 }
