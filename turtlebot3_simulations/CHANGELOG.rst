@@ -2,7 +2,7 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1.0.1 (2018-05-29)
+1.0.1 (2018-05-30)
 ------------------
 * resolving dependency issues:
   http://build.ros.org/job/Kbin_dj_dJ64__turtlebot3_gazebo__debian_jessie_amd64__binary/2/
