@@ -2,6 +2,12 @@
 Changelog for package turtlebot3_gazebo_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.1 (2018-05-30)
+------------------
+* resolving dependency issues:
+  http://build.ros.org/job/Kbin_dj_dJ64__turtlebot3_gazebo__debian_jessie_amd64__binary/2/
+* Contributors: Pyo
+
 1.0.0 (2018-05-29)
 ------------------
 * added world for turtlebot3_autorace

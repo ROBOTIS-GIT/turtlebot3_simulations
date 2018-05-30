@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>turtlebot3_gazebo</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <description>
     Gazebo simulation package for the TurtleBot3
   </description>
@@ -14,6 +14,7 @@
   <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
   <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues</url>
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>libgazebo7-dev</build_depend>
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
@@ -21,6 +22,7 @@
   <depend>nav_msgs</depend>
   <depend>tf</depend>
   <depend>gazebo_ros</depend>
+  <exec_depend>gazebo</exec_depend>
   <export>
     <gazebo_ros plugin_path="${prefix}/lib:${prefix}/models/turtlebot3_autorace/gazebo_traffic_plugin" gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/models:${prefix}/models/turtlebot3_autorace"/>
   </export>
