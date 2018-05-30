@@ -40,7 +40,8 @@ find_package(gazebo REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
- )
+  DEPENDS gazebo
+)
 
 ################################################################################
 # Build
@@ -50,7 +51,6 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(
   include
   ${catkin_INCLUDE_DIRS}
-  ${Boost_INCLUDE_DIR}
   ${GAZEBO_INCLUDE_DIRS}
 )
 
