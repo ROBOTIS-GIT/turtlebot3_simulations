@@ -1,4 +1,4 @@
-material course
+material Gazebo/course
 {
   receive_shadows on
   technique

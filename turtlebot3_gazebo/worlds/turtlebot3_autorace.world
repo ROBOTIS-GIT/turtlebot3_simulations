@@ -51,8 +51,8 @@
           </geometry>
           <material>
             <script>
-              <uri>file://course.material</uri>
-              <name>course</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/course</name>
             </script>
           </material>
         </visual>
@@ -118,35 +118,6 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-
-    <model name="box_occu">
-      <pose>1.19 1.47 0.142601 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.39 0.23 0.5</size>
-            </box>
-          </geometry>
-        </collision>
-
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.39 0.23 0.5</size>
-            </box>
-          </geometry>
-	  <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/WoodFloor</name>
-            </script>
-          </material>
-        </visual>
-      </link>
-      <static>1</static>
-    </model>  
-    
     <model name='traffic_parking'>
       <pose frame=''>1.75206 1.35212 0.125 0 -0 0</pose>
       <link name='box'>
@@ -202,10 +173,10 @@
       </link>
     </model>
     <model name='traffic_tunnel'>
-      <pose frame=''>-1.46808 -0.007378 0.125 0 -0 0</pose>
+      <pose frame=''>0 0 0 0 -0 0</pose>
       <link name='box'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
         <collision name='collision'>
+          <pose frame=''>-0.075 -0.07 0 0 -0 0</pose>
           <geometry>
             <box>
               <size>0.12 0.025 0.25</size>
@@ -226,6 +197,7 @@
           </surface>
         </collision>
         <visual name='visual'>
+          <pose frame=''>-0.075 -0.07 0 0 -0 0</pose>
           <geometry>
             <box>
               <size>0.12 0.025 0.25</size>
@@ -254,6 +226,64 @@
         <kinematic>0</kinematic>
         <gravity>1</gravity>
       </link>
+    <static>1</static>
+    </model>
+    <model name='traffic_stop'>
+      <pose frame=''>0 0 0 0 0 0</pose>
+      <link name='box'>
+        <collision name='collision'>
+          <pose frame=''>-2.05 0.65 0.125 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 0.025 0.25</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>-2.05 0.65 0.125 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.12 0.025 0.25</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://traffic_stop/materials/scripts</uri>
+              <uri>model://traffic_stop/materials/textures</uri>
+              <name>traffic_stop</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <inertial>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+          <mass>1</mass>
+        </inertial>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <static>1</static>
+
     </model>
     <light name='user_point_light_2' type='point'>
       <pose frame=''>-0.948146 0.604519 1 0 -0 0</pose>
@@ -295,6 +325,19 @@
       <direction>0 0 -1</direction>
     </light>
 
+    <light name='user_point_light_8' type='point'>
+      <pose frame=''>-1.8 1.5 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
     <state world_name='default'>
       <sim_time>116 345000000</sim_time>
       <real_time>32 693566475</real_time>
@@ -1089,220 +1132,6 @@
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose frame=''>-1.04145 -1.12671 0 0 -0 0</pose>
-    </model>
-
-    <model name='unit_box'>
-      <pose frame=''>-1.89241 1.13644 0.0 0 -0 0</pose>
-      <link name='traffic_bar'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.4 0.023 0.09</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.3 0.01 0.023</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://traffic_bar/materials/scripts</uri>
-              <uri>model://traffic_bar/materials/textures</uri>
-              <name>traffic_bar</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <plugin name="traffic_control" filename="build/libtraffic_control.so"/>
-      <static>1</static>
-    </model>
-    <model name='unit_sphere'>
-      <pose frame=''>1.39 -1.57 0.111741 0 -0 0</pose>
-      <link name='light_r'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.1</iyy>
-            <iyz>0</iyz>
-            <izz>0.1</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <sphere>
-              <radius>0.05</radius>
-            </sphere>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <sphere>
-              <radius>0.05</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Red</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <plugin name="traffic_control" filename="build/libtraffic_control.so"/>
-      <static>1</static>
-    </model>
-    <model name='unit_sphere_clone'>
-      <pose frame=''>1.39 -1.57 0.211741 0 -0 0</pose>
-      <link name='light_g'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.1</iyy>
-            <iyz>0</iyz>
-            <izz>0.1</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <sphere>
-              <radius>0.05</radius>
-            </sphere>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <sphere>
-              <radius>0.05</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Green</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <plugin name="traffic_control" filename="build/libtraffic_control.so"/>
-      <static>1</static>
-    </model>
-    <model name='unit_sphere_clone_clone'>
-      <pose frame=''>1.39 -1.57 0.311741 0 -0 0</pose>
-      <link name='light_y'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.1</iyy>
-            <iyz>0</iyz>
-            <izz>0.1</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <sphere>
-              <radius>0.05</radius>
-            </sphere>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <sphere>
-              <radius>0.05</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Yellow</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-      <plugin name="traffic_control" filename="build/libtraffic_control.so"/>
-      <static>1</static>
-    </model>
+    </model>   
   </world>
 </sdf>

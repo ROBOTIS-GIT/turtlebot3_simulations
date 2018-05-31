@@ -13,10 +13,11 @@
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>  
-  
+
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_burger_for_autorace.urdf.xacro" />
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_burger -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
-  
+   
+
 </launch>
 
 
