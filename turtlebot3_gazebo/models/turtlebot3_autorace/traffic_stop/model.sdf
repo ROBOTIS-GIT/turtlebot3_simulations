@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="traffic_bar">
+  <model name="traffic_stop">
     <pose>0 0 0.125 0 0 0</pose>
     <link name="box">
       <pose>0 0 0 0 0 0</pose>
@@ -19,9 +19,9 @@
         </geometry>
         <material>
           <script>
-            <uri>model://traffic_bar/materials/scripts</uri>
-            <uri>model://traffic_bar/materials/textures</uri>
-            <name>traffic_bar</name>
+            <uri>model://traffic_stop/materials/scripts</uri>
+            <uri>model://traffic_stop/materials/textures</uri>
+            <name>traffic_stop</name>
           </script>
         </material>
       </visual>

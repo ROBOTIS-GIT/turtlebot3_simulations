@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='traffic_light_red'>
+    <pose frame=''>0 0 0 0 -0 -1.5708</pose>
+    <link name='traffic_light_red'>
+       <collision name='collision'>
+          <pose frame=''>1.3 -1.95 0.13 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.015</radius>
+            </sphere>
+          </geometry>   
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>1.3 -1.95 0.13 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.015</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+</sdf>

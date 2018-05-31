@@ -242,6 +242,6 @@
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
-
+  <static>0</static>
   </model>
 </sdf>
