@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>turtlebot3_gazebo</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <description>
     Gazebo simulation package for the TurtleBot3
   </description>
@@ -14,7 +14,6 @@
   <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
   <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues</url>
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>libgazebo7-dev</build_depend>
   <depend>roscpp</depend>
   <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
