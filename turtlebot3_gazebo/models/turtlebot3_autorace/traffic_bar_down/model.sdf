@@ -4,7 +4,7 @@
     <pose frame=''>0 0 0 0 0 0</pose>
     <link name="traffic_bar_down">
       <collision name="collision">
-        <pose frame=''>-1.8 0.6 0.2 0 0 0</pose>
+        <pose frame=''>-1.8 0.6 0.15 0 0 0</pose>
         <geometry>
           <box>
             <size>0.3 0.01 0.023</size>
@@ -12,7 +12,7 @@
         </geometry>
       </collision>
       <visual name="visual">
-        <pose frame=''>-1.8 0.6 0.2 0 0 0</pose>
+        <pose frame=''>-1.8 0.6 0.15 0 0 0</pose>
         <geometry>
           <box>
             <size>0.3 0.01 0.023</size>

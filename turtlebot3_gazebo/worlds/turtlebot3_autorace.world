@@ -118,35 +118,6 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-
-    <model name="box_occu">
-      <pose>1.19 1.47 0.142601 0 0 0</pose>
-      <link name="link">
-        <collision name="collision">
-          <geometry>
-            <box>
-              <size>0.39 0.23 0.5</size>
-            </box>
-          </geometry>
-        </collision>
-
-        <visual name="visual">
-          <geometry>
-            <box>
-              <size>0.39 0.23 0.5</size>
-            </box>
-          </geometry>
-	  <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/WoodFloor</name>
-            </script>
-          </material>
-        </visual>
-      </link>
-      <static>1</static>
-    </model>  
-    
     <model name='traffic_parking'>
       <pose frame=''>1.75206 1.35212 0.125 0 -0 0</pose>
       <link name='box'>
@@ -354,6 +325,19 @@
       <direction>0 0 -1</direction>
     </light>
 
+    <light name='user_point_light_8' type='point'>
+      <pose frame=''>-1.8 1.5 1 0 -0 0</pose>
+      <diffuse>0.5 0.5 0.5 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>20</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <direction>0 0 -1</direction>
+    </light>
     <state world_name='default'>
       <sim_time>116 345000000</sim_time>
       <real_time>32 693566475</real_time>
