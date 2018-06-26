@@ -30,8 +30,8 @@
 	      <material>
           <script>
             <!--uri>file://materials/scripts/floor.material</uri-->
-            <uri>model://course/materials/scripts</uri>
-            <uri>model://course/materials/textures</uri>
+            <uri>model://turtlebot3_autorace/course/materials/scripts</uri>
+            <uri>model://turtlebot3_autorace/course/materials/textures</uri>
             <name>course</name>
           </script>
         </material>

@@ -19,8 +19,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://traffic_tunnel/materials/scripts</uri>
-            <uri>model://traffic_tunnel/materials/textures</uri>
+            <uri>model://turtlebot3_autorace/traffic_tunnel/materials/scripts</uri>
+            <uri>model://turtlebot3_autorace/traffic_tunnel/materials/textures</uri>
             <name>traffic_tunnel</name>
           </script>
         </material>
