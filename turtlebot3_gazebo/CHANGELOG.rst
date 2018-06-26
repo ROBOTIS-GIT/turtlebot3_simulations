@@ -2,6 +2,14 @@
 Changelog for package turtlebot3_gazebo_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.2 (2018-06-01)
+------------------
+* added mission.launch modified model.sdf
+* deleted turtlebot3's gazebo plugins
+* modified autorace gazebo
+* merged pull request `#53 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/53>`_ `#52 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/52>`_ `#51 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/51>`_ `#50 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/50>`_ `#49 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/49>`_
+* Contributors: Gilbert, Darby Lim, Pyo
+
 1.0.1 (2018-05-30)
 ------------------
 * resolving dependency issues:
