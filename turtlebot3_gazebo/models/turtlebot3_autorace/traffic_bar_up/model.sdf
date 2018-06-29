@@ -20,8 +20,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://traffic_bar_up/materials/scripts</uri>
-            <uri>model://traffic_bar_up/materials/textures</uri>
+            <uri>model://turtlebot3_autorace/traffic_bar_up/materials/scripts</uri>
+            <uri>model://turtlebot3_autorace/traffic_bar_up/materials/textures</uri>
             <name>traffic_bar</name>
           </script>
         </material>

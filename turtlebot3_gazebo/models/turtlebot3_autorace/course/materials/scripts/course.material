@@ -1,4 +1,4 @@
-material traffic_parking
+material course
 {
   technique
   {
@@ -6,7 +6,7 @@ material traffic_parking
     {
       texture_unit
       {
-        texture parking.png
+        texture course.png
       }
     }
   }
