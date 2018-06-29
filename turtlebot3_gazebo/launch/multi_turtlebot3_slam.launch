@@ -2,7 +2,7 @@
   <arg name="ns" default="tb3_0"/>
 
   <!-- Gmapping -->
-  <node pkg="gmapping" type="slam_gmapping" name="$(arg ns)_turtlebot3_slam_gmapping" output="screen">
+  <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen" ns="$(arg ns)">
     <param name="base_frame" value="$(arg ns)/base_footprint"/>
     <param name="odom_frame" value="$(arg ns)/odom"/>
     <param name="map_frame"  value="$(arg ns)/map"/>
@@ -35,8 +35,5 @@
     <param name="llsamplestep" value="0.01"/>
     <param name="lasamplerange" value="0.005"/>
     <param name="lasamplestep" value="0.005"/>
-
-    <remap from="scan" to="$(arg ns)/scan"/>
-    <remap from="map" to="$(arg ns)/map"/>
   </node>
 </launch>
