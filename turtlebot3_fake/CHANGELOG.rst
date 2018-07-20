@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.0 (2018-07-20)
+------------------
+* added TurtleBot3 Waffle Pi
+* Contributors: Darby Lim, Pyo
+
 1.0.2 (2018-06-01)
 ------------------
 * none

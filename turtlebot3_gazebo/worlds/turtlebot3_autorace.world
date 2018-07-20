@@ -6,6 +6,27 @@
       <grid>0</grid>
       <background>0.7 0.7 0.7 1</background>
     </scene>
+
+    <include>
+      <uri>model://turtlebot3_autorace/course</uri>
+      <pose> 0 0 0 0 0 -1.54</pose>
+    </include>
+    
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_parking</uri>
+      <pose> 1.84 1.27 0.13 0 0 -0.356</pose>
+    </include>
+    
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_tunnel</uri>
+      <pose> -1.544 -0.08 0.125 0 0 0</pose>
+    </include>
+   
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_stop</uri>
+       <pose> -2.05 0.65 0.125 0 -0 0</pose>
+    </include>    
+
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose frame=''>0 0 10 0 -0 0</pose>
@@ -19,48 +40,6 @@
       </attenuation>
       <direction>-0.5 0.5 -1</direction>
     </light>
-    <model name='ground'>
-      <pose frame=''>0 0 0 0 -0 0</pose>
-      <static>1</static>
-      <link name='ground'>
-        <collision name='ground_coll'>
-          <geometry>
-            <box>
-              <size>4 4 0.01</size>
-            </box>
-          </geometry>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='ground_vis'>
-          <geometry>
-            <box>
-              <size>4 4 0.01</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/course</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-    </model>
     <model name='ground2'>
       <pose frame=''>0 0 -0.1 0 -0 0</pose>
       <static>1</static>
@@ -117,174 +96,8 @@
       <longitude_deg>0</longitude_deg>
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
-    </spherical_coordinates>
-    <model name='traffic_parking'>
-      <pose frame=''>1.75206 1.35212 0.125 0 -0 0</pose>
-      <link name='box'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>0.12 0.025 0.25</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>0.12 0.025 0.25</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://traffic_parking/materials/scripts</uri>
-              <uri>model://traffic_parking/materials/textures</uri>
-              <name>traffic_parking</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-    </model>
-    <model name='traffic_tunnel'>
-      <pose frame=''>0 0 0 0 -0 0</pose>
-      <link name='box'>
-        <collision name='collision'>
-          <pose frame=''>-0.075 -0.07 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.12 0.025 0.25</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>-0.075 -0.07 0 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.12 0.025 0.25</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://traffic_tunnel/materials/scripts</uri>
-              <uri>model://traffic_tunnel/materials/textures</uri>
-              <name>traffic_tunnel</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-    <static>1</static>
-    </model>
-    <model name='traffic_stop'>
-      <pose frame=''>0 0 0 0 0 0</pose>
-      <link name='box'>
-        <collision name='collision'>
-          <pose frame=''>-2.05 0.65 0.125 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.12 0.025 0.25</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <pose frame=''>-2.05 0.65 0.125 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.12 0.025 0.25</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://traffic_stop/materials/scripts</uri>
-              <uri>model://traffic_stop/materials/textures</uri>
-              <name>traffic_stop</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-      </link>
-      <static>1</static>
-
-    </model>
+    </spherical_coordinates> 
+ 
     <light name='user_point_light_2' type='point'>
       <pose frame=''>-0.948146 0.604519 1 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
@@ -354,26 +167,7 @@
         </link>
       </model>
       
-      <model name='traffic_parking'>
-        <pose frame=''>1.84664 1.2771 0.13 -4.2e-05 -1e-06 -0.356066</pose>
-        <scale>1 1 1</scale>
-        <link name='box'>
-          <pose frame=''>1.84664 1.2771 0.13 -4.2e-05 -1e-06 -0.356066</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.072814 0.011062 -0.036111 -0.088491 -0.582511 0</acceleration>
-          <wrench>-0.072814 0.011062 -0.036111 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='traffic_tunnel'>
-        <pose frame=''>-1.46808 -0.007372 0.130001 -4.6e-05 -2e-06 1.5e-05</pose>
-        <scale>1 1 1</scale>
-        <link name='box'>
-          <pose frame=''>-1.46808 -0.007372 0.130001 -4.6e-05 -2e-06 1.5e-05</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.071092 -0.014803 -0.173023 0.118425 0.568732 0</acceleration>
-          <wrench>0.071092 -0.014803 -0.173023 0 -0 0</wrench>
-        </link>
-      </model>
+
       <model name='tunnel_occ_2_1'>
         <pose frame=''>-1.04145 -1.12671 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -853,7 +647,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.13</radius>
+              <radius>0.1</radius>
               <length>0.5</length>
             </cylinder>
           </geometry>
@@ -880,7 +674,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.149803</radius>
+              <radius>0.1</radius>
               <length>0.46418</length>
             </cylinder>
           </geometry>
@@ -952,7 +746,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.13</radius>
+              <radius>0.1</radius>
               <length>0.5</length>
             </cylinder>
           </geometry>
@@ -979,7 +773,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.149803</radius>
+              <radius>0.1</radius>
               <length>0.46418</length>
             </cylinder>
           </geometry>
@@ -1051,7 +845,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.13</radius>
+              <radius>0.1</radius>
               <length>0.5</length>
             </cylinder>
           </geometry>
@@ -1078,7 +872,7 @@
           <pose frame=''>0 0 0 0 -0 0</pose>
           <geometry>
             <cylinder>
-              <radius>0.149803</radius>
+              <radius>0.1</radius>
               <length>0.46418</length>
             </cylinder>
           </geometry>
