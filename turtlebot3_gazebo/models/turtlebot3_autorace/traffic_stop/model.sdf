@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
   <model name="traffic_stop">
-    <pose>0 0 0.125 0 0 0</pose>
+    <static>true</static>
     <link name="box">
       <pose>0 0 0 0 0 0</pose>
       <collision name="collision">
@@ -19,8 +19,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://traffic_stop/materials/scripts</uri>
-            <uri>model://traffic_stop/materials/textures</uri>
+            <uri>model://turtlebot3_autorace/traffic_stop/materials/scripts</uri>
+            <uri>model://turtlebot3_autorace/traffic_stop/materials/textures</uri>
             <name>traffic_stop</name>
           </script>
         </material>

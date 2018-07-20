@@ -44,7 +44,7 @@ bool Turtlebot3Fake::init()
     turning_radius_   = 0.080;
     robot_radius_     = 0.105;
   }
-  else if (!robot_model.compare("waffle"))
+  else if (!robot_model.compare("waffle") || !robot_model.compare("waffle_pi"))
   {
     wheel_seperation_ = 0.287;
     turning_radius_   = 0.1435;

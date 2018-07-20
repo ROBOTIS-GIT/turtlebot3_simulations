@@ -1,18 +1,17 @@
 <?xml version='1.0'?>
-<sdf version="1.6">
+<sdf version="1.5">
   <model name="traffic_bar_down">
-    <pose frame=''>0 0 0 0 0 0</pose>
+    <static>true</static>
     <link name="traffic_bar_down">
-      <collision name="collision">
         <pose frame=''>-1.8 0.6 0.15 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.3 0.01 0.023</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <pose frame=''>-1.8 0.6 0.15 0 0 0</pose>
+        <collision name="collision">
+         <geometry>
+           <box>
+             <size>0.3 0.01 0.023</size>
+           </box>
+         </geometry>
+        </collision>
+        <visual name="visual">
         <geometry>
           <box>
             <size>0.3 0.01 0.023</size>
@@ -20,8 +19,8 @@
         </geometry>
         <material>
           <script>
-            <uri>model://traffic_bar_down/materials/scripts</uri>
-            <uri>model://traffic_bar_down/materials/textures</uri>
+            <uri>model://turtlebot3_autorace/traffic_bar_down/materials/scripts</uri>
+            <uri>model://turtlebot3_autorace/traffic_bar_down/materials/textures</uri>
             <name>traffic_bar</name>
           </script>
         </material>
