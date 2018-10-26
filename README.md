@@ -43,3 +43,35 @@
 - [Website for TurtleBot Series](http://www.turtlebot.com/)
 - [e-Book for TurtleBot3](https://community.robotsource.org/t/download-the-ros-robot-programming-book-for-free/51/)
 - [Videos for TurtleBot3 ](https://www.youtube.com/playlist?list=PLRG6WP3c31_XI3wlvHlx2Mp8BYqgqDURU)
+
+
+## How to run TB3 in Gazebo
+
+### Setup
+
+```
+$ mkdir -p ~/turtlebot3_ws/src
+$ cd ~/turtlebot3_ws/src
+$ git clone -b ros2 https://github.com/ROBOTIS-GIT/turtlebot3.git
+$ git clone -b ros2 https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+$ git clone -b ros2 https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+$ git clone -b release-latest https://github.com/ros2/cartographer.git
+$ git clone -b release-latest https://github.com/ros2/cartographer_ros.git
+$ git clone https://github.com/ros2/pcl_conversions.git
+$ sudo apt install libpcl-conversions-dev libpcl-dev
+$ cd ~/turtlebot3_ws && colcon build
+```
+
+### Run
+
+```
+$ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models
+$ cd ~/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds
+$ gazebo --verbose turtlebot3_ros2_demo.world
+``` 
+
+### Run teleop node
+
+```
+$ ros2 run turtlebot3_teleop turtlebot3_teleop_key __ns:=/tb3
+```
