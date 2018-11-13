@@ -74,10 +74,9 @@
         <uri>model://turtlebot3_world</uri>
       </include>
     </model>
-    
+
     <model name="turtlebot3">
       <pose>-2.0 0.0 0.1 0.0 0.0 0.0</pose>
-      <link name="base_footprint"/>
 
       <link name="base_link">
 
@@ -217,6 +216,16 @@
                     <slip2>0.0</slip2>
                   </ode>
               </friction>
+              <contact>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+5</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
             </surface>
           </collision>
 
@@ -245,7 +254,7 @@
             </inertia>
             <mass>0.1</mass>
           </inertial>
-        
+
           <collision name="right_wheel_collision">
             <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
             <geometry>
@@ -265,6 +274,16 @@
                     <slip2>0.0</slip2>
                   </ode>
               </friction>
+              <contact>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+5</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
             </surface>
           </collision>
 
@@ -298,6 +317,18 @@
                 <radius>0.005000</radius>
               </sphere>
             </geometry>
+            <surface>
+              <contact>
+                <ode>
+                  <soft_cfm>0</soft_cfm>
+                  <soft_erp>0.2</soft_erp>
+                  <kp>1e+5</kp>
+                  <kd>1</kd>
+                  <max_vel>0.01</max_vel>
+                  <min_depth>0.001</min_depth>
+                </ode>
+              </contact>
+            </surface>
           </collision>
         </link>
 
@@ -333,7 +364,7 @@
             <!-- <use_parent_model_frame>true</use_parent_model_frame> -->
           </axis>
         </joint>
-    
+
         <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
 
           <ros>
