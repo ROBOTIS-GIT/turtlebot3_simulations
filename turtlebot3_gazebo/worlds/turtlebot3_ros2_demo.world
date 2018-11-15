@@ -263,16 +263,16 @@
                 <length>0.018</length>
               </cylinder>
             </geometry>
-              <surface>
+            <surface>
               <!-- This friction pamareter don't contain reliable data!! -->
-                <friction>
-                  <ode>
-                    <mu>100000.0</mu>
-                    <mu2>100000.0</mu2>
-                    <fdir1>0 0 0</fdir1>
-                    <slip1>0.0</slip1>
-                    <slip2>0.0</slip2>
-                  </ode>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0.0</slip1>
+                  <slip2>0.0</slip2>
+                </ode>
               </friction>
               <contact>
                 <ode>
