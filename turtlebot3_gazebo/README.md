@@ -62,3 +62,28 @@ $ ros2 launch turtlebot3_bringup turtlebot3_robot.launch.py
 $ rviz2
 ```
 
+### Useful Commands
+
+- Try sending commands:
+
+```
+$ ros2 topic pub /tb3/cmd_vel geometry_msgs/Twist '{linear: {x: 1.0}}' -1
+
+$ ros2 topic pub /tb3/cmd_vel geometry_msgs/Twist '{angular: {z: 0.1}}' -1
+```
+
+- Try listening to odometry:
+
+```
+$ ros2 topic echo /demo/odom_demo
+```
+
+- Try listening to TF:
+
+```
+$ ros2 run tf2_ros tf2_echo odom base_link
+
+$ ros2 run tf2_ros tf2_echo base_link right_wheel
+
+$ ros2 run tf2_ros tf2_echo base_link left_wheel
+```
