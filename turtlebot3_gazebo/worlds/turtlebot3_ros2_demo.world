@@ -76,9 +76,9 @@
     </model>
 
     <model name="turtlebot3">
-      <pose>-2.0 0.0 0.1 0.0 0.0 0.0</pose>
+      <pose>-2.0 -0.5 0.05 0.0 0.0 0.0</pose>
 
-      <!-- <link name="base_footprint"/> -->
+      <link name="base_footprint"/>
 
       <link name="base_link">
 
@@ -170,7 +170,7 @@
         </sensor>
       </link>
 
-      <link name="base_scan">
+      <link name="base_scan_link">
         <inertial>
           <pose>-0.020 0 0.161 0 0 0</pose>
           <inertia>
@@ -205,10 +205,10 @@
           </visual>
 
           <sensor name="hls_lfcd_lds" type="ray">
-            <always_on>1</always_on>
-            <visualize>1</visualize>
+            <always_on>true</always_on>
+            <visualize>false</visualize>
             <pose>-0.032 0 0.171 0 0 0</pose>
-            <update_rate>1800</update_rate>
+            <update_rate>5</update_rate>
             <ray>
               <scan>
                 <horizontal>
@@ -239,7 +239,7 @@
           </sensor>
         </link>
 
-        <link name="left_wheel">
+        <link name="left_wheel_link">
 
           <inertial>
             <pose>0 0.08 0.023 -1.57 0 0</pose>
@@ -297,7 +297,7 @@
           </visual>
         </link>
 
-        <link name="right_wheel">
+        <link name="right_wheel_link">
 
           <inertial>
             <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
@@ -355,7 +355,7 @@
           </visual>
         </link>
 
-        <link name='caster'>
+        <link name='caster_link'>
           <pose>-0.081 0 -0.004 0 0 0</pose>
           <inertial>
             <mass>0.001</mass>
@@ -389,9 +389,15 @@
           </collision>
         </link>
 
+        <joint name="base_joint" type="fixed">
+          <parent>base_footprint</parent>
+          <child>base_link</child>
+          <pose>0.0 0.0 0.010 0 0 0</pose>
+        </joint>
+
         <joint name="left_wheel_joint" type="revolute">
           <parent>base_link</parent>
-          <child>left_wheel</child>
+          <child>left_wheel_link</child>
           <pose>0.0 0.08 0.023 -1.57 0 0</pose>
           <axis>
             <xyz>0 0 1</xyz>
@@ -400,16 +406,16 @@
 
         <joint name="right_wheel_joint" type="revolute">
           <parent>base_link</parent>
-          <child>right_wheel</child>
+          <child>right_wheel_link</child>
           <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
           <axis>
             <xyz>0 0 1</xyz>
           </axis>
         </joint>
 
-        <joint name='caster_wheel' type='ball'>
+        <joint name='caster_wheel_joint' type='ball'>
           <parent>base_link</parent>
-          <child>caster</child>
+          <child>caster_link</child>
         </joint>
 
         <joint name="imu_joint" type="fixed">
@@ -418,21 +424,19 @@
           <pose>-0.032 0 0.068 0 0 0</pose>
           <axis>
             <xyz>0 0 1</xyz>
-            <!-- <use_parent_model_frame>true</use_parent_model_frame> -->
           </axis>
         </joint>
 
         <joint name="lidar_joint" type="fixed">
           <parent>base_link</parent>
-          <child>base_scan</child>
+          <child>base_scan_link</child>
           <pose>-0.032 0 0.171 0 0 0</pose>
           <axis>
             <xyz>0 0 1</xyz>
-            <!-- <use_parent_model_frame>true</use_parent_model_frame> -->
           </axis>
         </joint>
 
-        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+        <plugin name="turtlebot3_diff_drive" filename="libgazebo_ros_diff_drive.so">
 
           <ros>
             <!-- <namespace>/tb3</namespace> -->
@@ -456,11 +460,11 @@
           <publish_wheel_tf>true</publish_wheel_tf>
 
           <odometry_frame>odom</odometry_frame>
-          <robot_base_frame>base_link</robot_base_frame>
+          <robot_base_frame>base_footprint</robot_base_frame>
 
         </plugin>
 
-        <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+        <plugin name="turtlebot3_joint_state" filename="libgazebo_ros_joint_state_publisher.so">
           <ros>
             <!-- <namespace>/tb3</namespace> -->
             <argument>~/out:=joint_states</argument>
