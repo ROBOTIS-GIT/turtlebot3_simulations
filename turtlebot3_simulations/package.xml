@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>turtlebot3_simulations</name>
+  <version>0.0.1</version>
+  <description>
+    ROS2 packages for turtlebot3 simulations
+  </description>
+  <maintainer email="pyo@robotis.com">Pyo</maintainer>
+  <license>Apache 2.0</license>
+  <url type="website">http://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
+  <url type="bugtracker">http://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues</url>
+  <url type="repository">http://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
+  <author email="thlim@robotis.com">Darby Lim</author>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
