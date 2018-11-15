@@ -78,6 +78,8 @@
     <model name="turtlebot3">
       <pose>-2.0 0.0 0.1 0.0 0.0 0.0</pose>
 
+      <!-- <link name="base_footprint"/> -->
+
       <link name="base_link">
 
         <inertial>
@@ -111,6 +113,61 @@
             </mesh>
           </geometry>
         </visual>
+      </link>
+
+      <link name="imu_link">
+        <sensor name="tb3_imu" type="imu">
+          <always_on>true</always_on>
+          <update_rate>200</update_rate>
+          <imu>
+            <angular_velocity>
+              <x>
+                <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>2e-4</stddev>
+                </noise>
+              </x>
+              <y>
+                <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>2e-4</stddev>
+                </noise>
+              </y>
+              <z>
+                <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>2e-4</stddev>
+                </noise>
+              </z>
+            </angular_velocity>
+            <linear_acceleration>
+              <x>
+                <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>1.7e-2</stddev>
+                </noise>
+              </x>
+              <y>
+                <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>1.7e-2</stddev>
+                </noise>
+              </y>
+              <z>
+                <noise type="gaussian">
+                  <mean>0.0</mean>
+                  <stddev>1.7e-2</stddev>
+                </noise>
+              </z>
+            </linear_acceleration>
+          </imu>
+          <plugin name="my_imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+            <ros>
+              <!-- <namespace>/tb3</namespace> -->
+              <argument>~/out:=imu</argument>
+            </ros>
+          </plugin>
+        </sensor>
       </link>
 
       <link name="base_scan">
@@ -174,7 +231,7 @@
             </ray>
             <plugin name="laserscan" filename="libgazebo_ros_ray_sensor.so">
               <ros>
-                <namespace>/tb3</namespace>
+                <!-- <namespace>/tb3</namespace> -->
                 <argument>~/out:=scan</argument>
               </ros>
               <output_type>sensor_msgs/LaserScan</output_type>
@@ -205,16 +262,16 @@
                 <length>0.018</length>
               </cylinder>
             </geometry>
-              <surface>
+            <surface>
               <!-- This friction pamareter don't contain reliable data!! -->
-                <friction>
-                  <ode>
-                    <mu>100000.0</mu>
-                    <mu2>100000.0</mu2>
-                    <fdir1>0 0 0</fdir1>
-                    <slip1>0.0</slip1>
-                    <slip2>0.0</slip2>
-                  </ode>
+              <friction>
+                <ode>
+                  <mu>100000.0</mu>
+                  <mu2>100000.0</mu2>
+                  <fdir1>0 0 0</fdir1>
+                  <slip1>0.0</slip1>
+                  <slip2>0.0</slip2>
+                </ode>
               </friction>
               <contact>
                 <ode>
@@ -355,6 +412,16 @@
           <child>caster</child>
         </joint>
 
+        <joint name="imu_joint" type="fixed">
+          <parent>base_link</parent>
+          <child>imu_link</child>
+          <pose>-0.032 0 0.068 0 0 0</pose>
+          <axis>
+            <xyz>0 0 1</xyz>
+            <!-- <use_parent_model_frame>true</use_parent_model_frame> -->
+          </axis>
+        </joint>
+
         <joint name="lidar_joint" type="fixed">
           <parent>base_link</parent>
           <child>base_scan</child>
@@ -365,10 +432,10 @@
           </axis>
         </joint>
 
-        <plugin name='diff_drive' filename='libgazebo_ros_diff_drive.so'>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
 
           <ros>
-            <namespace>/tb3</namespace>
+            <!-- <namespace>/tb3</namespace> -->
           </ros>
 
           <!-- wheels -->
@@ -393,6 +460,16 @@
 
         </plugin>
 
+        <plugin name="gazebo_ros_joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+          <ros>
+            <!-- <namespace>/tb3</namespace> -->
+            <argument>~/out:=joint_states</argument>
+          </ros>
+          <update_rate>250</update_rate>
+          <joint_name>left_wheel_joint</joint_name>
+          <joint_name>right_wheel_joint</joint_name>
+        </plugin>
+        
       </model>
 
   </world>
