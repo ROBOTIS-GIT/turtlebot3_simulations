@@ -52,7 +52,7 @@ $ gazebo --verbose turtlebot3_ros2_demo.world
 ### Run teleop node
 
 ```
-$ ros2 run turtlebot3_teleop turtlebot3_teleop_key __ns:=/tb3
+$ ros2 run turtlebot3_teleop turtlebot3_teleop_key
 ```
 
 ### Run Rviz
