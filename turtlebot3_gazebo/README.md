@@ -49,6 +49,12 @@ $ cd ~/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds
 $ gazebo --verbose turtlebot3_ros2_demo.world
 ``` 
 
+### Run tf2_monitor
+
+```
+$ ros2 run tf2_ros tf2_monitor
+```
+
 ### Run teleop node
 
 ```
@@ -83,7 +89,7 @@ $ ros2 topic echo /demo/odom_demo
 ```
 $ ros2 run tf2_ros tf2_echo odom base_link
 
-$ ros2 run tf2_ros tf2_echo base_link right_wheel
+$ ros2 run tf2_ros tf2_echo base_footprint wheel_right_wheel
 
-$ ros2 run tf2_ros tf2_echo base_link left_wheel
+$ ros2 run tf2_ros tf2_echo base_footprint wheel_left_wheel
 ```
