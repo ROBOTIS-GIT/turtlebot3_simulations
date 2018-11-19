@@ -64,6 +64,7 @@ $ ros2 run turtlebot3_teleop turtlebot3_teleop_key
 ### Run Rviz
 
 ```
+$ ros2 launch turtlebot3_bringup turtlebot3_robot.launch.py
 $ rviz2
 ```
 
