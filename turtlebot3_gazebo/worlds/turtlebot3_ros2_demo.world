@@ -65,7 +65,7 @@
     </model>
 
     <model name="turtlebot3">
-      <pose>-2.0 -0.5 0.05 0.0 0.0 0.0</pose>
+      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
 
       <link name="base_footprint"/>
 
@@ -446,7 +446,7 @@
           <!-- output -->
           <publish_odom>true</publish_odom>
           <publish_odom_tf>true</publish_odom_tf>
-          <publish_wheel_tf>false</publish_wheel_tf>
+          <publish_wheel_tf>true</publish_wheel_tf>
 
           <odometry_frame>odom</odometry_frame>
           <robot_base_frame>base_footprint</robot_base_frame>
