@@ -46,7 +46,7 @@ $ cd ~/turtlebot3_ws && colcon build
 ```
 $ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models
 $ cd ~/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds
-$ gazebo --verbose turtlebot3_ros2_demo.world
+$ gazebo --verbose turtlebot3_ros2_demo.world -s libgazebo_ros_init.so
 ``` 
 
 ### Run tf2_monitor
@@ -97,5 +97,6 @@ $ ros2 run tf2_ros tf2_echo base_footprint wheel_left_wheel
 ### Run Cartographer
 
 ```
-
+$ launch `ros2 pkg prefix turtlebot3_cartographer`/share/turtlebot3_cartographer/launch/turtlebot3_cartographer.py
+$ ros2 param set cartographer_node /use_sim_time true
 ```
