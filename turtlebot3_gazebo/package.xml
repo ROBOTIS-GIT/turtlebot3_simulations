@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtlebot3_gazebo</name>
+  <version>0.0.1</version>
+  <description>
+    Gazebo packages for TurtleBot3
+  </description>
+  <license>Apache 2.0</license>
+  <author email="thlim@robotis.com">Darby Lim</author>
+  <author email="pyo@robotis.com">Pyo</author>  
+  <maintainer email="pyo@robotis.com">Pyo</maintainer>
+  <url type="website">http://wiki.ros.org/turtlebot3_description</url>
+  <url type="emanual">http://turtlebot3.robotis.com</url>
+  <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3</url>
+  <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3/issues</url>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>gazebo_ros_pkgs</depend>
+  <depend>turtlebot3</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
