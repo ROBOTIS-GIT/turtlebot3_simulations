@@ -98,5 +98,5 @@ $ ros2 run tf2_ros tf2_echo base_footprint wheel_left_wheel
 
 ```
 $ launch `ros2 pkg prefix turtlebot3_cartographer`/share/turtlebot3_cartographer/launch/turtlebot3_cartographer.py
-$ ros2 param set cartographer_node /use_sim_time true
+$ ros2 param set /cartographer_node /use_sim_time true
 ```
