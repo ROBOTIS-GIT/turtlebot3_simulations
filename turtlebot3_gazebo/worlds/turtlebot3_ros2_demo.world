@@ -150,7 +150,7 @@
               </z>
             </linear_acceleration>
           </imu>
-          <plugin name="my_imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+          <plugin name="turtlebot3_imu" filename="libgazebo_ros_imu_sensor.so">
             <ros>
               <!-- <namespace>/tb3</namespace> -->
               <argument>~/out:=imu</argument>
@@ -218,7 +218,7 @@
                 <stddev>0.01</stddev>
               </noise>
             </ray>
-            <plugin name="laserscan" filename="libgazebo_ros_ray_sensor.so">
+            <plugin name="turtlebot3_laserscan" filename="libgazebo_ros_ray_sensor.so">
               <ros>
                 <!-- <namespace>/tb3</namespace> -->
                 <argument>~/out:=scan</argument>
