@@ -195,9 +195,9 @@
 
           <sensor name="hls_lfcd_lds" type="ray">
             <always_on>true</always_on>
-            <visualize>false</visualize>
+            <visualize>true</visualize>
             <pose>-0.032 0 0.171 0 0 0</pose>
-            <update_rate>200</update_rate>
+            <update_rate>5</update_rate>
             <ray>
               <scan>
                 <horizontal>
