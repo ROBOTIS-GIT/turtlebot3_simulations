@@ -2,6 +2,14 @@
 Changelog for package turtlebot3_gazebo_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2019-01-22)
+------------------
+* moved <scene> into <world> `#65 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/65>`_
+* modified ML stage
+* delete unused param
+* update algorithm and modified variable more clearly
+* Contributors: Darby Lim, Gilbert, Louise Poubel, Pyo
+
 1.1.0 (2018-07-20)
 ------------------
 * modified uri path

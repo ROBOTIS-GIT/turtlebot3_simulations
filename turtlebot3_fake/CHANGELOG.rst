@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2019-01-22)
+------------------
+* move out the init() from ROS_ASSERT `#68 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/68>`_
+* Contributors: Sean Yen, Darby Lim, Pyo
+
 1.1.0 (2018-07-20)
 ------------------
 * added TurtleBot3 Waffle Pi

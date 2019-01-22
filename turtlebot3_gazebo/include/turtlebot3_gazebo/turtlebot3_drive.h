@@ -20,16 +20,9 @@
 #define TURTLEBOT3_DRIVE_H_
 
 #include <ros/ros.h>
-#include <ros/time.h>
 
-#include <math.h>
-#include <limits.h>
-
-#include <std_msgs/String.h>
-#include <sensor_msgs/JointState.h>
 #include <sensor_msgs/LaserScan.h>
 #include <geometry_msgs/Twist.h>
-#include <tf/tf.h>
 #include <nav_msgs/Odometry.h>
 
 #define DEG2RAD (M_PI / 180.0)
@@ -61,7 +54,6 @@ class Turtlebot3Drive
   ros::NodeHandle nh_priv_;
 
   // ROS Parameters
-  bool is_debug_;
 
   // ROS Time
 
@@ -70,21 +62,21 @@ class Turtlebot3Drive
 
   // ROS Topic Subscribers
   ros::Subscriber laser_scan_sub_;
-  ros::Subscriber joint_state_sub_;
+  ros::Subscriber odom_sub_;
 
-  double turning_radius_;
-  double rotate_angle_;
-  double front_distance_limit_;
-  double side_distance_limit_;
+  // Variables
+  double escape_range_;
+  double check_forward_dist_;
+  double check_side_dist_;
 
-  double direction_vector_[3] = {0.0, 0.0, 0.0};
+  double scan_data_[3] = {0.0, 0.0, 0.0};
 
-  double right_joint_encoder_;
-  double priv_right_joint_encoder_;
+  double tb3_pose_;
+  double prev_tb3_pose_;
 
   // Function prototypes
   void updatecommandVelocity(double linear, double angular);
   void laserScanMsgCallBack(const sensor_msgs::LaserScan::ConstPtr &msg);
-  void jointStateMsgCallBack(const sensor_msgs::JointState::ConstPtr &msg);
+  void odomMsgCallBack(const nav_msgs::Odometry::ConstPtr &msg);
 };
 #endif // TURTLEBOT3_DRIVE_H_
