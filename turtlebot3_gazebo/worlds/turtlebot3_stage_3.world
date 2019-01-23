@@ -183,8 +183,6 @@
           </material>
         </visual>
       </link>
-      <plugin name="rotation_obstacle" filename="librotation_obstacle.so"/>
-      <static>1</static>
     </model>
       
     <scene>

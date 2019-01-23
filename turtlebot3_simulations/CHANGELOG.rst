@@ -2,6 +2,15 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2019-01-22)
+------------------
+* move out the init() from ROS_ASSERT `#68 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/68>`_
+* moved <scene> into <world> `#65 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/65>`_
+* modified ML stage
+* delete unused param
+* update algorithm and modified variable more clearly
+* Contributors: Darby Lim, Gilbert, Louise Poubel, Pyo
+
 1.1.0 (2018-07-20)
 ------------------
 * added TurtleBot3 Waffle Pi

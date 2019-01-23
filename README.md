@@ -23,6 +23,7 @@
 - [turtlebot3_autorace](https://github.com/ROBOTIS-GIT/turtlebot3_autorace)
 - [turtlebot3_deliver](https://github.com/ROBOTIS-GIT/turtlebot3_deliver)
 - [hls_lfcd_lds_driver](https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver)
+- [robotis_manipulator](https://github.com/ROBOTIS-GIT/robotis_manipulator)
 - [open_manipulator_msgs](https://github.com/ROBOTIS-GIT/open_manipulator_msgs)
 - [open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)
 - [open_manipulator_simulations](https://github.com/ROBOTIS-GIT/open_manipulator_simulations)
