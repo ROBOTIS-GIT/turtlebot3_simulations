@@ -224,6 +224,7 @@
                 <argument>~/out:=scan</argument>
               </ros>
               <output_type>sensor_msgs/LaserScan</output_type>
+              <frame_name>base_scan</frame_name>
             </plugin>
           </sensor>
         </link>
@@ -431,6 +432,8 @@
             <!-- <namespace>/tb3</namespace> -->
           </ros>
 
+          <update_rate>30</update_rate>
+
           <!-- wheels -->
           <left_joint>wheel_left_joint</left_joint>
           <right_joint>wheel_right_joint</right_joint>
@@ -443,11 +446,14 @@
           <max_wheel_torque>20</max_wheel_torque>
           <max_wheel_acceleration>1.0</max_wheel_acceleration>
 
+          <command_topic>cmd_vel</command_topic>
+
           <!-- output -->
           <publish_odom>true</publish_odom>
           <publish_odom_tf>true</publish_odom_tf>
           <publish_wheel_tf>false</publish_wheel_tf>
 
+          <odometry_topic>odom</odometry_topic>
           <odometry_frame>odom</odometry_frame>
           <robot_base_frame>base_footprint</robot_base_frame>
 
