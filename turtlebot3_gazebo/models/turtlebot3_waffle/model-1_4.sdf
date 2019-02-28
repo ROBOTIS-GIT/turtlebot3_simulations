@@ -366,14 +366,14 @@
       </inertial>
 
       <collision name="collision">
-        <pose>0.064 -0.047 0.107 0 0 0</pose>
+        <pose>0.069 -0.047 0.107 0 0 0</pose>
         <geometry>
           <box>
             <size>0.008 0.130 0.022</size>
           </box>
         </geometry>
       </collision>
-      <pose>0.064 -0.047 0.107 0 0 0</pose>
+      <pose>0.069 -0.047 0.107 0 0 0</pose>
       <sensor name="camera" type="camera">
         <always_on>true</always_on>
         <visualize>true</visualize>
