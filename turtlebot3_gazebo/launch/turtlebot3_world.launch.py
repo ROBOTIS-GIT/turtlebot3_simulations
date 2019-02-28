@@ -26,6 +26,8 @@ from launch.substitutions import ThisLaunchFileDir
 from launch.actions import ExecuteProcess
 from launch.substitutions import LaunchConfiguration
 
+TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
+
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     world = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'worlds', 'turtlebot3.world')
@@ -41,7 +43,7 @@ def generate_launch_description():
             output='screen'),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([launch_file_dir, '/burger_state_publisher.launch.py']),
+            PythonLaunchDescriptionSource([launch_file_dir, '/turtlebot3_state_publisher.launch.py']),
             launch_arguments={'use_sim_time': use_sim_time}.items(),
         ),
     ])
