@@ -42,10 +42,9 @@
         </constraints>
       </ode>
     </physics>
-     
+
     <include>
-      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
-      <uri>model://turtlebot3_waffle</uri>
+      <uri>model://turtlebot3_waffle_pi</uri>
     </include>
 
   </world>

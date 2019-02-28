@@ -49,13 +49,11 @@
         <uri>model://turtlebot3_world</uri>
       </include>
     </model>
-
-    <model name="turtlebot3_burger">
+     
+    <include>
       <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
-      <include>
-        <uri>model://turtlebot3_burger</uri>
-      </include>
-    </model>
+      <uri>model://turtlebot3_waffle</uri>
+    </include>
 
   </world>
 </sdf>
