@@ -43,19 +43,9 @@
       </ode>
     </physics>
 
-    <model name="turtlebot3_world">
-      <static>1</static>
-      <include>
-        <uri>model://turtlebot3_world</uri>
-      </include>
-    </model>
-
-    <model name="turtlebot3_burger">
-      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
-      <include>
-        <uri>model://turtlebot3_burger</uri>
-      </include>
-    </model>
+    <include>
+      <uri>model://turtlebot3_burger</uri>
+    </include>
 
   </world>
 </sdf>
