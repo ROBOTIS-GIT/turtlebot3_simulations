@@ -20,7 +20,10 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
 )
 
+cmake_policy(PUSH)
+cmake_policy(SET CMP0054 OLD)
 find_package(gazebo REQUIRED)
+cmake_polify(POP)
 
 ################################################################################
 # Setup for python modules and scripts
