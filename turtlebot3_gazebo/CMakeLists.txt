@@ -23,7 +23,13 @@ find_package(catkin REQUIRED COMPONENTS
 cmake_policy(PUSH)
 cmake_policy(SET CMP0054 OLD)
 find_package(gazebo REQUIRED)
-cmake_polify(POP)
+if(NOT DEFINED gazebo_INCLUDE_DIRS)
+  set(gazebo_INCLUDE_DIRS ${GAZEBO_INCLUDE_DIRS})
+endif(NOT DEFINED gazebo_INCLUDE_DIRS)
+if(NOT DEFINED gazebo_LIBRARIES)
+  set(gazebo_LIBRARIES ${GAZEBO_LIBRARIES})
+endif(NOT DEFINED gazebo_LIBRARIES)  
+cmake_policy(POP)
 
 ################################################################################
 # Setup for python modules and scripts
