@@ -1,6 +1,0 @@
-<launch>
-   <node pkg="turtlebot3_autorace_core" type="core_node_mission" name="core_node_mission" output="screen" />
-   
-</launch>
-
-
