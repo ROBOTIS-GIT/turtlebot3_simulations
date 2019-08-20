@@ -1,6 +1,6 @@
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package turtlebot3_simulations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package turtlebot3_gazebo
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2.0.0 (2019-08-20)
 ------------------
@@ -10,7 +10,6 @@ Changelog for package turtlebot3_simulations
 
 1.2.0 (2019-01-22)
 ------------------
-* move out the init() from ROS_ASSERT `#68 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/68>`_
 * moved <scene> into <world> `#65 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/65>`_
 * modified ML stage
 * delete unused param
@@ -19,7 +18,6 @@ Changelog for package turtlebot3_simulations
 
 1.1.0 (2018-07-20)
 ------------------
-* added TurtleBot3 Waffle Pi
 * modified uri path
 * modified autorace
 * delete remap
@@ -50,8 +48,7 @@ Changelog for package turtlebot3_simulations
 
 0.2.4 (2018-03-14)
 ------------------
-* solved DuplicateVersionsException error
-* Contributors: Pyo
+* none
 
 0.2.3 (2018-03-14)
 ------------------
@@ -60,28 +57,18 @@ Changelog for package turtlebot3_simulations
 
 0.2.2 (2018-03-14)
 ------------------
-* added line feed into metapackage
-* Contributors: Pyo
+* none
 
 0.2.1 (2018-03-14)
 ------------------
 * added worlds for gazebo and turtlebot3
-* deleted turtlebot3_gazebo_plugin and merged into turtlebot3_gazebo_ros package
 * Contributors: Darby Lim
 
 0.2.0 (2018-03-13)
 ------------------
-* added TurtleBot3 Waffle Pi
 * added slam with multiple tb3
 * added multi example
 * added turtlebot3_house
-* added turtlebot3_house
-* added msg function
-* modified gazebo plugin
-* modified tb3 control
-* modified sensor param
-* modified camera position
-* modified image_listener
 * modified cmake file
 * modified spwn model name
 * modified multi slam param
