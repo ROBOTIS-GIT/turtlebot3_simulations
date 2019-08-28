@@ -32,5 +32,4 @@ install(DIRECTORY models rviz worlds launch
 ################################################################################
 ament_export_dependencies(rclcpp)
 ament_export_dependencies(gazebo_ros_pkgs)
-ament_export_dependencies(turtlebot3)
 ament_package()
