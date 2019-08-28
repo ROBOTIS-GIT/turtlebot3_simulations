@@ -18,7 +18,6 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
-find_package(turtlebot3_description REQUIRED)
 
 ################################################################################
 # Install
