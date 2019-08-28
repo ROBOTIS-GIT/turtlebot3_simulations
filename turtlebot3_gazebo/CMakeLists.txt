@@ -18,7 +18,6 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(gazebo_ros_pkgs REQUIRED)
-find_package(turtlebot3 REQUIRED)
 
 ################################################################################
 # Install
@@ -32,5 +31,4 @@ install(DIRECTORY models rviz worlds launch
 ################################################################################
 ament_export_dependencies(rclcpp)
 ament_export_dependencies(gazebo_ros_pkgs)
-ament_export_dependencies(turtlebot3)
 ament_package()
