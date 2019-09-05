@@ -5,7 +5,9 @@ Changelog for package turtlebot3_simulations
 2.0.1 (2019-09-05)
 ------------------
 * Modified dependency packages
-* Contributors: Darby Lim
+* Modified launch directory
+* Added a launch file for robot state publisher
+* Contributors: Darby Lim, Pyo
 
 2.0.0 (2019-08-20)
 ------------------
