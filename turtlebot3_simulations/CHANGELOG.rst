@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.0.1 (2019-09-05)
+------------------
+* Modified dependency packages
+* Contributors: Darby Lim
+
 2.0.0 (2019-08-20)
 ------------------
 * Supported ROS 2 Dashing Diademata
