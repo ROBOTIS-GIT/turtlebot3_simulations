@@ -14,7 +14,7 @@
 * limitations under the License.
 *******************************************************************************/
 
-/* Authors: Yoonseok Pyo */
+/* Authors: Yoonseok Pyo, Ryan Shim */
 
 #include "turtlebot3_fake_node/turtlebot3_fake_node.hpp"
 
@@ -34,9 +34,9 @@ Turtlebot3Fake::Turtlebot3Fake()
   init_variables();
 
   /************************************************************
-  ** Initialise ROS publishers, subscribers
+  ** Initialise ROS publishers and subscribers
   ************************************************************/
-  auto qos = rclcpp::QoS(rclcpp::KeepLast(100));
+  auto qos = rclcpp::QoS(rclcpp::KeepLast(10));
 
   // Initialise publishers
   odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", qos);
@@ -48,9 +48,9 @@ Turtlebot3Fake::Turtlebot3Fake()
     "cmd_vel", qos, std::bind(&Turtlebot3Fake::command_velocity_callback, this, std::placeholders::_1));
 
   /************************************************************
-  ** Start update thread
+  ** Start updating thread
   ************************************************************/
-  update_timer_ = this->create_wall_timer(30ms, std::bind(&Turtlebot3Fake::update_callback, this));
+  update_timer_ = this->create_wall_timer(10ms, std::bind(&Turtlebot3Fake::update_callback, this));
 
   RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Initialised");
 }
@@ -83,15 +83,15 @@ void Turtlebot3Fake::init_parameters()
 void Turtlebot3Fake::init_variables()
 {
   // Initialise variables
-  wheel_speed_cmd_[LEFT]  = 0.0;
+  wheel_speed_cmd_[LEFT] = 0.0;
   wheel_speed_cmd_[RIGHT] = 0.0;
-  goal_linear_velocity_   = 0.0;
-  goal_angular_velocity_  = 0.0;
-  cmd_vel_timeout_        = 1.0;
-  last_position_[LEFT]    = 0.0;
-  last_position_[RIGHT]   = 0.0;
-  last_velocity_[LEFT]    = 0.0;
-  last_velocity_[RIGHT]   = 0.0;
+  goal_linear_velocity_ = 0.0;
+  goal_angular_velocity_ = 0.0;
+  cmd_vel_timeout_ = 1.0;
+  last_position_[LEFT] = 0.0;
+  last_position_[RIGHT] = 0.0;
+  last_velocity_[LEFT] = 0.0;
+  last_velocity_[RIGHT] = 0.0;
 
   // TODO: Find more accurate covariance
   // double pcov[36] = { 0.1,   0,   0,   0,   0, 0,
@@ -128,10 +128,10 @@ void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::
   rclcpp::Clock clock(RCL_SYSTEM_TIME);
   last_cmd_vel_time_ = clock.now();
 
-  goal_linear_velocity_  = cmd_vel_msg->linear.x;
+  goal_linear_velocity_ = cmd_vel_msg->linear.x;
   goal_angular_velocity_ = cmd_vel_msg->angular.z;
 
-  wheel_speed_cmd_[LEFT]  = goal_linear_velocity_ - (goal_angular_velocity_ * wheel_seperation_ / 2);
+  wheel_speed_cmd_[LEFT] = goal_linear_velocity_ - (goal_angular_velocity_ * wheel_seperation_ / 2);
   wheel_speed_cmd_[RIGHT] = goal_linear_velocity_ + (goal_angular_velocity_ * wheel_seperation_ / 2);
 }
 
@@ -148,7 +148,7 @@ void Turtlebot3Fake::update_callback()
   // zero-ing after timeout (stop the robot if no cmd_vel)
   if ((time_now - last_cmd_vel_time_).seconds() > cmd_vel_timeout_)
   {
-    wheel_speed_cmd_[LEFT]  = 0.0;
+    wheel_speed_cmd_[LEFT] = 0.0;
     wheel_speed_cmd_[RIGHT] = 0.0;
   }
 
@@ -176,18 +176,18 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   double delta_s, delta_theta;
   double v[2], w[2];
 
-  wheel_l = wheel_r     = 0.0;
+  wheel_l = wheel_r = 0.0;
   delta_s = delta_theta = 0.0;
 
-  v[LEFT]  = wheel_speed_cmd_[LEFT];
-  w[LEFT]  = v[LEFT] / wheel_radius_;  // w = v / r
+  v[LEFT] = wheel_speed_cmd_[LEFT];
+  w[LEFT] = v[LEFT] / wheel_radius_;  // w = v / r
   v[RIGHT] = wheel_speed_cmd_[RIGHT];
   w[RIGHT] = v[RIGHT] / wheel_radius_;
 
-  last_velocity_[LEFT]  = w[LEFT];
+  last_velocity_[LEFT] = w[LEFT];
   last_velocity_[RIGHT] = w[RIGHT];
 
-  wheel_l = w[LEFT]  * duration.seconds();
+  wheel_l = w[LEFT] * duration.seconds();
   wheel_r = w[RIGHT] * duration.seconds();
 
   if(isnan(wheel_l))
@@ -200,10 +200,10 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
     wheel_r = 0.0;
   }
 
-  last_position_[LEFT]  += wheel_l;
+  last_position_[LEFT] += wheel_l;
   last_position_[RIGHT] += wheel_r;
 
-  delta_s     = wheel_radius_ * (wheel_r + wheel_l) / 2.0;
+  delta_s = wheel_radius_ * (wheel_r + wheel_l) / 2.0;
   delta_theta = wheel_radius_ * (wheel_r - wheel_l) / wheel_seperation_;
 
   // compute odometric pose
@@ -229,7 +229,7 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   odom_.pose.pose.orientation.w = q.w();
 
   // We should update the twist of the odometry
-  odom_.twist.twist.linear.x  = odom_vel_[0];
+  odom_.twist.twist.linear.x = odom_vel_[0];
   odom_.twist.twist.angular.z = odom_vel_[2];
 
   return true;
@@ -237,9 +237,9 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
 
 void Turtlebot3Fake::update_joint_state()
 {
-  joint_states_.position[LEFT]  = last_position_[LEFT];
+  joint_states_.position[LEFT] = last_position_[LEFT];
   joint_states_.position[RIGHT] = last_position_[RIGHT];
-  joint_states_.velocity[LEFT]  = last_velocity_[LEFT];
+  joint_states_.velocity[LEFT] = last_velocity_[LEFT];
   joint_states_.velocity[RIGHT] = last_velocity_[RIGHT];
 }
 

@@ -14,7 +14,7 @@
 * limitations under the License.
 *******************************************************************************/
 
-/* Authors: Yoonseok Pyo */
+/* Authors: Yoonseok Pyo, Ryan Shim */
 
 #ifndef TURTLEBOT3_FAKE_NODE_HPP_
 #define TURTLEBOT3_FAKE_NODE_HPP_
@@ -30,8 +30,8 @@
 #include "tf2_msgs/msg/tf_message.hpp"
 #include "turtlebot3_msgs/msg/sensor_state.hpp"
 
-#define LEFT                            0
-#define RIGHT                           1
+#define LEFT 0
+#define RIGHT 1
 
 class Turtlebot3Fake : public rclcpp::Node
 {
@@ -78,5 +78,4 @@ class Turtlebot3Fake : public rclcpp::Node
   void update_joint_state();
   void update_tf(geometry_msgs::msg::TransformStamped & odom_tf);
 };
-
 #endif // TURTLEBOT3_FAKE_NODE_HPP_
