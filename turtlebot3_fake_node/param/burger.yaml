@@ -7,3 +7,4 @@ turtlebot3_fake_node:
     joint_states_frame: "base_footprint"
     odom_frame: "odom"
     base_frame: "base_footprint"
+    
