@@ -55,8 +55,8 @@ Turtlebot3Fake::Turtlebot3Fake()
   RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Initialised");
 }
 
-Turtlebot3Fake::~Turtlebot3Fake() 
-{  
+Turtlebot3Fake::~Turtlebot3Fake()
+{
   RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Terminated");
 }
 
@@ -220,7 +220,7 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   odom_.pose.pose.position.y = odom_pose_[1];
   odom_.pose.pose.position.z = 0;
 
-  tf2::Quaternion q;  
+  tf2::Quaternion q;
   q.setRPY(0, 0, odom_pose_[2]);
 
   odom_.pose.pose.orientation.x = q.x();
