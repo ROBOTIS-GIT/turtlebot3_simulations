@@ -2,6 +2,20 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.0 (2019-09-10)
+------------------
+* ROS 2 migration of turtlebot3_fake_node package
+* Modified rviz config (background colour changed to white, tf display disabled)
+* Contributors: Ryan Shim, Darby Lim, Pyo
+
+2.0.1 (2019-09-05)
+------------------
+* none
+
+2.0.0 (2019-08-20)
+------------------
+* none
+
 1.2.0 (2019-01-22)
 ------------------
 * move out the init() from ROS_ASSERT `#68 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/68>`_
