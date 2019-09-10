@@ -146,7 +146,7 @@ void Turtlebot3Fake::update_callback()
   prev_update_time_ = time_now;
 
   // zero-ing after timeout (stop the robot if no cmd_vel)
-  if ((time_now - last_cmd_vel_time_).seconds() > cmd_vel_timeout_)
+  if ((time_now - last_cmd_vel_time_).nanoseconds() / 1e9 > cmd_vel_timeout_)
   {
     wheel_speed_cmd_[LEFT] = 0.0;
     wheel_speed_cmd_[RIGHT] = 0.0;
@@ -175,10 +175,13 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   double wheel_l, wheel_r; // rotation value of wheel [rad]
   double delta_s, delta_theta;
   double v[2], w[2];
+  double step_time = duration.nanoseconds() / 1e9; // [sec]
 
   wheel_l = wheel_r = 0.0;
   delta_s = delta_theta = 0.0;
 
+  // v = translational velocity [m/s]
+  // w = rotational velocity [rad/s]
   v[LEFT] = wheel_speed_cmd_[LEFT];
   w[LEFT] = v[LEFT] / wheel_radius_;  // w = v / r
   v[RIGHT] = wheel_speed_cmd_[RIGHT];
@@ -187,8 +190,8 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   last_velocity_[LEFT] = w[LEFT];
   last_velocity_[RIGHT] = w[RIGHT];
 
-  wheel_l = w[LEFT] * duration.seconds();
-  wheel_r = w[RIGHT] * duration.seconds();
+  wheel_l = w[LEFT] * step_time;
+  wheel_r = w[RIGHT] * step_time;
 
   if(isnan(wheel_l))
   {
@@ -212,9 +215,9 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   odom_pose_[2] += delta_theta;
 
   // compute odometric instantaneouse velocity
-  odom_vel_[0] = delta_s / duration.seconds();     // v
+  odom_vel_[0] = delta_s / step_time;     // v
   odom_vel_[1] = 0.0;
-  odom_vel_[2] = delta_theta / duration.seconds(); // w
+  odom_vel_[2] = delta_theta / step_time; // w
 
   odom_.pose.pose.position.x = odom_pose_[0];
   odom_.pose.pose.position.y = odom_pose_[1];
