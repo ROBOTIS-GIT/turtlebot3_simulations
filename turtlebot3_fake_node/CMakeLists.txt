@@ -25,10 +25,6 @@ find_package(tf2_msgs REQUIRED)
 find_package(turtlebot3_msgs REQUIRED)
 
 ################################################################################
-# Declare ROS messages, services and actions
-################################################################################
-
-################################################################################
 # Build
 ################################################################################
 include_directories(
@@ -36,13 +32,13 @@ include_directories(
 )
 
 set(dependencies
-  "geometry_msgs" 
-  "nav_msgs" 
-  "rclcpp" 
+  "geometry_msgs"
+  "nav_msgs"
+  "rclcpp"
   "sensor_msgs"
-  "tf2" 
-  "tf2_msgs" 
-  "turtlebot3_msgs" 
+  "tf2"
+  "tf2_msgs"
+  "turtlebot3_msgs"
 )
 
 set(EXEC_NAME "turtlebot3_fake_node")
@@ -61,7 +57,7 @@ install(DIRECTORY launch param rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
-install(DIRECTORY include/   
+install(DIRECTORY include/
   DESTINATION include/
 )
 

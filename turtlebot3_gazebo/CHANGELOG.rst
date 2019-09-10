@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.0 (2019-09-10)
+------------------
+* Added turtlebot3_house and related world, model files
+* Contributors: Ryan Shim
+
 2.0.1 (2019-09-05)
 ------------------
 * Modified dependency packages
