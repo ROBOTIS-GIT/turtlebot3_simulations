@@ -116,8 +116,8 @@ void Turtlebot3Fake::init_variables()
   joint_states_.velocity.resize(2, 0.0);
   joint_states_.effort.resize(2, 0.0);
 
-  rclcpp::Clock clock(RCL_SYSTEM_TIME);
-  prev_update_time_ = clock.now();
+  prev_update_time_ = this->now();
+  last_cmd_vel_time_ = this->now();
 }
 
 /********************************************************************************
@@ -125,8 +125,7 @@ void Turtlebot3Fake::init_variables()
 ********************************************************************************/
 void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
 {
-  rclcpp::Clock clock(RCL_SYSTEM_TIME);
-  last_cmd_vel_time_ = clock.now();
+  last_cmd_vel_time_ = this->now();
 
   goal_linear_velocity_ = cmd_vel_msg->linear.x;
   goal_angular_velocity_ = cmd_vel_msg->angular.z;
@@ -140,9 +139,8 @@ void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::
 ********************************************************************************/
 void Turtlebot3Fake::update_callback()
 {
-  rclcpp::Clock clock(RCL_SYSTEM_TIME);
-  rclcpp::Time time_now = clock.now();
-  rclcpp::Duration duration = time_now - prev_update_time_;
+  rclcpp::Time time_now = this->now();
+  rclcpp::Duration duration(time_now - prev_update_time_);
   prev_update_time_ = time_now;
 
   // zero-ing after timeout (stop the robot if no cmd_vel)
