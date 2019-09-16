@@ -2,6 +2,13 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.1.0 (2019-09-10)
+------------------
+* ROS 2 migration of turtlebot3_fake_node package
+* Modified rviz config (background colour changed to white, tf display disabled)
+* Added turtlebot3_house and related world, model files
+* Contributors: Ryan Shim, Darby Lim, Pyo
+
 2.0.1 (2019-09-05)
 ------------------
 * Modified dependency packages
