@@ -45,19 +45,19 @@ Turtlebot3Fake::Turtlebot3Fake()
 
   // Initialise subscribers
   cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-    "cmd_vel", qos, std::bind(&Turtlebot3Fake::command_velocity_callback, this, std::placeholders::_1));
+    "cmd_vel", qos, std::bind(&Turtlebot3Fake::cmd_vel_callback, this, std::placeholders::_1));
 
   /************************************************************
-  ** Start updating thread
+  ** initialise ROS timers
   ************************************************************/
   update_timer_ = this->create_wall_timer(10ms, std::bind(&Turtlebot3Fake::update_callback, this));
 
-  RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Initialised");
+  RCLCPP_INFO(this->get_logger(), "Turtlebot3 fake node has been initialised");
 }
 
 Turtlebot3Fake::~Turtlebot3Fake()
 {
-  RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Terminated");
+  RCLCPP_INFO(this->get_logger(), "Turtlebot3 fake node has been terminated");
 }
 
 /********************************************************************************
@@ -123,7 +123,7 @@ void Turtlebot3Fake::init_variables()
 /********************************************************************************
 ** Callback functions for ROS subscribers
 ********************************************************************************/
-void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
+void Turtlebot3Fake::cmd_vel_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
 {
   last_cmd_vel_time_ = this->now();
 
@@ -151,7 +151,7 @@ void Turtlebot3Fake::update_callback()
   }
 
   // odom
-  update_odometry(duration);
+  update_odom(duration);
   odom_.header.stamp = time_now;
   odom_pub_->publish(odom_);
 
@@ -168,7 +168,7 @@ void Turtlebot3Fake::update_callback()
   tf_pub_->publish(odom_tf_msg);
 }
 
-bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
+bool Turtlebot3Fake::update_odom(const rclcpp::Duration & duration)
 {
   double wheel_l, wheel_r; // rotation value of wheel [rad]
   double delta_s, delta_theta;
