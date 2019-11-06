@@ -45,7 +45,7 @@ Turtlebot3Fake::Turtlebot3Fake()
 
   // Initialise subscribers
   cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-    "cmd_vel", qos, std::bind(&Turtlebot3Fake::cmd_vel_callback, this, std::placeholders::_1));
+    "cmd_vel", qos, std::bind(&Turtlebot3Fake::command_velocity_callback, this, std::placeholders::_1));
 
   /************************************************************
   ** initialise ROS timers
@@ -123,7 +123,7 @@ void Turtlebot3Fake::init_variables()
 /********************************************************************************
 ** Callback functions for ROS subscribers
 ********************************************************************************/
-void Turtlebot3Fake::cmd_vel_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
+void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
 {
   last_cmd_vel_time_ = this->now();
 
@@ -151,7 +151,7 @@ void Turtlebot3Fake::update_callback()
   }
 
   // odom
-  update_odom(duration);
+  update_odometry(duration);
   odom_.header.stamp = time_now;
   odom_pub_->publish(odom_);
 
@@ -168,7 +168,7 @@ void Turtlebot3Fake::update_callback()
   tf_pub_->publish(odom_tf_msg);
 }
 
-bool Turtlebot3Fake::update_odom(const rclcpp::Duration & duration)
+bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
 {
   double wheel_l, wheel_r; // rotation value of wheel [rad]
   double delta_s, delta_theta;
