@@ -66,10 +66,10 @@ Turtlebot3Drive::~Turtlebot3Drive()
 void Turtlebot3Drive::odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg)
 {
   tf2::Quaternion q(
-        msg->pose.pose.orientation.x,
-        msg->pose.pose.orientation.y,
-        msg->pose.pose.orientation.z,
-        msg->pose.pose.orientation.w);
+    msg->pose.pose.orientation.x,
+    msg->pose.pose.orientation.y,
+    msg->pose.pose.orientation.z,
+    msg->pose.pose.orientation.w);
   tf2::Matrix3x3 m(q);
   double roll, pitch, yaw;
   m.getRPY(roll, pitch, yaw);
