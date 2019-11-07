@@ -44,6 +44,9 @@ class Turtlebot3Fake : public rclcpp::Node
   rclcpp::Time last_cmd_vel_time_;
   rclcpp::Time prev_update_time_;
 
+  // ROS timer
+  rclcpp::TimerBase::SharedPtr update_timer_;
+
   // ROS topic publishers
   rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_pub_;
   rclcpp::Publisher<sensor_msgs::msg::JointState>::SharedPtr joint_states_pub_;
@@ -52,7 +55,6 @@ class Turtlebot3Fake : public rclcpp::Node
   // ROS topic subscribers
   rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
 
-  rclcpp::TimerBase::SharedPtr update_timer_;
 
   nav_msgs::msg::Odometry odom_;
   sensor_msgs::msg::JointState joint_states_;
