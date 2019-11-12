@@ -40,7 +40,7 @@ def generate_launch_description():
             output='screen'),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([launch_file_dir, '/turtlebot3_state_publisher.launch.py']),
+            PythonLaunchDescriptionSource([launch_file_dir, '/robot_state_publisher.launch.py']),
             launch_arguments={'use_sim_time': use_sim_time}.items(),
         ),
     ])
