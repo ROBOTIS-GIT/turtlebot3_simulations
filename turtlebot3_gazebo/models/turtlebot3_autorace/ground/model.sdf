@@ -1,0 +1,45 @@
+<?xml version='1.0'?>
+<sdf version="1.5">
+  <model name='ground'>
+    <pose frame=''>0 0 -0.1 0 0 0</pose>
+    <static>1</static>
+    <link name='ground'>
+      <collision name='ground_coll'>
+        <geometry>
+          <box>
+            <size>8 8 0.01</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <bounce/>
+          <friction>
+            <torsional>
+              <ode/>
+            </torsional>
+            <ode/>
+          </friction>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='ground_vis'>
+        <geometry>
+          <box>
+            <size>10 10 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/FlatBlack</name>
+          </script>
+        </material>
+      </visual>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+    </link>
+  </model>
+</sdf>

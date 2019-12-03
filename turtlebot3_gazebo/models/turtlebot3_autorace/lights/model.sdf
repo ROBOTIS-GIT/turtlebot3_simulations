@@ -1,0 +1,42 @@
+<?xml version='1.0'?>
+<sdf version="1.5">
+  <light name='user_point_light_2' type='point'>
+    <pose frame=''>-0.948146 0.604519 1 0 -0 0</pose>
+    <diffuse>0.5 0.5 0.5 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>20</range>
+      <constant>0.5</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <cast_shadows>0</cast_shadows>
+    <direction>0 0 -1</direction>
+  </light>    
+  <light name='user_point_light_6' type='point'>
+    <pose frame=''>1.63854 1.69565 1 0 -0 0</pose>
+    <diffuse>0.5 0.5 0.5 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>20</range>
+      <constant>0.5</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <cast_shadows>0</cast_shadows>
+    <direction>0 0 -1</direction>
+  </light>
+  <light name='user_point_light_7' type='point'>
+    <pose frame=''>0.42  -3.31 1 0 -0 0</pose>
+    <diffuse>0.5 0.5 0.5 1</diffuse>
+    <specular>0.1 0.1 0.1 1</specular>
+    <attenuation>
+      <range>20</range>
+      <constant>0.5</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <cast_shadows>0</cast_shadows>
+    <direction>0 0 -1</direction>
+  </light>
+</sdf>
