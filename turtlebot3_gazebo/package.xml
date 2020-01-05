@@ -25,6 +25,7 @@
   <depend>gazebo_ros</depend>
   <exec_depend>gazebo</exec_depend>
   <export>
-    <gazebo_ros gazebo_media_path="${prefix}" gazebo_model_path="${prefix}/models:${prefix}/models/turtlebot3_autorace"/>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>
