@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/robotis/robotis_ws/src/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0b9ee/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0b9ee.dir/build.make CMakeFiles/cmTC_0b9ee.dir/build
+make[1]: Entering directory '/home/robotis/github/tb/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b9ee.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0b9ee.dir/CheckSymbolExists.c.o   -c /home/robotis/robotis_ws/src/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_0b9ee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b9ee.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0b9ee.dir/CheckSymbolExists.c.o  -o cmTC_0b9ee 
+CMakeFiles/cmTC_0b9ee.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0b9ee.dir/build.make:97: recipe for target 'cmTC_0b9ee' failed
+make[1]: *** [cmTC_0b9ee] Error 1
+make[1]: Leaving directory '/home/robotis/github/tb/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0b9ee/fast' failed
+make: *** [cmTC_0b9ee/fast] Error 2
+
+File /home/robotis/robotis_ws/src/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/robotis/robotis_ws/src/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b717b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b717b.dir/build.make CMakeFiles/cmTC_b717b.dir/build
+make[1]: Entering directory '/home/robotis/github/tb/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b717b.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_b717b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b717b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b717b.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_b717b.dir/CheckFunctionExists.c.o  -o cmTC_b717b -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b717b.dir/build.make:97: recipe for target 'cmTC_b717b' failed
+make[1]: *** [cmTC_b717b] Error 1
+make[1]: Leaving directory '/home/robotis/github/tb/turtlebot3_ros2/turtlebot3_gazebo/models/turtlebot3_dqn_world/obstacle_plugin/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b717b/fast' failed
+make: *** [cmTC_b717b/fast] Error 2
+
+

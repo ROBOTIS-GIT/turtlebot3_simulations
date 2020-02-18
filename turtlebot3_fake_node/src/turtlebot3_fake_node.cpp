@@ -48,16 +48,16 @@ Turtlebot3Fake::Turtlebot3Fake()
     "cmd_vel", qos, std::bind(&Turtlebot3Fake::command_velocity_callback, this, std::placeholders::_1));
 
   /************************************************************
-  ** Start updating thread
+  ** initialise ROS timers
   ************************************************************/
   update_timer_ = this->create_wall_timer(10ms, std::bind(&Turtlebot3Fake::update_callback, this));
 
-  RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Initialised");
+  RCLCPP_INFO(this->get_logger(), "Turtlebot3 fake node has been initialised");
 }
 
 Turtlebot3Fake::~Turtlebot3Fake()
 {
-  RCLCPP_INFO(this->get_logger(), "Turtlebot3 Fake Node Terminated");
+  RCLCPP_INFO(this->get_logger(), "Turtlebot3 fake node has been terminated");
 }
 
 /********************************************************************************

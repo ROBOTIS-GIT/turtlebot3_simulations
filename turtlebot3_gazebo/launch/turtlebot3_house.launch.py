@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Authors: Darby Lim
+# Authors: Darby Lim, Ryan Shim
 
 import os
 
@@ -28,6 +28,7 @@ from launch.substitutions import LaunchConfiguration
 
 TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
+
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
     world_file_name = 'turtlebot3_houses/' + TURTLEBOT3_MODEL + '.model'
@@ -40,7 +41,7 @@ def generate_launch_description():
             output='screen'),
 
         IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([launch_file_dir, '/turtlebot3_state_publisher.launch.py']),
+            PythonLaunchDescriptionSource([launch_file_dir, '/robot_state_publisher.launch.py']),
             launch_arguments={'use_sim_time': use_sim_time}.items(),
         ),
     ])
