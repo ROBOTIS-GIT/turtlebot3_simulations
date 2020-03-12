@@ -1,0 +1,14 @@
+material traffic_light
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_light.png
+      }
+    }
+  }
+}
+
