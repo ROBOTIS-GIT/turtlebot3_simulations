@@ -13,11 +13,6 @@
     </include>
 
     <include>
-      <uri>model://turtlebot3_autorace_2020/traffic_light</uri>
-      <pose> 1.45 -1.95 0.125 0 -0 -1.57</pose>
-    </include>
-    
-    <include>
       <uri>model://turtlebot3_autorace_2020/traffic_parking</uri>
       <pose> 0.74 1.95 0.13 0 0 -1.57</pose>
     </include>
@@ -33,19 +28,9 @@
     </include>    
 
     <include>
-      <uri>model://turtlebot3_autorace_2020/traffic_left</uri>
-       <pose> 1.08 -0.838 0.125 0 -0 -1.57</pose>
-    </include>
-
-    <include>
       <uri>model://turtlebot3_autorace_2020/traffic_pl_left</uri>
        <pose>0.50 1.90 0.13 0 0 0</pose>
     </include>
-
-    <include>
-      <uri>model://turtlebot3_autorace_2020/traffic_right</uri>
-       <pose> 1.08 -0.728 0.125 0 -0 -1.57</pose>
-    </include>  
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_construction</uri>
@@ -61,11 +46,6 @@
       <uri>model://turtlebot3_autorace_2020/traffic_noentry</uri>
        <pose> 0.95 -0.758 0.125 0 -0 0.0</pose>
     </include>
-
-    <include>
-      <uri>model://turtlebot3_autorace_2020/traffic_bar</uri>
-      <pose> -1.15 1.20 0.125 0 -0 -1.57</pose>
-    </include>  
 
 <!--
     <include>
@@ -147,7 +127,7 @@
     </spherical_coordinates> 
  
     <light name='user_point_light_1' type='point'>
-      <pose frame=''>-0.948146 0.604519 1 0 -0 0</pose>
+      <pose frame=''>-1.648146 0.604519 1 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
       <specular>0.1 0.1 0.1 1</specular>
       <attenuation>
@@ -302,7 +282,7 @@
         <pose frame=''>0 0 10 0 -0 0</pose>
       </light>      
       <light name='user_point_light_1'>
-        <pose frame=''>-0.948146 0.604519 1 0 -0 0</pose>
+        <pose frame=''>-1.648146 0.604519 1 0 -0 0</pose>
       </light>
       <light name='user_point_light_2'>
         <pose frame=''>1.63854 1.69565 1 0 -0 0</pose>

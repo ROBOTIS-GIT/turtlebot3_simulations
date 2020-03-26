@@ -3,7 +3,7 @@
   <model name="traffic_left">
     <static>true</static>
     <link name="box">
-      <pose>0 0 0 0 0 0</pose>
+      <pose>1.08 -0.838 0.125 0 -0 -1.57</pose>
       <collision name="collision">
         <geometry>
           <box>

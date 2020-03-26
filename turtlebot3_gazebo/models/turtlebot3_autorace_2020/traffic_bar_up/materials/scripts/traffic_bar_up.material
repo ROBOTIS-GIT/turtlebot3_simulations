@@ -1,4 +1,4 @@
-material traffic_light
+material traffic_bar_up
 {
   technique
   {
@@ -6,7 +6,7 @@ material traffic_light
     {
       texture_unit
       {
-        texture traffic_light.png
+        texture traffic_bar_up.png
       }
     }
   }
