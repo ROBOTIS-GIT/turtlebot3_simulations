@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<sdf version="1.6">
+  <model name="traffic_bar_up">
+    <pose frame=''>-1.0 1.2 0.15 0 0 1.57</pose>
+    <link name="traffic_bar_up">
+      <collision name="collision">
+        <pose frame=''>-1.0 1.2 0.15 0 0 1.57</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.02 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose frame=''>-1.0 1.2 0.15 0 0 1.57</pose>
+        <geometry>
+          <box>
+            <size>0.3 0.02 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://turtlebot3_autorace_2020/traffic_bar_up/materials/scripts</uri>
+            <uri>model://turtlebot3_autorace_2020/traffic_bar_up/materials/textures</uri>
+            <name>traffic_bar_up</name>
+          </script>
+        </material>
+      </visual>
+    </link> 
+    <static>1</static>   
+  </model>
+</sdf>

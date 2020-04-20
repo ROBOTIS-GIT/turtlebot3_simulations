@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='traffic_light_red'>
+    <pose frame=''>0 0 0 0 -0 0</pose>
+    <link name='traffic_light_red'>
+       <collision name='collision'>
+          <pose frame=''>1.3 -1.95 0.13 0 0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.12 0.025 0.25</size>
+            </box>
+          </geometry>   
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>1.3 -1.95 0.13 0 0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.12 0.025 0.25</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://turtlebot3_autorace_2020/traffic_light_red/materials/scripts</uri>
+              <uri>model://turtlebot3_autorace_2020/traffic_light_red/materials/textures</uri>
+              <name>traffic_light_red</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <static>1</static>
+    </model>
+</sdf>
