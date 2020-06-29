@@ -7,7 +7,8 @@ Changelog for package turtlebot3_gazebo
 * TurtleBot3 Drive node implementation
 * Additional Gazebo maps added
 * argument tags in the sdf file replaced with remapping tags
-* Contributors: Ryan Shim, Mikael Arguedas
+* Low polygon 3D modeling applied for simulation
+* Contributors: Ryan Shim, Mikael Arguedas, Will Son
 
 2.1.0 (2019-09-10)
 ------------------
