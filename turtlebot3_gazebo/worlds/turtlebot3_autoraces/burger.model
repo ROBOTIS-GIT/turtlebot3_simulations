@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<sdf version='1.6'>
+  <world name='default'>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <scene>
+      <shadows>false</shadows>
+    </scene>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>2.7696 -1.93094 6.71513 0 1.1618 2.27182</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    
+    <physics type="ode">
+      <real_time_update_rate>1000.0</real_time_update_rate>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>150</iters>
+          <precon_iters>0</precon_iters>
+          <sor>1.400000</sor>
+          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
+        </solver>
+        <constraints>
+          <cfm>0.00001</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>2000.000000</contact_max_correcting_vel>
+          <contact_surface_layer>0.01000</contact_surface_layer>
+        </constraints>
+      </ode>
+    </physics>
+
+    <include>
+      <uri>model://turtlebot3_autorace/course</uri>
+      <pose> 0 0 0 0 0 -1.54</pose>
+    </include>
+
+    <include>
+      <uri>model://turtlebot3_autorace/ground</uri>
+      <pose> 0 0 -0.1 0 0 0</pose>
+    </include>
+    
+    <include>
+      <uri>model://turtlebot3_autorace/lights</uri>
+      <pose> 0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_parking</uri>
+      <pose> 1.84 1.27 0.13 0 0 -0.356</pose>
+    </include>
+    
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_tunnel</uri>
+      <pose> -1.544 -0.08 0.125 0 0 0</pose>
+    </include>
+   
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_stop</uri>
+       <pose> -2.05 0.65 0.125 0 -0 0</pose>
+    </include>    
+
+    <include>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_autorace/tunnel_wall</uri>
+    </include>
+
+    <include>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_autorace/tunnel_obstacles</uri>
+    </include>
+
+    <include>
+      <pose>0.1 -1.78 0.01 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_burger</uri>
+    </include>
+
+  </world>
+</sdf>
