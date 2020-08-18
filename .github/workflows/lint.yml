@@ -18,7 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         linter: [copyright, cppcheck, cpplint, uncrustify, pep8, pep257, xmllint]
-        distribution: [dashing, eloquent, foxy]
+        distribution: [dashing, eloquent]
     steps:
       - uses: actions/checkout@v2
       - uses: ros-tooling/setup-ros@0.0.20
