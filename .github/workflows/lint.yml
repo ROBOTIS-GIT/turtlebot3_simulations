@@ -6,7 +6,7 @@ name: Lint
 # events but only for the master branch
 on:
   push:
-    branches: [ ros2, ros2-devel, dashing-devel, eloquent-devel, foxy-devel ]
+    branches: [ ros2, ros2-devel, dashing-devel, eloquent-devel ]
   pull_request:
     branches: [ ros2, ros2-devel ]
 
