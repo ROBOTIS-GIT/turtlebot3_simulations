@@ -12,6 +12,10 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+if(MSVC)
+  add_compile_definitions(_USE_MATH_DEFINES)
+endif()
+
 ################################################################################
 # Find ament packages and libraries for ament and system dependencies
 ################################################################################
