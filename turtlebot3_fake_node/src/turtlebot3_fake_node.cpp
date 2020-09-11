@@ -1,22 +1,23 @@
-/*******************************************************************************
-* Copyright 2019 ROBOTIS CO., LTD.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*******************************************************************************/
-
-/* Authors: Yoonseok Pyo, Ryan Shim */
+// Copyright 2019 ROBOTIS CO., LTD.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Authors: Yoonseok Pyo, Ryan Shim
 
 #include "turtlebot3_fake_node/turtlebot3_fake_node.hpp"
+
+#include <memory>
+#include <string>
 
 using namespace std::chrono_literals;
 
@@ -45,7 +46,11 @@ Turtlebot3Fake::Turtlebot3Fake()
 
   // Initialise subscribers
   cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
-    "cmd_vel", qos, std::bind(&Turtlebot3Fake::command_velocity_callback, this, std::placeholders::_1));
+    "cmd_vel", \
+    qos, \
+    std::bind(&Turtlebot3Fake::command_velocity_callback, \
+    this, \
+    std::placeholders::_1));
 
   /************************************************************
   ** initialise ROS timers
@@ -73,7 +78,9 @@ void Turtlebot3Fake::init_parameters()
   this->declare_parameter("wheels.radius");
 
   // Get parameters from yaml
-  this->get_parameter_or<std::string>("joint_states_frame", joint_states_.header.frame_id, "base_footprint");
+  this->get_parameter_or<std::string>("joint_states_frame", \
+    joint_states_.header.frame_id, \
+    "base_footprint");
   this->get_parameter_or<std::string>("odom_frame", odom_.header.frame_id, "odom");
   this->get_parameter_or<std::string>("base_frame", odom_.child_frame_id, "base_footprint");
   this->get_parameter_or<double>("wheels.separation", wheel_seperation_, 0.0);
@@ -93,7 +100,7 @@ void Turtlebot3Fake::init_variables()
   last_velocity_[LEFT] = 0.0;
   last_velocity_[RIGHT] = 0.0;
 
-  // TODO: Find more accurate covariance
+  // TODO(Will Son): Find more accurate covariance
   // double pcov[36] = { 0.1,   0,   0,   0,   0, 0,
   //                       0, 0.1,   0,   0,   0, 0,
   //                       0,   0, 1e6,   0,   0, 0,
@@ -123,7 +130,8 @@ void Turtlebot3Fake::init_variables()
 /********************************************************************************
 ** Callback functions for ROS subscribers
 ********************************************************************************/
-void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
+void Turtlebot3Fake::command_velocity_callback(
+  const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
 {
   last_cmd_vel_time_ = this->now();
 
@@ -131,7 +139,8 @@ void Turtlebot3Fake::command_velocity_callback(const geometry_msgs::msg::Twist::
   goal_angular_velocity_ = cmd_vel_msg->angular.z;
 
   wheel_speed_cmd_[LEFT] = goal_linear_velocity_ - (goal_angular_velocity_ * wheel_seperation_ / 2);
-  wheel_speed_cmd_[RIGHT] = goal_linear_velocity_ + (goal_angular_velocity_ * wheel_seperation_ / 2);
+  wheel_speed_cmd_[RIGHT] = goal_linear_velocity_ + \
+    (goal_angular_velocity_ * wheel_seperation_ / 2);
 }
 
 /********************************************************************************
@@ -144,8 +153,7 @@ void Turtlebot3Fake::update_callback()
   prev_update_time_ = time_now;
 
   // zero-ing after timeout (stop the robot if no cmd_vel)
-  if ((time_now - last_cmd_vel_time_).nanoseconds() / 1e9 > cmd_vel_timeout_)
-  {
+  if ((time_now - last_cmd_vel_time_).nanoseconds() / 1e9 > cmd_vel_timeout_) {
     wheel_speed_cmd_[LEFT] = 0.0;
     wheel_speed_cmd_[RIGHT] = 0.0;
   }
@@ -170,10 +178,10 @@ void Turtlebot3Fake::update_callback()
 
 bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
 {
-  double wheel_l, wheel_r; // rotation value of wheel [rad]
+  double wheel_l, wheel_r;  // rotation value of wheel [rad]
   double delta_s, delta_theta;
   double v[2], w[2];
-  double step_time = duration.nanoseconds() / 1e9; // [sec]
+  double step_time = duration.nanoseconds() / 1e9;  // [sec]
 
   wheel_l = wheel_r = 0.0;
   delta_s = delta_theta = 0.0;
@@ -191,13 +199,11 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   wheel_l = w[LEFT] * step_time;
   wheel_r = w[RIGHT] * step_time;
 
-  if(isnan(wheel_l))
-  {
+  if (isnan(wheel_l)) {
     wheel_l = 0.0;
   }
 
-  if(isnan(wheel_r))
-  {
+  if (isnan(wheel_r)) {
     wheel_r = 0.0;
   }
 
@@ -215,7 +221,7 @@ bool Turtlebot3Fake::update_odometry(const rclcpp::Duration & duration)
   // compute odometric instantaneouse velocity
   odom_vel_[0] = delta_s / step_time;     // v
   odom_vel_[1] = 0.0;
-  odom_vel_[2] = delta_theta / step_time; // w
+  odom_vel_[2] = delta_theta / step_time;  // w
 
   odom_.pose.pose.position.x = odom_pose_[0];
   odom_.pose.pose.position.y = odom_pose_[1];
@@ -257,7 +263,7 @@ void Turtlebot3Fake::update_tf(geometry_msgs::msg::TransformStamped & odom_tf)
 /*****************************************************************************
 ** Main
 *****************************************************************************/
-int main(int argc, char **argv)
+int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<Turtlebot3Fake>());
