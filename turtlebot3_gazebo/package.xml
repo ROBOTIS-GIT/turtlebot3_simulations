@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>turtlebot3_gazebo</name>
-  <version>1.2.0</version>
+  <version>1.3.0</version>
   <description>
     Gazebo simulation package for the TurtleBot3
   </description>
@@ -9,8 +9,7 @@
   <author email="pyo@robotis.com">Pyo</author>
   <author email="thlim@robotis.com">Darby Lim</author>
   <author email="kkjong@robotis.com">Gilbert</author>
-  <maintainer email="pyo@robotis.com">Pyo</maintainer>
-  <maintainer email="thlim@robotis.com">Darby Lim</maintainer>
+  <maintainer email="willson@robotis.com">Will Son</maintainer>
   <url type="website">http://wiki.ros.org/turtlebot3_gazebo</url>
   <url type="emanual">http://turtlebot3.robotis.com</url>
   <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
