@@ -2,6 +2,15 @@
 Changelog for package turtlebot3_gazebo_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.0 (2020-09-29)
+------------------
+* fix ROS Assert issue when debugging (#124)
+* added TurtleBot3 Autorace 2020 (#108)
+* added turtlebot3_description to dependency list (#104)
+* removed *nix path separator (#92)
+* removed unnecessary gazebo plugin_path (#78)
+* Contributors: Sean Yen, Ashe Kim, Mikael Arguedas, Ben Wolsieffer
+
 1.2.0 (2019-01-22)
 ------------------
 * moved <scene> into <world> `#65 <https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/65>`_
