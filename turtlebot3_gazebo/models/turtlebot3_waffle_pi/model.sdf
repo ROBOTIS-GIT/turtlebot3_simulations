@@ -33,7 +33,7 @@
         <pose>-0.064 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_waffle/meshes/waffle_base.dae</uri>
+            <uri>model://turtlebot3_waffle_pi/meshes/waffle_pi_base.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -351,7 +351,7 @@
 
     <link name="camera_link"/>
 
-    <link name="camera_rgb_frame">
+    <link name="camera_rgb_optical_frame">
       <inertial>
         <pose>0.076 0.0 0.093 0 0 0</pose>
         <inertia>
@@ -465,7 +465,7 @@
 
     <joint name="camera_rgb_joint" type="fixed">
       <parent>camera_link</parent>
-      <child>camera_rgb_frame</child>
+      <child>camera_rgb_optical_frame</child>
       <pose>0.003 0.011 0.009 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
