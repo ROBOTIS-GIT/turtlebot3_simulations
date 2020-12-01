@@ -20,8 +20,8 @@ jobs:
         linter: [copyright, cppcheck, cpplint, uncrustify, pep8, pep257, xmllint]
         distribution: [dashing, eloquent]
     steps:
-      - uses: actions/checkout@v2
-      - uses: ros-tooling/setup-ros@0.0.20
+      - uses: actions/checkout@v2.3.4
+      - uses: ros-tooling/setup-ros@0.1.0
       - uses: ros-tooling/action-ros-lint@0.0.6
         with:
           distribution: ${{ matrix.distribution }}
