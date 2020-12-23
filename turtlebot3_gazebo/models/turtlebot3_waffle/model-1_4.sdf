@@ -10,14 +10,14 @@
       <inertial>
         <pose>-0.064 0 0.048 0 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>4.2111447e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.2111447e-02</iyy>
+          <iyz>0</iyz>
+          <izz>7.5254874e-02</izz>
         </inertia>
-        <mass>1.0</mass>
+        <mass>1.3729096e+00</mass>
       </inertial>
 
       <collision name="base_collision">
@@ -106,7 +106,7 @@
           <iyz>0.000</iyz>
           <izz>0.001</izz>
         </inertia>
-        <mass>0.125</mass>
+        <mass>0.114</mass>
       </inertial>
 
       <collision name="lidar_sensor_collision">
@@ -170,12 +170,12 @@
       <inertial>
         <pose>0.0 0.144 0.023 -1.57 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>1.1175580e-05</ixx>
+          <ixy>-4.2369783e-11</ixy>
+          <ixz>-5.9381719e-09</ixz>
+          <iyy>1.1192413e-05</iyy>
+          <iyz>-1.4400107e-11</iyz>
+          <izz>2.0712558e-05</izz>
         </inertia>
         <mass>0.1</mass>
       </inertial>
@@ -228,12 +228,12 @@
       <inertial>
         <pose>0.0 -0.144 0.023 -1.57 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
-          <ixy>0.000</ixy>
-          <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
-          <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <ixx>1.1175580e-05</ixx>
+          <ixy>-4.2369783e-11</ixy>
+          <ixz>-5.9381719e-09</ixz>
+          <iyy>1.1192413e-05</iyy>
+          <iyz>-1.4400107e-11</iyz>
+          <izz>2.0712558e-05</izz>
         </inertia>
         <mass>0.1</mass>
       </inertial>
@@ -282,7 +282,7 @@
     </link>
 
     <link name='caster_back_right_link'>
-      <pose>-0.177 -0.064 -0.004 0 0 0</pose>
+      <pose>-0.177 -0.064 -0.004 -1.57 0 0</pose>
       <inertial>
         <mass>0.001</mass>
         <inertia>
@@ -316,7 +316,7 @@
     </link>
 
     <link name='caster_back_left_link'>
-      <pose>-0.177 0.064 -0.004 0 0 0</pose>
+      <pose>-0.177 0.064 -0.004 -1.57 0 0</pose>
       <inertial>
         <mass>0.001</mass>
         <inertia>
@@ -365,14 +365,6 @@
         <mass>0.035</mass>
       </inertial>
 
-      <collision name="collision">
-        <pose>0 0 0.047 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.008 0.130 0.022</size>
-          </box>
-        </geometry>
-      </collision>
       <pose>0.069 -0.047 0.107 0 0 0</pose>
       <sensor name="camera" type="camera">
         <always_on>true</always_on>
