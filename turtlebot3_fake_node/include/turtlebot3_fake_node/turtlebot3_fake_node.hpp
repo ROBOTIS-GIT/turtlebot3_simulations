@@ -1,27 +1,25 @@
-/*******************************************************************************
-* Copyright 2019 ROBOTIS CO., LTD.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*******************************************************************************/
+// Copyright 2019 ROBOTIS CO., LTD.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+// Authors: Yoonseok Pyo, Ryan Shim
 
-/* Authors: Yoonseok Pyo, Ryan Shim */
+#ifndef TURTLEBOT3_FAKE_NODE__TURTLEBOT3_FAKE_NODE_HPP_
+#define TURTLEBOT3_FAKE_NODE__TURTLEBOT3_FAKE_NODE_HPP_
 
-#ifndef TURTLEBOT3_FAKE_NODE_HPP_
-#define TURTLEBOT3_FAKE_NODE_HPP_
-
+#include <tf2/LinearMath/Quaternion.h>
 #include <rclcpp/rclcpp.hpp>
 #include <chrono>
-#include <tf2/LinearMath/Quaternion.h>
 
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "geometry_msgs/msg/twist.hpp"
@@ -35,11 +33,11 @@
 
 class Turtlebot3Fake : public rclcpp::Node
 {
- public:
+public:
   Turtlebot3Fake();
   ~Turtlebot3Fake();
-  
- private:
+
+private:
   // ROS time
   rclcpp::Time last_cmd_vel_time_;
   rclcpp::Time prev_update_time_;
@@ -65,8 +63,8 @@ class Turtlebot3Fake : public rclcpp::Node
   double cmd_vel_timeout_;
   double last_position_[2];
   double last_velocity_[2];
-  float  odom_pose_[3];
-  float  odom_vel_[3];
+  float odom_pose_[3];
+  float odom_vel_[3];
 
   double wheel_seperation_;
   double wheel_radius_;
@@ -80,4 +78,4 @@ class Turtlebot3Fake : public rclcpp::Node
   void update_joint_state();
   void update_tf(geometry_msgs::msg::TransformStamped & odom_tf);
 };
-#endif // TURTLEBOT3_FAKE_NODE_HPP_
+#endif  // TURTLEBOT3_FAKE_NODE__TURTLEBOT3_FAKE_NODE_HPP_

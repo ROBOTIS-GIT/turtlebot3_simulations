@@ -2,6 +2,16 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.1 (2021-01-13)
+------------------
+* Eloquent Elusor EOL
+* Ament lint applied
+* Contributors: ashe Kim, Will Son
+
+2.2.0 (2020-06-29)
+------------------
+* none
+
 2.1.0 (2019-09-10)
 ------------------
 * ROS 2 migration of turtlebot3_fake_node package
@@ -13,6 +23,10 @@ Changelog for package turtlebot3_fake
 * none
 
 2.0.0 (2019-08-20)
+------------------
+* none
+
+1.3.0 (2020-06-29)
 ------------------
 * none
 

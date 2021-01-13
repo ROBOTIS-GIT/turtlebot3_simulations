@@ -2,6 +2,23 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.1 (2021-01-13)
+------------------
+* Eloquent Elusor EOL
+* Add missing imu joint in sdf
+* Append Gazebo model path
+* Portable fix, launch description revise
+* Ament lint applied
+* Contributors: minwoominwoominwoo7, Rayman, seanyen, ashe kim, Will Son
+
+2.2.0 (2020-06-29)
+------------------
+* TurtleBot3 Drive node implementation
+* Additional Gazebo maps added
+* argument tags in the sdf file replaced with remapping tags
+* Low polygon 3D modeling applied for simulation
+* Contributors: Ryan Shim, Mikael Arguedas, Will Son
+
 2.1.0 (2019-09-10)
 ------------------
 * Added turtlebot3_house and related world, model files
@@ -19,6 +36,13 @@ Changelog for package turtlebot3_gazebo
 * Supported ROS 2 Dashing Diademata
 * Updated the CHANGELOG and version to release binary packages
 * Contributors: Darby Lim, Pyo
+
+1.3.0 (2020-06-29)
+------------------
+* Turtlebot3 Autorace 2020 implemented
+* Remove the plugin_path from gazebo_ros export
+* Remove *nix path separator
+* Contributors: Ashe Kim, Ben Wolsieffer, Sean Yen
 
 1.2.0 (2019-01-22)
 ------------------
