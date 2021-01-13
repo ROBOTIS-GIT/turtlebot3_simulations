@@ -2,6 +2,15 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.1 (2021-01-13)
+------------------
+* Eloquent Elusor EOL
+* Add missing imu joint in sdf
+* Append Gazebo model path
+* Portable fix, launch description revise
+* Ament lint applied
+* Contributors: minwoominwoominwoo7, Rayman, seanyen, ashe kim, Will Son
+
 2.2.0 (2020-06-29)
 ------------------
 * TurtleBot3 Drive node implementation
