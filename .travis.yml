@@ -16,7 +16,6 @@ branches:
     - ros2
     - ros2-devel
     - dashing-devel
-    - foxy-devel
 
 install:
   - git clone --quiet --depth 1 https://github.com/ROBOTIS-GIT/ros2ci.git .ros2ci
@@ -24,4 +23,3 @@ install:
 matrix:
   include:
     - script: .ros2ci/travis.bash dashing
-    - script: .ros2ci/travis.bash foxy
