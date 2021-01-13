@@ -4,13 +4,13 @@
 ## ROS 1 Packages for TurtleBot3 Simulations
 |develop|master|Kinetic + Ubuntu Xenial|Melodic + Ubuntu Bionic|Noetic + Ubuntu Focal|
 |:---:|:---:|:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=develop)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=master)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=kinetic-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=melodic-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=noetic-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|
+|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=develop)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=master)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=kinetic-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=melodic-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=noetic-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|
 
 
 ## ROS 2 Packages for TurtleBot3 Simulations
-|ros2-devel|ros2|Dashing + Ubuntu Bionic|Eloquent + Ubuntu Bionic|Foxy + Ubuntu Focal|
-|:---:|:---:|:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=ros2-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=ros2)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=dashing-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=eloquent-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=foxy-devel)](https://travis-ci.org/ROBOTIS-GIT/turtlebot3_simulations)|
+|ros2-devel|ros2|Dashing + Ubuntu Bionic|Foxy + Ubuntu Focal|
+|:---:|:---:|:---:|:---:|
+|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=ros2-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=ros2)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=dashing-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=foxy-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|
 
 ## ROBOTIS e-Manual for TurtleBot3
 - [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
@@ -37,7 +37,6 @@
 - [open_manipulator_with_tb3](https://github.com/ROBOTIS-GIT/open_manipulator_with_tb3)
 - [open_manipulator_with_tb3_simulations](https://github.com/ROBOTIS-GIT/open_manipulator_with_tb3_simulations)
 - [dynamixel_sdk](https://github.com/ROBOTIS-GIT/DynamixelSDK)
-- [dynamixel_workbench](https://github.com/ROBOTIS-GIT/dynamixel-workbench)
 - [OpenCR-Hardware](https://github.com/ROBOTIS-GIT/OpenCR-Hardware)
 - [OpenCR](https://github.com/ROBOTIS-GIT/OpenCR)
 
@@ -45,7 +44,6 @@
 - [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
 - [ROBOTIS e-Manual for OpenManipulator](http://emanual.robotis.com/docs/en/platform/openmanipulator/)
 - [ROBOTIS e-Manual for Dynamixel SDK](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/)
-- [ROBOTIS e-Manual for Dynamixel Workbench](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/)
 - [Website for TurtleBot Series](http://www.turtlebot.com/)
 - [e-Book for TurtleBot3](https://community.robotsource.org/t/download-the-ros-robot-programming-book-for-free/51/)
 - [Videos for TurtleBot3 ](https://www.youtube.com/playlist?list=PLRG6WP3c31_XI3wlvHlx2Mp8BYqgqDURU)
