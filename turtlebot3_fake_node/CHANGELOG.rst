@@ -2,6 +2,12 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.1 (2021-01-13)
+------------------
+* Eloquent Elusor EOL
+* Ament lint applied
+* Contributors: ashe Kim, Will Son
+
 2.2.0 (2020-06-29)
 ------------------
 * none
