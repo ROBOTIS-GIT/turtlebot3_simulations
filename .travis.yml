@@ -15,21 +15,11 @@ branches:
   only:
     - ros2
     - ros2-devel
-<<<<<<< HEAD
     - galactic-devel
-=======
-    - dashing-devel
-    - foxy-devel
->>>>>>> ros2
 
 install:
   - git clone --quiet --depth 1 https://github.com/ROBOTIS-GIT/ros2ci.git .ros2ci
 
 matrix:
   include:
-<<<<<<< HEAD
     - script: .ros2ci/travis.bash rolling
-=======
-    - script: .ros2ci/travis.bash dashing
-    - script: .ros2ci/travis.bash foxy
->>>>>>> ros2
