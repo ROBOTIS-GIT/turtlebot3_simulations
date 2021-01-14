@@ -2,6 +2,13 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.1 (2021-01-07)
+------------------
+* fix init() in turtlebot3_drive.cpp
+* Apply low poly models
+* Noetic release
+* Contributors: Sean Yen, Will Son
+
 1.3.0 (2020-09-29)
 ------------------
 * fix ROS Assert issue when debugging (#124)
