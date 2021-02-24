@@ -27,4 +27,4 @@ matrix:
   include:
     - script: .ros2ci/travis.bash dashing
     - script: .ros2ci/travis.bash foxy
-    - script: .ros2ci/travis.bash rolling
+    # - script: .ros2ci/travis.bash rolling
