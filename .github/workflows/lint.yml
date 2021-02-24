@@ -13,20 +13,17 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   ament_lint:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         linter: [copyright, cppcheck, cpplint, uncrustify, pep8, pep257, xmllint]
         distribution: [dashing, foxy]
     steps:
-      - uses: actions/checkout@v2.3.4
-      - uses: ros-tooling/setup-ros@0.1.0
-      - uses: ros-tooling/action-ros-lint@0.0.6
+      - uses: actions/checkout@v2
+      - uses: ros-tooling/setup-ros@master
+      - uses: ros-tooling/action-ros-lint@master
         with:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
-          package-name: |
-            turtlebot3_simulations
-            turtlebot3_fake_node
-            turtlebot3_gazebo
+          package-name: turtlebot3_simulations turtlebot3_fake_node turtlebot3_gazebo
