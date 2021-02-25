@@ -6,27 +6,46 @@ name: Lint
 # events but only for the master branch
 on:
   push:
-    branches: [ ros2, ros2-devel, dashing-devel, eloquent-devel ]
+    branches: [ ros2, ros2-devel, dashing-devel, foxy-devel, galactic-devel ]
   pull_request:
     branches: [ ros2, ros2-devel ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  ament_lint:
+  ament_lint_dashing:
     runs-on: ubuntu-18.04
     strategy:
       fail-fast: false
       matrix:
-        linter: [copyright, cppcheck, cpplint, uncrustify, pep8, pep257, xmllint]
-        distribution: [dashing, eloquent]
+        linter: [copyright, cppcheck, cpplint, flake8, pep257, xmllint]
+        distribution: [dashing]
     steps:
-      - uses: actions/checkout@v2.3.4
-      - uses: ros-tooling/setup-ros@0.1.0
-      - uses: ros-tooling/action-ros-lint@0.0.6
+      - uses: actions/checkout@v1
+      - uses: ros-tooling/setup-ros@v0.1
+      - uses: ros-tooling/action-ros-lint@v0.1
         with:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
-          package-name: |
+          package-name: 
+            turtlebot3_simulations
+            turtlebot3_fake_node
+            turtlebot3_gazebo
+
+  ament_lint_foxy:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        linter: [copyright, cppcheck, cpplint, flake8, pep257, xmllint]
+        distribution: [foxy]
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ros-tooling/setup-ros@v0.1
+      - uses: ros-tooling/action-ros-lint@v0.1
+        with:
+          distribution: ${{ matrix.distribution }}
+          linter: ${{ matrix.linter }}
+          package-name: 
             turtlebot3_simulations
             turtlebot3_fake_node
             turtlebot3_gazebo
