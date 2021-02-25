@@ -45,9 +45,10 @@ Turtlebot3Drive::Turtlebot3Drive()
   scan_sub_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
     "scan", \
     rclcpp::SensorDataQoS(), \
-    std::bind(&Turtlebot3Drive::scan_callback, \
-    this, \
-    std::placeholders::_1));
+    std::bind(
+      &Turtlebot3Drive::scan_callback, \
+      this, \
+      std::placeholders::_1));
   odom_sub_ = this->create_subscription<nav_msgs::msg::Odometry>(
     "odom", qos, std::bind(&Turtlebot3Drive::odom_callback, this, std::placeholders::_1));
 
