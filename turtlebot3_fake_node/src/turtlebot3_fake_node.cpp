@@ -48,9 +48,10 @@ Turtlebot3Fake::Turtlebot3Fake()
   cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
     "cmd_vel", \
     qos, \
-    std::bind(&Turtlebot3Fake::command_velocity_callback, \
-    this, \
-    std::placeholders::_1));
+    std::bind(
+      &Turtlebot3Fake::command_velocity_callback, \
+      this, \
+      std::placeholders::_1));
 
   /************************************************************
   ** initialise ROS timers
@@ -78,7 +79,8 @@ void Turtlebot3Fake::init_parameters()
   this->declare_parameter("wheels.radius");
 
   // Get parameters from yaml
-  this->get_parameter_or<std::string>("joint_states_frame", \
+  this->get_parameter_or<std::string>(
+    "joint_states_frame", \
     joint_states_.header.frame_id, \
     "base_footprint");
   this->get_parameter_or<std::string>("odom_frame", odom_.header.frame_id, "odom");

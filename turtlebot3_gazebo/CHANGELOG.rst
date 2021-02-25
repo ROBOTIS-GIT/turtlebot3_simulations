@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.2 (2021-02-24)
+------------------
+* Remove shared objects built in older version
+* Contributors: Will Son
+
 2.2.1 (2021-01-13)
 ------------------
 * Eloquent Elusor EOL
