@@ -24,7 +24,7 @@
 
 namespace gazebo
 {
-class Obstacle2 : public ModelPlugin
+class Obstacle2: public ModelPlugin
 {
 public:
   void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
