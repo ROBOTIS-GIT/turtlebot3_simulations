@@ -40,7 +40,7 @@ find_package(gazebo REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
-  DEPENDS gazebo
+  DEPENDS GAZEBO
 )
 
 ################################################################################
