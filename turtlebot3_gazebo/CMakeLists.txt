@@ -27,7 +27,6 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(turtlebot3 REQUIRED)
 
 ################################################################################
 # Build
@@ -88,5 +87,4 @@ ament_export_dependencies(nav_msgs)
 ament_export_dependencies(rclcpp)
 ament_export_dependencies(sensor_msgs)
 ament_export_dependencies(tf2)
-ament_export_dependencies(turtlebot3)
 ament_package()
