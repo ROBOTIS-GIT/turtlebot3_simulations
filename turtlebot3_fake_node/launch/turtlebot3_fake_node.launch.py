@@ -62,14 +62,14 @@ def generate_launch_description():
 
         Node(
             package='turtlebot3_fake_node',
-            node_executable='turtlebot3_fake_node',
+            executable='turtlebot3_fake_node',
             parameters=[param_dir],
             output='screen'),
 
         Node(
             package='robot_state_publisher',
-            node_executable='robot_state_publisher',
-            node_name='robot_state_publisher',
+            executable='robot_state_publisher',
+            name='robot_state_publisher',
             output='screen',
             parameters=[{'use_sim_time': use_sim_time}],
             arguments=[urdf]),
