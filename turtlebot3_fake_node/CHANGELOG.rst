@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.3 (2021-04-12)
+------------------
+* Update required keyword arguments
+* Contributors: ruffsl
+
 2.2.2 (2021-02-24)
 ------------------
 * none
