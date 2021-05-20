@@ -38,15 +38,9 @@ def generate_launch_description():
     return LaunchDescription([
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
+                os.path.join(pkg_gazebo_ros, 'launch', 'gazebo.launch.py')
             ),
             launch_arguments={'world': world}.items(),
-        ),
-
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
-            ),
         ),
 
         IncludeLaunchDescription(
