@@ -1,15 +1,15 @@
-name: ros-ci
+name: galactic-devel
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 on:
   push:
-    branches: [ ros2-devel ]
+    branches: [ galactic-devel ]
   pull_request:
-    branches: [ ros2-devel ]
+    branches: [ galactic-devel ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  ros2-devel-ci:
+  galactic-devel-ci:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
