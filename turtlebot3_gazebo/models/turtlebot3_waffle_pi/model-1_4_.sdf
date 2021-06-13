@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.4">
-  <model name="turtlebot3_waffle">  
+  <model name="turtlebot3_waffle_pi">  
   <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
 
     <link name="base_footprint"/>
@@ -33,7 +33,7 @@
         <pose>-0.064 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_common/meshes/waffle_base.dae</uri>
+            <uri>model://turtlebot3_common/meshes/waffle_pi_base.dae</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
@@ -353,7 +353,7 @@
 
     <link name="camera_rgb_frame">
       <inertial>
-        <pose>0.069 -0.047 0.107 0 0 0</pose>
+        <pose>0.076 0.0 0.093 0 0 0</pose>
         <inertia>
           <ixx>0.001</ixx>
           <ixy>0.000</ixy>
@@ -365,21 +365,21 @@
         <mass>0.035</mass>
       </inertial>
 
-      <pose>0.069 -0.047 0.107 0 0 0</pose>
+      <pose>0.076 0.0 0.093 0 0 0</pose>
       <sensor name="camera" type="camera">
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>30</update_rate>
-        <camera name="intel_realsense_r200">
-          <horizontal_fov>1.02974</horizontal_fov>
+        <camera name="picam">
+          <horizontal_fov>1.085595</horizontal_fov>
           <image>
-            <width>1920</width>
-            <height>1080</height>
-            <format>R8G8B8</format>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.02</near>
-            <far>300</far>
+              <near>0.03</near>
+              <far>100</far>
           </clip>
           <noise>
             <type>gaussian</type>
@@ -458,7 +458,7 @@
     <joint name="camera_joint" type="fixed">
       <parent>base_link</parent>
       <child>camera_link</child>
-      <pose>0.064 -0.065 0.094 0 0 0</pose>
+      <pose>0.073 -0.011 0.084 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
@@ -467,7 +467,7 @@
     <joint name="camera_rgb_joint" type="fixed">
       <parent>camera_link</parent>
       <child>camera_rgb_frame</child>
-      <pose>0.005 0.018 0.013 0 0 0</pose>
+      <pose>0.003 0.011 0.009 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>

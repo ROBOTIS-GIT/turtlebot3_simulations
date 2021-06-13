@@ -23,9 +23,9 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     rviz_config_dir = os.path.join(
-        get_package_share_directory('turtlebot3_fake_node'),
+        get_package_share_directory('turtlebot3_gazebo'),
         'rviz',
-        'model.rviz'
+        'tb3_gazebo.rviz'
     )
 
     return LaunchDescription([

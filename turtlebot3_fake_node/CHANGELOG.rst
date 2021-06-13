@@ -2,6 +2,14 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.4 (2021-06-14)
+------------------
+* Release for ROS2 Galactic
+* Clean up unncessary files
+* Use turtlebot3_common mesh modeling
+* Independent turtlebot3_simulations package
+* Contributors: Will Son
+
 2.2.3 (2021-04-12)
 ------------------
 * Update required keyword arguments
