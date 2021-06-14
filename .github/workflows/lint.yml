@@ -27,4 +27,6 @@ jobs:
           distribution: ${{ matrix.distribution }}
           linter: ${{ matrix.linter }}
           package-name: 
+            turtlebot3_fake_node
+            turtlebot3_gazebo
             turtlebot3_simulations
