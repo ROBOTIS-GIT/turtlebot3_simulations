@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>turtlebot3_gazebo</name>
-  <version>2.2.3</version>
+  <version>2.2.4</version>
   <description>
     Gazebo simulation package for the TurtleBot3
   </description>
@@ -21,7 +21,6 @@
   <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
-  <exec_depend>turtlebot3_description</exec_depend>
   <export>
     <build_type>ament_cmake</build_type>
     <gazebo_ros gazebo_model_path="${prefix}/models"/>

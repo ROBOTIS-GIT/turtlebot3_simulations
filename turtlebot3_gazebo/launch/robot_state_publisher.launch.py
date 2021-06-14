@@ -33,10 +33,13 @@ def generate_launch_description():
 
     print('urdf_file_name : {}'.format(urdf_file_name))
 
-    urdf = os.path.join(
-        get_package_share_directory('turtlebot3_description'),
+    urdf_path = os.path.join(
+        get_package_share_directory('turtlebot3_gazebo'),
         'urdf',
         urdf_file_name)
+
+    with open(urdf_path, 'r') as infp:
+        robot_desc = infp.read()
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -49,6 +52,9 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            parameters=[{'use_sim_time': use_sim_time}],
-            arguments=[urdf]),
+            parameters=[{
+                'use_sim_time': use_sim_time,
+                'robot_description': robot_desc
+            }],
+        ),
     ])
