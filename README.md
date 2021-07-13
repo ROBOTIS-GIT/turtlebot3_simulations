@@ -1,15 +1,13 @@
 # TurtleBot3
 <img src="https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
 
-## ROS 1 Packages for TurtleBot3 Simulations
-|develop|master|Kinetic + Ubuntu Xenial|Melodic + Ubuntu Bionic|Noetic + Ubuntu Focal|
-|:---:|:---:|:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=develop)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=master)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=kinetic-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=melodic-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=noetic-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|
+[![kinetic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/kinetic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/kinetic-devel)
+[![melodic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/melodic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/melodic-devel)
+[![noetic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/noetic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/noetic-devel)
 
-## ROS 2 Packages for TurtleBot3 Simulations
-|ros2-devel|ros2|Dashing + Ubuntu Bionic|Foxy + Ubuntu Focal|
-|:---:|:---:|:---:|:---:|
-|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=ros2-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=ros2)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=dashing-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|[![Build Status](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations.svg?branch=foxy-devel)](https://travis-ci.com/ROBOTIS-GIT/turtlebot3_simulations)|
+[![dashing-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/dashing-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/dashing-devel)
+[![foxy-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/foxy-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/foxy-devel)
+[![galactic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/workflows/galactic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/galactic-devel)
 
 ## ROBOTIS e-Manual for TurtleBot3
 - [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
