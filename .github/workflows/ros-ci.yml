@@ -2,7 +2,8 @@ name: melodic-devel
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 on:
-  push:    branches: [ master, develop, melodic-devel ]
+  push:
+    branches: [ master, develop, melodic-devel ]
   pull_request:
     branches: [ master, develop, melodic-devel ]
 
