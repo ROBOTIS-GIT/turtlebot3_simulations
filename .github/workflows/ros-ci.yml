@@ -9,7 +9,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  galactic-devel-ci:
+  dashing-devel-ci:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -54,4 +54,4 @@ jobs:
         with:
           package-name: turtlebot3_simulations
           target-ros2-distro: ${{ matrix.ros_distribution }}
-          vcs-repo-file-url: "https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3_simulations/galactic-devel/turtlebot3_simulations_ci.repos"
+          vcs-repo-file-url: "https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3_simulations/dashing-devel/turtlebot3_simulations_ci.repos"
