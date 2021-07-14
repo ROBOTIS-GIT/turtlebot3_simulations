@@ -3,6 +3,7 @@
 ################################################################################
 cmake_minimum_required(VERSION 3.0.2)
 project(turtlebot3_fake)
+cmake_policy(SET CMP0054 NEW)
 
 ################################################################################
 # Find catkin packages and libraries for catkin and system dependencies
