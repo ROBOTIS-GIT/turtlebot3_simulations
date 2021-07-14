@@ -2,6 +2,12 @@
 Changelog for package turtlebot3_gazebo_ros
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.3.2 (2021-07-13)
+------------------
+* update catkin minimum requirement
+* fix bugs
+* Contributors: Kerui, Elvis Dowson, Will Son
+
 1.3.1 (2021-01-07)
 ------------------
 * fix init() in turtlebot3_drive.cpp
