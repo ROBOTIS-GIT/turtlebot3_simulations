@@ -3,9 +3,9 @@ name: ros2-devel
 # Controls when the action will run. Triggers the workflow on push or pull request
 on:
   push:
-    branches: [ ros2, ros2-devel, foxy-devel, galactic-devel ]
+    branches: [ ros2, ros2-devel, galactic-devel ]
   pull_request:
-    branches: [ ros2, ros2-devel, foxy-devel, galactic-devel ]
+    branches: [ ros2, ros2-devel, galactic-devel ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -17,7 +17,7 @@ jobs:
         ros_distribution:
           # - dashing
           # - foxy
-          # - galactic
+          - galactic
           - rolling
         include:
             # Dashing Diademata (May 2019 - May 2021)
@@ -29,9 +29,9 @@ jobs:
           #   ros_distribution: foxy
           #   ros_version: 2
             # Galactic Geochelone (May 2021)
-          # - docker_image: ubuntu:focal
-          #   ros_distribution: galactic
-          #   ros_version: 2
+          - docker_image: ubuntu:focal
+            ros_distribution: galactic
+            ros_version: 2
             # Rolling
           - docker_image: ubuntu:focal
             ros_distribution: rolling

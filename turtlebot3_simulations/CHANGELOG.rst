@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.5 (2021-08-25)
+------------------
+* Release for ROS2 Rolling
+* Contributors: Will Son
+
 2.2.4 (2021-06-14)
 ------------------
 * Release for ROS2 Galactic
