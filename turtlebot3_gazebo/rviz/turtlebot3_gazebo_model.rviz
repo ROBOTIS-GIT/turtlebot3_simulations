@@ -172,6 +172,18 @@ Visualization Manager:
         TF: true
         Value: true
       Zoom Factor: 1
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /camera/image
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
     - Angle Tolerance: 0.10000000149011612
       Class: rviz/Odometry
       Covariance:
