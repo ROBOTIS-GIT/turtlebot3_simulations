@@ -22,15 +22,16 @@
   <include file="$(find turtlebot3_gazebo)/launch/multi_turtlebot3_slam.launch">
     <arg name="ns" value="$(arg ns)"/>
   </include>
-<!--   
-  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" ns="$(arg ns)"/>
+  
+  <!-- <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" ns="$(arg ns)"/> -->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="$(arg ns)_map_tf_broadcaster" args="0 0 0 0 0 0  /$(arg ns)/odom /map 100"/> -->
 
-  <include file="$(find turtlebot3_gazebo)/launch/multi_amcl.launch">
+  <!-- <include file="$(find turtlebot3_gazebo)/launch/multi_amcl.launch">
     <arg name="ns" value="$(arg ns)"/>
-  </include>  
+  </include>   -->
   
   <include file="$(find turtlebot3_gazebo)/launch/multi_move_base.launch">
     <arg name="ns" value="$(arg ns)"/>
-  </include> -->
+  </include>
 
 </launch>

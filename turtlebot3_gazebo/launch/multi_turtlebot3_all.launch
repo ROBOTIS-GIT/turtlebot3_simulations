@@ -16,7 +16,7 @@
     <arg name="tb3_yaw" value="1.57"/>
   </include>  
   
-  <include file="$(find turtlebot3_gazebo)/launch/multi_turtlebot3_single.launch">
+  <!-- <include file="$(find turtlebot3_gazebo)/launch/multi_turtlebot3_single.launch">
     <arg name="ns" value="tb3_1"/>
     <arg name="tb3_x_pos" value="4.0"/>
     <arg name="tb3_y_pos" value="-6.0"/>
@@ -38,7 +38,7 @@
     <arg name="tb3_y_pos" value="-6.0"/>
     <arg name="tb3_z_pos" value="0.0"/>
     <arg name="tb3_yaw" value="-1.57"/>
-  </include>
+  </include> -->
   
   <!-- Launch multi map merge -->
   <!-- <include file="$(find turtlebot3_gazebo)/launch/multi_map_merge.launch"/> -->

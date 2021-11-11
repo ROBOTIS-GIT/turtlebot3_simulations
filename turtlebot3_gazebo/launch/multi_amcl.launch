@@ -45,7 +45,7 @@
       <param name="base_frame_id"             value="base_footprint"/> -->
       <param name="odom_frame_id"             value="/$(arg ns)/odom"/>
       <param name="base_frame_id"             value="/$(arg ns)/base_footprint"/>
-      <param name="global_frame_id"           value="/$(arg ns)/map"/>
+      <param name="global_frame_id"           value="map"/>
 
     </node>
   </group>
