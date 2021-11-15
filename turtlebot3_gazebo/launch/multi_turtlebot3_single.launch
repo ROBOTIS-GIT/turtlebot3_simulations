@@ -10,10 +10,10 @@
 
   <group ns = "$(arg ns)">
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+    <param name="tf_prefix" value="$(arg ns)" />
 
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
       <param name="publish_frequency" type="double" value="50.0" />
-      <param name="tf_prefix" value="$(arg ns)" />
     </node>
     
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg ns) -x $(arg tb3_x_pos) -y $(arg tb3_y_pos) -z $(arg tb3_z_pos) -Y $(arg tb3_yaw) -param robot_description" />
