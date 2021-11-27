@@ -15,9 +15,10 @@ def agents_list(num_of_agents):
 
     for i in range(num_of_agents):
         agent_name = "tb3_"+str(i)
-        x = np.random.uniform(0,100)
-        y = np.random.uniform(0,100)                         
-        agents.append({'name': agent_name, 'x_pose': x, 'y_pose': y, 'z_pose': 0.01})
+        x = np.random.uniform(0,50)
+        y = np.random.uniform(0,50)                         
+        w = np.random.uniform(0,360)
+        agents.append({'name': agent_name, 'x_pose': x, 'y_pose': y, 'z_pose': 0.01,'w_pose':w})
 
     return agents 
 
@@ -39,7 +40,7 @@ def generate_launch_description():
         'models',
         sdf_file)
     # Names and poses of the robots
-    robots = agents_list(10)
+    robots = agents_list(50)
 
     # We create the list of spawn robots commands
     spawn_robots_cmds = []
@@ -55,6 +56,7 @@ def generate_launch_description():
                                   'x': TextSubstitution(text=str(robot['x_pose'])),
                                   'y': TextSubstitution(text=str(robot['y_pose'])),
                                   'z': TextSubstitution(text=str(robot['z_pose'])),
+                                  'w': TextSubstitution(text=str(robot['w_pose'])),
                                   'robot_name': robot['name'],
                                   'robot_namespace': robot['name']
                                   }.items()))

@@ -5,11 +5,19 @@
 import argparse
 import os
 import xml.etree.ElementTree as ET
-
+import numpy as np
 from ament_index_python.packages import get_package_share_directory
 from gazebo_msgs.srv import SpawnEntity
 import rclpy
 
+def euler_to_quaternion(yaw, pitch, roll):
+
+        qx = np.sin(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) - np.cos(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
+        qy = np.cos(roll/2) * np.sin(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.cos(pitch/2) * np.sin(yaw/2)
+        qz = np.cos(roll/2) * np.cos(pitch/2) * np.sin(yaw/2) - np.sin(roll/2) * np.sin(pitch/2) * np.cos(yaw/2)
+        qw = np.cos(roll/2) * np.cos(pitch/2) * np.cos(yaw/2) + np.sin(roll/2) * np.sin(pitch/2) * np.sin(yaw/2)
+
+        return [qx, qy, qz, qw]
 
 def main():
     # Get input arguments from user
@@ -28,6 +36,8 @@ def main():
                         help='the y component of the initial position [meters]')
     parser.add_argument('-z', type=float, default=0,
                         help='the z component of the initial position [meters]')
+    parser.add_argument('-w', type=float, default=0,
+                        help='the w component of the initial orientation [degree]')
 
     args, unknown = parser.parse_known_args()
 
@@ -83,18 +93,23 @@ def main():
     request.initial_pose.position.x = float(args.x)
     request.initial_pose.position.y = float(args.y)
     request.initial_pose.position.z = float(args.z)
+    quat = euler_to_quaternion(float(args.w),0,0)
+    request.initial_pose.orientation.x = quat[0] 
+    request.initial_pose.orientation.y = quat[1] 
+    request.initial_pose.orientation.z = quat[2] 
+    request.initial_pose.orientation.w = quat[3] 
 
 
     if args.namespace is True:
-        node.get_logger().info('spawning `{}` on namespace `{}` at {}, {}, {}'.format(
-            args.robot_name, args.robot_namespace, args.x, args.y, args.z))
+        node.get_logger().info('spawning `{}` on namespace `{}` at {}, {}, {}, {}'.format(
+            args.robot_name, args.robot_namespace, args.x, args.y, args.z,args.w))
 
         request.robot_namespace = args.robot_namespace
         print(args.robot_namespace)
 
     else:
-        node.get_logger().info('spawning `{}` at {}, {}, {}'.format(
-            args.robot_name, args.x, args.y, args.z))
+        node.get_logger().info('spawning `{}` at {}, {}, {}, {}'.format(
+            args.robot_name, args.x, args.y, args.z, args.w))
 
     node.get_logger().info('Spawning Robot using service: `/spawn_entity`')
     future = client.call_async(request)

@@ -34,18 +34,18 @@ class params:
 		self.num_L = 1
 		self.L_type = 'L'
 		self.a_type = 'SA'
-		self.num_SA = 10
+		self.num_SA = 50
 		self.init_patch_radius = 1.5*(self.num_SA+self.num_L)
 		self.init_patch_center = [50,50] #np.random.uniform(self.boundary_min+self.init_patch_radius,
                                           #          self.boundary_max-self.init_patch_radius,2)
-		self.Rr = 1
+		self.Rr = 2
 		self.Ro = 11
 		self.Ra = 26
         # self.Rr = 1
-        # self.Ro = 3
-        # self.Ra = 15
+        # self.Ro = 11
+        # self.Ra = 26
 		self.max_omega = 70*np.pi/180
-		self.visibility_range = 180*np.pi/180
+		self.visibility_range = 120*np.pi/180
         # self.max_omega = 100*np.pi/180
         # self.visibility_range = 150*np.pi/180
 		self.agent_body_size = 0.1
@@ -62,7 +62,7 @@ class params:
                                             self.boundary_max-self.goal_threshold_radius,2)         # Goal can be made dynamic for goal chasing problem
 		self.agent_speed = 5
 		self.leader_speed = 3
-		self.rotation_act = 10*np.pi/180 # its Omega
+		self.rotation_act = 70*np.pi/180 # its Omega
     
 
 class Swarm:
@@ -250,7 +250,7 @@ class Publisher(Node):
 	def __init__(self):
 		super().__init__('publisher_subscriber')
 		self.publisher_ = None
-		time_period = 0.5
+		time_period = 0.1
 		self.timer = self.create_timer(time_period,self.loop_callback)
 	
 	def callback(self,msg,thisAgent):

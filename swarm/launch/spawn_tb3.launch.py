@@ -31,7 +31,8 @@ def generate_launch_description():
                 '--robot_namespace', launch.substitutions.LaunchConfiguration('robot_namespace'),
                 '-x', launch.substitutions.LaunchConfiguration('x'),
                 '-y', launch.substitutions.LaunchConfiguration('y'),
-                '-z', launch.substitutions.LaunchConfiguration('z')]),
+                '-z', launch.substitutions.LaunchConfiguration('z'),
+                '-w', launch.substitutions.LaunchConfiguration('w')]),
          
     ])
 
