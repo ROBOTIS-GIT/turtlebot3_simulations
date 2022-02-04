@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="turtlebot_ignition" params="">
+    <gazebo reference="wheel_left_link">
+      <visual>
+        <material>
+          <ambient>0.3 0.3 0.3 1.0</ambient>
+          <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          <specular>0.3 0.3 0.3 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+
+    <gazebo reference="wheel_right_link">
+      <visual>
+        <material>
+          <ambient>0.3 0.3 0.3 1.0</ambient>
+          <diffuse>0.3 0.3 0.3 1.0</diffuse>
+          <specular>0.3 0.3 0.3 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+
+    <gazebo reference="base_link">
+      <visual>
+        <material>
+          <ambient>0.4 0.4 0.4 1.0</ambient>
+          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+          <specular>0.4 0.4 0.4 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+
+    <gazebo reference="base_scan">
+      <visual>
+        <material>
+          <ambient>0 0 0 1.0</ambient>
+          <diffuse>0 0 0 1.0</diffuse>
+          <specular>0 0 0 1.0</specular>
+        </material>
+      </visual>
+    </gazebo>
+    <gazebo reference="base_scan">
+      <sensor name='hls_lfcd_lds' type='gpu_lidar'>
+        <topic>scan</topic>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <pose>-0.032 0 0.171 0 0 0</pose>
+        <update_rate>5</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0.000000</min_angle>
+              <max_angle>6.280000</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.120000</min>
+            <max>3.5</max>
+            <resolution>0.015000</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+      </sensor>
+    </gazebo>
+
+    <gazebo reference="imu_link">
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>10.0</update_rate>
+        <visualize>true</visualize>
+        <topic>imu</topic>
+      </sensor>
+    </gazebo>
+
+    <gazebo>
+      <!-- Joint state publisher -->
+      <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+        <parameters>$(find turtlebot3_ignition)/config/turtlebot3_burger.yaml</parameters>
+      </plugin>
+    </gazebo>
+
+    <ros2_control name="IgnitionSystem" type="system">
+      <hardware>
+          <plugin>ign_ros2_control/IgnitionSystem</plugin>
+      </hardware>
+
+      <xacro:macro name="configure_joint" params="joint_name">
+        <joint name="${joint_name}">
+          <command_interface name="velocity">
+            <param name="min">-1</param>
+            <param name="max">1</param>
+          </command_interface>
+          <state_interface name="position"/>
+          <state_interface name="velocity"/>
+        </joint>
+      </xacro:macro>
+
+      <sensor name="imu_sensor">
+        <state_interface name="orientation.x"/>
+        <state_interface name="orientation.y"/>
+        <state_interface name="orientation.z"/>
+        <state_interface name="orientation.w"/>
+        <state_interface name="angular_velocity.x"/>
+        <state_interface name="angular_velocity.y"/>
+        <state_interface name="angular_velocity.z"/>
+        <state_interface name="linear_acceleration.x"/>
+        <state_interface name="linear_acceleration.y"/>
+        <state_interface name="linear_acceleration.z"/>
+      </sensor>
+
+      <xacro:configure_joint joint_name="wheel_left_joint"/>
+      <xacro:configure_joint joint_name="wheel_right_joint"/>
+    </ros2_control>
+  </xacro:macro>
+</robot>

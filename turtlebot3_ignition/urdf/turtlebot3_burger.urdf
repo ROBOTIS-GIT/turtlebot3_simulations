@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
+
+  <xacro:include filename="$(find turtlebot3_description)/urdf/turtlebot3_burger.urdf"/>
+
+  <xacro:include filename="$(find turtlebot3_ignition)/urdf/turtlebot3_ignition.urdf"/>
+
+  <xacro:turtlebot_ignition/>
+</robot>
