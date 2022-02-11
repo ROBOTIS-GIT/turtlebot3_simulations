@@ -17,7 +17,6 @@ class CMDSubscriber : public rclcpp::Node
         std::bind(&CMDSubscriber::topic_callback, this, _1));
       publisher_ = this->create_publisher<geometry_msgs::msg::Twist>(
         "/diff_drive_base_controller/cmd_vel_unstamped", 10);
-
     }
 
   private:
@@ -33,8 +32,6 @@ class CMDSubscriber : public rclcpp::Node
       republished.angular.z = msg->angular.z;
 
       publisher_->publish(republished);
-
-      // RCLCPP_INFO(this->get_logger(), "I heard: '%s'", msg->data.c_str());
     }
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr subscription_;
