@@ -19,6 +19,8 @@ imu_sensor_broadcaster:
 
 diff_drive_base_controller:
   ros__parameters:
+    use_sim_time: True
+
     left_wheel_names: ["wheel_left_joint"]
     right_wheel_names: ["wheel_right_joint"]
 
@@ -39,7 +41,7 @@ diff_drive_base_controller:
     open_loop: false
     enable_odom_tf: true
 
-    cmd_vel_timeout: 0.1
+    cmd_vel_timeout: 100.0
     #publish_limited_velocity: true
     use_stamped_vel: false
     #velocity_rolling_window_size: 10

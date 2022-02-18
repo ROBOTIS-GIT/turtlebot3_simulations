@@ -28,11 +28,11 @@
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>ros2controlcli</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
   <exec_depend>ros_ign_bridge</exec_depend>
   <exec_depend>ros_ign_gazebo</exec_depend>
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>turtlebot3_description</exec_depend>
-  <exec_depend>turtlebot3_gazebo</exec_depend>
   <exec_depend>rviz2</exec_depend>
   <exec_depend>xacro</exec_depend>
 

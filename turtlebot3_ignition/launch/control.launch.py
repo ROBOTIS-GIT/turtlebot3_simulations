@@ -33,14 +33,14 @@ def generate_launch_description():
 
     load_joint_state_controller = Node(
         package='controller_manager',
-        executable='spawner.py',
+        executable='spawner',
         arguments=['joint_state_broadcaster', '--controller-manager', '/controller_manager'],
         parameters=[{'use_sim_time': use_sim_time}]
     )
 
     load_diff_drive_base_controller = Node(
         package='controller_manager',
-        executable='spawner.py',
+        executable='spawner',
         arguments=['diff_drive_base_controller', '--controller-manager', '/controller_manager'],
         parameters=[control_params_file, {'use_sim_time': use_sim_time}],
         output={
