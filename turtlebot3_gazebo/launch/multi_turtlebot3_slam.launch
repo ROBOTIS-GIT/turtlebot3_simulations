@@ -3,9 +3,9 @@
 
   <!-- Gmapping -->
   <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen" ns="$(arg ns)">
-    <param name="base_frame" value="$(arg ns)/base_footprint"/>
-    <param name="odom_frame" value="$(arg ns)/odom"/>
-    <param name="map_frame"  value="$(arg ns)/map"/>
+    <param name="base_frame" value="/$(arg ns)/base_footprint"/>
+    <param name="odom_frame" value="/$(arg ns)/odom"/>
+    <param name="map_frame"  value="/$(arg ns)/map"/>
     <param name="map_update_interval" value="2.0"/>
     <param name="maxUrange" value="4.0"/>
     <param name="minimumScore" value="100"/>

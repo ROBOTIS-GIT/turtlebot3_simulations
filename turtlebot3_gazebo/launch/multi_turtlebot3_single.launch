@@ -1,0 +1,41 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="ns" default="tb3_0"/>
+  
+  <arg name="tb3_x_pos" default="-7.0"/>
+  <arg name="tb3_y_pos" default="-1.0"/>
+  <arg name="tb3_z_pos" default=" 0.0"/>
+  <arg name="tb3_yaw"   default=" 1.57"/>
+  <arg name="map_file" default="$(find turtlebot3_gazebo)/maps/map.yaml"/>
+
+  <group ns = "$(arg ns)">
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+    <param name="tf_prefix" value="$(arg ns)" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+      <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+    
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model $(arg ns) -x $(arg tb3_x_pos) -y $(arg tb3_y_pos) -z $(arg tb3_z_pos) -Y $(arg tb3_yaw) -param robot_description" />
+  </group>
+  
+  <include file="$(find turtlebot3_gazebo)/launch/multi_turtlebot3_slam.launch">
+    <arg name="ns" value="$(arg ns)"/>
+  </include>
+  
+  <!-- <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" ns="$(arg ns)"/> -->
+  <!-- <node pkg="tf" type="static_transform_publisher" name="$(arg ns)_map_tf_broadcaster" args="0 0 0 0 0 0  /$(arg ns)/odom /map 100"/> -->
+
+  <!-- <include file="$(find turtlebot3_gazebo)/launch/multi_amcl.launch">
+    <arg name="ns" value="$(arg ns)"/>
+  </include>   -->
+  
+  <include file="$(find turtlebot3_gazebo)/launch/multi_move_base.launch">
+    <arg name="ns" value="$(arg ns)"/>
+  </include>
+
+  <include file="$(find explore_lite)/launch/explore.launch">
+    <arg name="ns" value="$(arg ns)"/>
+  </include>
+
+</launch>
