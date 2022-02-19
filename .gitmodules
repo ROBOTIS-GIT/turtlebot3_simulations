@@ -1,3 +1,4 @@
 [submodule "m-explore"]
 	path = m-explore
-	url = git@github.com:AshayAswale/m-explore.git
+	url = https://github.com/NESTLab/m-explore.git
+	branch = noetic-devel
