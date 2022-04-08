@@ -10,6 +10,7 @@
   <gazebo reference="camera_rgb_frame">
     <sensor name="camera" type="camera">
       <always_on>true</always_on>
+      <ignition_frame_id>base_camera</ignition_frame_id>
       <visualize>true</visualize>
       <update_rate>30</update_rate>
       <camera name="intel_realsense_r200">
@@ -33,5 +34,5 @@
         </noise>
       </camera>
     </sensor>
-  </gazebo>  
+  </gazebo>
 </robot>

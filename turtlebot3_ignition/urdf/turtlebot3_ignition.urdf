@@ -44,6 +44,7 @@
     <gazebo reference="base_scan">
       <sensor name='hls_lfcd_lds' type='gpu_lidar'>
         <topic>scan</topic>
+        <ignition_frame_id>base_scan</ignition_frame_id>
         <always_on>true</always_on>
         <visualize>true</visualize>
         <pose>-0.032 0 0.171 0 0 0</pose>
