@@ -81,11 +81,6 @@
 
     <include>
       <pose>0.1 -1.78 0.01 0.0 0.0 0.0</pose>
-      <uri>model://turtlebot3_burger</uri>
-    </include>
-     
-    <include>
-      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
       <uri>model://turtlebot3_waffle_pi</uri>
     </include>
 
