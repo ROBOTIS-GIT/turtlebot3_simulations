@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
-<sdf version="1.6">
-  <world name="default">
-
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
+<sdf version='1.6'>
+  <world name='default'>
 
     <include>
       <uri>model://sun</uri>
@@ -43,15 +39,48 @@
       </ode>
     </physics>
 
-    <model name="turtlebot3_autorace">
-      <static>1</static>
-      <include>
-        <uri>model://turtlebot3_autorace</uri>
-      </include>
-    </model>
-     
     <include>
-      <pose>-2.0 -0.5 0.01 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_autorace/course</uri>
+      <pose> 0 0 0 0 0 -1.54</pose>
+    </include>
+
+    <include>
+      <uri>model://turtlebot3_autorace/ground</uri>
+      <pose> 0 0 -0.1 0 0 0</pose>
+    </include>
+    
+    <include>
+      <uri>model://turtlebot3_autorace/lights</uri>
+      <pose> 0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_parking</uri>
+      <pose> 1.84 1.27 0.13 0 0 -0.356</pose>
+    </include>
+    
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_tunnel</uri>
+      <pose> -1.544 -0.08 0.125 0 0 0</pose>
+    </include>
+   
+    <include>
+      <uri>model://turtlebot3_autorace/traffic_stop</uri>
+       <pose> -2.05 0.65 0.125 0 -0 0</pose>
+    </include>    
+
+    <include>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_autorace/tunnel_wall</uri>
+    </include>
+
+    <include>
+      <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+      <uri>model://turtlebot3_autorace/tunnel_obstacles</uri>
+    </include>
+
+    <include>
+      <pose>0.1 -1.78 0.01 0.0 0.0 0.0</pose>
       <uri>model://turtlebot3_waffle_pi</uri>
     </include>
 
