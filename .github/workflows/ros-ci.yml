@@ -30,7 +30,7 @@ jobs:
             ros_version: 2
             # Humble Hawksbill (May 2027)
           - docker_image: ubuntu:jammy
-            ros_distribution: galactic
+            ros_distribution: humble
             ros_version: 2
             # Rolling
           - docker_image: ubuntu:jammy
