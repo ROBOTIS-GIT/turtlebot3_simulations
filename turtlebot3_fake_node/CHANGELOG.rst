@@ -2,6 +2,10 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.6 (2202-05-26)
+------------------
+* ROS2 Humble Hawksbill supported
+
 2.2.5 (2021-08-25)
 ------------------
 * Release for ROS2 Rolling
