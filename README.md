@@ -29,3 +29,19 @@ Add your custom nodes in a dedicated package, add the relevant launch file.
 
 # Extras :eyes:
 Images / Videos from Foxglove
+
+# Citros integration
+1. Build Docker image:
+```bash
+docker build -t turtlebot3 .
+```
+2. Login to Citros
+ ```bash
+citros login
+citros docker-login
+```
+3. Tag your project and push it into Citros cloud
+ ```bash
+docker tag turtlebot3 us-central1-docker.pkg.dev/citros/lulav/turtlebot3
+docker push us-central1-docker.pkg.dev/citros/lulav/turtlebot3
+```

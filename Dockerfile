@@ -62,7 +62,7 @@ COPY ros2_entrypoint.sh ros2_entrypoint.sh
 RUN . /opt/ros/${ROS_DISTRO}/setup.sh
 RUN colcon build --symlink-install 
 
-ENV TURTLEBOT3_MODEL=waffle
+ENV TURTLEBOT3_MODEL=burger
  
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc && \
     echo "source /workspaces/turtlebot3/install/local_setup.bash" >> ~/.bashrc  
