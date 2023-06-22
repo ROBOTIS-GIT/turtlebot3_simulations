@@ -34,6 +34,8 @@ Images / Videos from Foxglove
 1. Build Docker image:
 ```bash
 docker build -t turtlebot3 .
+# OR *** when building from MAC M1 chip add FROM --platform=linux/amd64 ***
+docker buildx build --platform linux/amd64 -t turtlebot3 .   
 ```
 2. Login to Citros
  ```bash

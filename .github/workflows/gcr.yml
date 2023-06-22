@@ -1,0 +1,53 @@
+name: Push Docker to GCR GitHub Action
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build-and-push-to-gcr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build Package
+      run: |        
+        docker build -t turtlebot3 . 
+
+    - name: Authenticate to Google Cloud
+      id: auth
+      uses: google-github-actions/auth@v1
+      with:        
+        workload_identity_provider: projects/782463946337/locations/global/workloadIdentityPools/github-actions/providers/github
+        service_account: github-actions@citros.iam.gserviceaccount.com
+        # export_environment_variables: true          
+
+    - name: Upload Docker to Artifact Registry
+      run: |
+        gcloud config set project citros
+        gcloud config set artifacts/repository citros-py
+        gcloud config set artifacts/location us-central1
+        gcloud config set account github-actions@citros.iam.gserviceaccount.com
+
+        gcloud auth configure-docker us-central1-docker.pkg.dev        
+
+        docker tag turtlebot3 us-central1-docker.pkg.dev/citros/lulav/turtlebot3
+        docker push us-central1-docker.pkg.dev/citros/lulav/turtlebot3
+
+
+
+
+    # This example uses the docker login action      
+    # - uses: 'docker/login-action@v1'
+    #   with:
+    #     registry: 'gcr.io' # or REGION-docker.pkg.dev
+    #     username: 'oauth2accesstoken'
+    #     password: '${{ steps.auth.outputs.access_token }}'
+    # This example runs "docker login" directly to Artifact Registry.
+    # - run: |-
+    #     echo '${{ steps.auth.outputs.access_token }}' | docker login -u oauth2accesstoken --password-stdin https://REGION-docker.pkg.dev
+
+        
