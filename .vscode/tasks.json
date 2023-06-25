@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "echo -e 'Done building, simulation is ready!'",
+            "problemMatcher": [],
+            "dependsOn": ["ros2-build"],
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            }
+        },
+        {
+            "label": "ros2-build",
+            "type": "shell",
+            "command": "cd turtlebot3_ws && colcon build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            }
+        },
+        {
+            "label": "launch-empty",
+            "type": "shell",
+            "command": "source turtlebot3_ws/install/local_setup.bash && export TURTLEBOT3_MODEL=burger && ros2 launch turtlebot3_gazebo turtlebot3_sim_cont.launch.py",
+            "problemMatcher": [],
+            "dependsOn": ["build"]
+        },
+    ]
+}
