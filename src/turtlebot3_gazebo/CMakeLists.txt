@@ -69,7 +69,7 @@ install(TARGETS ${EXEC_NAME}
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch models param rviz worlds
+install(DIRECTORY launch models config rviz worlds
   DESTINATION share/${PROJECT_NAME}/
 )
 

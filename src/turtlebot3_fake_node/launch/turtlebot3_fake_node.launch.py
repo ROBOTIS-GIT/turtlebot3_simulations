@@ -33,7 +33,7 @@ def generate_launch_description():
         'param_dir',
         default=os.path.join(
             get_package_share_directory('turtlebot3_fake_node'),
-            'param',
+            'config',
             TURTLEBOT3_MODEL + '.yaml'))
 
     rviz_dir = LaunchConfiguration(
