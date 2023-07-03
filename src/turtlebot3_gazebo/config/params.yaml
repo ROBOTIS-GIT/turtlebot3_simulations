@@ -3,6 +3,8 @@ turtlebot3_gazebo:
     wheels:
       separation: 0.160
       radius: 0.033
+    check_forward_dist_param: 0.7
+    check_side_dist_param: 0.6
 
     joint_states_frame: "base_footprint"
     odom_frame: "odom"
