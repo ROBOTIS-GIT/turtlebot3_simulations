@@ -107,12 +107,26 @@
           <iyz>0</iyz>
           <izz>0.001</izz>
         </inertia>
-        <pose frame=''>00 0 0.2 -0 -0 0</pose>
+        <pose frame=''>0 0 0.2 -0 -0 0</pose>
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>false</kinematic>
-      <sensor name='camera1' type='camera'>
-        <camera name="head">
+      <sensor type="multicamera" name="stereo">
+        <camera name="left">
+          <pose>0 -0.05 0.2 0 0 0</pose>
+          <horizontal_fov>1.3962634</horizontal_fov>
+          <image>
+            <width>800</width>
+            <height>800</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+            </clip>
+        </camera>
+        <camera name="right">
+        <pose>0 0.05 0.2 0 0 0</pose>
           <horizontal_fov>1.3962634</horizontal_fov>
           <image>
             <width>800</width>
@@ -127,10 +141,10 @@
         <always_on>true</always_on>
         <update_rate>30</update_rate>
         <visualize>true</visualize>
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <plugin name="stereo_camera_controller" filename="libgazebo_ros_camera.so">
           <alwaysOn>true</alwaysOn>
           <updateRate>1.0</updateRate>
-          <cameraName>iris/camera</cameraName>
+          <cameraName>multisense_sl/camera</cameraName>
           <imageTopicName>image_raw</imageTopicName>
           <cameraInfoTopicName>camera_info</cameraInfoTopicName>
           <frameName>camera_link</frameName>
@@ -143,6 +157,15 @@
         </plugin>
       </sensor>
     </link>
+
+    <joint name="cam_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>cam_link</child>
+      <pose>-0 0 0.2 -0 -0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
 
 
     <link name="base_scan">
