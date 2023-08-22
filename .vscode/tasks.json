@@ -18,7 +18,7 @@
         {
             "label": "ros2-build",
             "type": "shell",
-            "command": "cd turtlebot3_ws && colcon build",
+            "command": "colcon build",
             "problemMatcher": [],
             "presentation": {
                 "reveal": "silent",
@@ -29,7 +29,7 @@
         {
             "label": "launch-empty",
             "type": "shell",
-            "command": "source turtlebot3_ws/install/local_setup.bash && export TURTLEBOT3_MODEL=burger && ros2 launch turtlebot3_gazebo turtlebot3_sim_cont.launch.py",
+            "command": "source install/local_setup.bash && export TURTLEBOT3_MODEL=burger && ros2 launch turtlebot3_gazebo turtlebot3_sim_cont.launch.py",
             "problemMatcher": [],
             "dependsOn": ["build"]
         },
