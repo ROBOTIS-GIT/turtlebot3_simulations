@@ -48,11 +48,11 @@ def generate_launch_description():
             launch_arguments={'world': world}.items(),
         ),
 
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(
-                os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
-            ),
-        ),
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(
+        #         os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
+        #     ),
+        # ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([launch_file_dir, '/robot_state_publisher.launch.py']),
