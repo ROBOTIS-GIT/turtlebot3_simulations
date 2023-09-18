@@ -72,19 +72,9 @@ You also can find more information about ROS message types on [ROS official API 
 
 OR
 
-:::tip
-
 You can use prepared layout: Go to the ```Layout``` tab on the top panel, then click on import_layout button and select the file from foxglove_layouts folder.
 
-:::
-
 ![gif](docs/img/foxglove1.gif "FoxGlove example")
-
-:::tip
-
-The best way to process simulation results is CITROS notebook 🍋 :)
-
-:::
 
 
 ### Run 🚀
@@ -97,11 +87,7 @@ ros2 launch turtlebot3_gazebo turtlebot3_sim_cont.launch.py
 
 OR
 
-:::tip
-
 You can use Visual Code Tasks: simply press ```Alt+T``` and select ```Launch_empty``` task to build, source and launch the project automaticly.
-
-:::
 
 ![png](docs/img/foxglove0.png "FoxGlove example")
 
