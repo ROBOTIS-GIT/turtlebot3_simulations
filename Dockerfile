@@ -51,7 +51,7 @@ RUN apt-get update \
    && rm -rf /var/lib/apt/lists/*
 
 RUN  pip install mcap-ros2-support
-RUN RUN pip install --no-cache-dir --upgrade pip \
+RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir  citros
 
 RUN echo 'export ROS_DOMAIN_ID=0' >> ~/.bashrc
