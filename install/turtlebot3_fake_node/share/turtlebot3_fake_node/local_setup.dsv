@@ -1,0 +1,2 @@
+source;share/turtlebot3_fake_node/environment/ament_prefix_path.sh
+source;share/turtlebot3_fake_node/environment/path.sh

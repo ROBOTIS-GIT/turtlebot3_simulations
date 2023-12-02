@@ -1,0 +1,72 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+-- Found rclcpp: 16.0.7 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.5 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found tf2: 0.25.5 (/opt/ros/humble/share/tf2/cmake)
+-- Found tf2_msgs: 0.25.5 (/opt/ros/humble/share/tf2_msgs/cmake)
+-- Found turtlebot3_msgs: 2.2.3 (/opt/ros/humble/share/turtlebot3_msgs/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/elee02/ros2_ws/src/build/turtlebot3_fake_node
+[ 50%] [32mBuilding CXX object CMakeFiles/turtlebot3_fake_node.dir/src/turtlebot3_fake_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable turtlebot3_fake_node[0m
+[100%] Built target turtlebot3_fake_node
+-- Install configuration: ""
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/lib/turtlebot3_fake_node/turtlebot3_fake_node
+-- Set runtime path of "/home/elee02/ros2_ws/src/install/turtlebot3_fake_node/lib/turtlebot3_fake_node/turtlebot3_fake_node" to ""
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch/turtlebot3_fake_node.launch.py
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch/rviz2.launch.py
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/waffle_pi.yaml
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/burger.yaml
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/waffle.yaml
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/include/
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/include//turtlebot3_fake_node
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/include//turtlebot3_fake_node/turtlebot3_fake_node.hpp
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/ament_index/resource_index/package_run_dependencies/turtlebot3_fake_node
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/ament_index/resource_index/parent_prefix_path/turtlebot3_fake_node
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/ament_prefix_path.sh
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/ament_prefix_path.dsv
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/path.sh
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/path.dsv
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.bash
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.sh
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.zsh
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.dsv
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/package.dsv
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/ament_index/resource_index/packages/turtlebot3_fake_node
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/turtlebot3_fake_nodeConfig.cmake
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/turtlebot3_fake_nodeConfig-version.cmake
+-- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/package.xml
