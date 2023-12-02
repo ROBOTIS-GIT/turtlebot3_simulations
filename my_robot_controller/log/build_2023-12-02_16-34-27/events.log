@@ -1,0 +1,77 @@
+[0.000000] (-) TimerEvent: {}
+[0.000965] (my_robot_controller) JobQueued: {'identifier': 'my_robot_controller', 'dependencies': OrderedDict()}
+[0.001670] (my_robot_controller) JobStarted: {'identifier': 'my_robot_controller'}
+[0.100233] (-) TimerEvent: {}
+[0.200578] (-) TimerEvent: {}
+[0.300844] (-) TimerEvent: {}
+[0.401151] (-) TimerEvent: {}
+[0.501807] (-) TimerEvent: {}
+[0.602115] (-) TimerEvent: {}
+[0.702403] (-) TimerEvent: {}
+[0.802704] (-) TimerEvent: {}
+[0.903077] (-) TimerEvent: {}
+[1.003440] (-) TimerEvent: {}
+[1.103831] (-) TimerEvent: {}
+[1.118790] (my_robot_controller) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', 'build/my_robot_controller', 'build', '--build-base', '/home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build', 'install', '--record', '/home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/install.log', '--single-version-externally-managed'], 'cwd': '/home/elee02/ros2_ws/src/my_robot_controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'elee02', 'LC_TIME': 'ko_KR.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/elee02', 'OLDPWD': '/home/elee02/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'ko_KR.UTF-8', 'SYSTEMD_EXEC_PID': '7787', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/elee02/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'elee02', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'elee02', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/elee02/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/elee02-MacBookPro:@/tmp/.ICE-unix/2192,unix/elee02-MacBookPro:/tmp/.ICE-unix/2192', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ko_KR.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/07c71ddb_0ec7_40ba_a7b4_dcc121afaa0d', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ko_KR.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.GELFF2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.149', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/elee02/ros2_ws/install/turtlebot3_simulations:/home/elee02/ros2_ws/install/turtlebot3_gazebo:/home/elee02/ros2_ws/install/turtlebot3_fake_node:/home/elee02/ros2_ws/install/my_robot_controller:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ko_KR.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ko_KR.UTF-8', 'LC_IDENTIFICATION': 'ko_KR.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/prefix_override:/home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages:/home/elee02/ros2_ws/build/my_robot_controller:/home/elee02/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ko_KR.UTF-8', 'LC_PAPER': 'ko_KR.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/elee02/ros2_ws/install/turtlebot3_simulations:/home/elee02/ros2_ws/install/turtlebot3_gazebo:/home/elee02/ros2_ws/install/turtlebot3_fake_node'}, 'shell': False}
+[1.203951] (-) TimerEvent: {}
+[1.304285] (-) TimerEvent: {}
+[1.404582] (-) TimerEvent: {}
+[1.434255] (my_robot_controller) StdoutLine: {'line': b'running egg_info\n'}
+[1.435088] (my_robot_controller) StdoutLine: {'line': b'creating build/my_robot_controller/my_robot_controller.egg-info\n'}
+[1.454630] (my_robot_controller) StdoutLine: {'line': b'writing build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO\n'}
+[1.455146] (my_robot_controller) StdoutLine: {'line': b'writing dependency_links to build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt\n'}
+[1.455400] (my_robot_controller) StdoutLine: {'line': b'writing entry points to build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt\n'}
+[1.455618] (my_robot_controller) StdoutLine: {'line': b'writing requirements to build/my_robot_controller/my_robot_controller.egg-info/requires.txt\n'}
+[1.455765] (my_robot_controller) StdoutLine: {'line': b'writing top-level names to build/my_robot_controller/my_robot_controller.egg-info/top_level.txt\n'}
+[1.455899] (my_robot_controller) StdoutLine: {'line': b"writing manifest file 'build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'\n"}
+[1.494408] (my_robot_controller) StdoutLine: {'line': b"reading manifest file 'build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'\n"}
+[1.495592] (my_robot_controller) StdoutLine: {'line': b"writing manifest file 'build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'\n"}
+[1.495792] (my_robot_controller) StdoutLine: {'line': b'running build\n'}
+[1.495899] (my_robot_controller) StdoutLine: {'line': b'running build_py\n'}
+[1.496031] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build\n'}
+[1.496183] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib\n'}
+[1.496308] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller\n'}
+[1.496385] (my_robot_controller) StdoutLine: {'line': b'copying my_robot_controller/my_first_node.py -> /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller\n'}
+[1.496475] (my_robot_controller) StdoutLine: {'line': b'copying my_robot_controller/draw_circle.py -> /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller\n'}
+[1.496707] (my_robot_controller) StdoutLine: {'line': b'copying my_robot_controller/__init__.py -> /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller\n'}
+[1.497040] (my_robot_controller) StdoutLine: {'line': b'running install\n'}
+[1.497326] (my_robot_controller) StderrLine: {'line': b'/home/elee02/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[1.497444] (my_robot_controller) StderrLine: {'line': b'!!\n'}
+[1.497518] (my_robot_controller) StderrLine: {'line': b'\n'}
+[1.497584] (my_robot_controller) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.497648] (my_robot_controller) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[1.497711] (my_robot_controller) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[1.497774] (my_robot_controller) StderrLine: {'line': b'        standards-based tools.\n'}
+[1.497836] (my_robot_controller) StderrLine: {'line': b'\n'}
+[1.497897] (my_robot_controller) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[1.497959] (my_robot_controller) StderrLine: {'line': b'        ********************************************************************************\n'}
+[1.498020] (my_robot_controller) StderrLine: {'line': b'\n'}
+[1.498081] (my_robot_controller) StderrLine: {'line': b'!!\n'}
+[1.498142] (my_robot_controller) StderrLine: {'line': b'  self.initialize_options()\n'}
+[1.503236] (my_robot_controller) StdoutLine: {'line': b'running install_lib\n'}
+[1.504658] (-) TimerEvent: {}
+[1.536543] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[1.536868] (my_robot_controller) StdoutLine: {'line': b'copying /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller/my_first_node.py -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[1.537074] (my_robot_controller) StdoutLine: {'line': b'copying /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller/draw_circle.py -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[1.537277] (my_robot_controller) StdoutLine: {'line': b'copying /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller/__init__.py -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[1.537894] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/my_first_node.py to my_first_node.cpython-310.pyc\n'}
+[1.538417] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/draw_circle.py to draw_circle.cpython-310.pyc\n'}
+[1.538838] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/__init__.py to __init__.cpython-310.pyc\n'}
+[1.539098] (my_robot_controller) StdoutLine: {'line': b'running install_data\n'}
+[1.559008] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index\n'}
+[1.559253] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index/resource_index\n'}
+[1.559359] (my_robot_controller) StdoutLine: {'line': b'creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index/resource_index/packages\n'}
+[1.559551] (my_robot_controller) StdoutLine: {'line': b'copying resource/my_robot_controller -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index/resource_index/packages\n'}
+[1.559643] (my_robot_controller) StdoutLine: {'line': b'copying package.xml -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/my_robot_controller\n'}
+[1.559755] (my_robot_controller) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.579877] (my_robot_controller) StdoutLine: {'line': b'Copying build/my_robot_controller/my_robot_controller.egg-info to /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info\n'}
+[1.581021] (my_robot_controller) StdoutLine: {'line': b'running install_scripts\n'}
+[1.604781] (-) TimerEvent: {}
+[1.705075] (-) TimerEvent: {}
+[1.776961] (my_robot_controller) StdoutLine: {'line': b'Installing draw_circle script to /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/my_robot_controller\n'}
+[1.777192] (my_robot_controller) StdoutLine: {'line': b'Installing test_node script to /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/my_robot_controller\n'}
+[1.777533] (my_robot_controller) StdoutLine: {'line': b"writing list of installed files to '/home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/install.log'\n"}
+[1.805201] (-) TimerEvent: {}
+[1.806313] (my_robot_controller) CommandEnded: {'returncode': 0}
+[1.882622] (my_robot_controller) JobEnded: {'identifier': 'my_robot_controller', 'rc': 0}
+[1.883239] (-) EventReactorShutdown: {}

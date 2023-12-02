@@ -9,6 +9,7 @@ setup.py
 ../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
 ../build/my_robot_controller/my_robot_controller.egg-info/zip-safe
 my_robot_controller/__init__.py
+my_robot_controller/draw_circle.py
 my_robot_controller/my_first_node.py
 resource/my_robot_controller
 test/test_copyright.py

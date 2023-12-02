@@ -1,0 +1,52 @@
+running egg_info
+creating build/my_robot_controller/my_robot_controller.egg-info
+writing build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO
+writing dependency_links to build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt
+writing entry points to build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt
+writing requirements to build/my_robot_controller/my_robot_controller.egg-info/requires.txt
+writing top-level names to build/my_robot_controller/my_robot_controller.egg-info/top_level.txt
+writing manifest file 'build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+reading manifest file 'build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+writing manifest file 'build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build
+creating /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib
+creating /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller
+copying my_robot_controller/my_first_node.py -> /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller
+copying my_robot_controller/draw_circle.py -> /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller
+copying my_robot_controller/__init__.py -> /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller
+running install
+/home/elee02/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running install_lib
+creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+copying /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller/my_first_node.py -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+copying /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller/draw_circle.py -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+copying /home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/build/lib/my_robot_controller/__init__.py -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller
+byte-compiling /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/my_first_node.py to my_first_node.cpython-310.pyc
+byte-compiling /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/draw_circle.py to draw_circle.cpython-310.pyc
+byte-compiling /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index
+creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index/resource_index
+creating /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index/resource_index/packages
+copying resource/my_robot_controller -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/ament_index/resource_index/packages
+copying package.xml -> /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/share/my_robot_controller
+running install_egg_info
+Copying build/my_robot_controller/my_robot_controller.egg-info to /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info
+running install_scripts
+Installing draw_circle script to /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/my_robot_controller
+Installing test_node script to /home/elee02/ros2_ws/src/my_robot_controller/install/my_robot_controller/lib/my_robot_controller
+writing list of installed files to '/home/elee02/ros2_ws/src/my_robot_controller/build/my_robot_controller/install.log'

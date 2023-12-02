@@ -1,0 +1,35 @@
+[0.300s] Invoking command in '/home/elee02/ros2_ws/src/build/turtlebot3_fake_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/elee02/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/elee02/ros2_ws/src/build/turtlebot3_fake_node -- -j8 -l8
+[0.387s] [35m[1mConsolidate compiler generated dependencies of target turtlebot3_fake_node[0m
+[0.429s] [100%] Built target turtlebot3_fake_node
+[0.687s] Invoked command in '/home/elee02/ros2_ws/src/build/turtlebot3_fake_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/elee02/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --build /home/elee02/ros2_ws/src/build/turtlebot3_fake_node -- -j8 -l8
+[0.733s] Invoking command in '/home/elee02/ros2_ws/src/build/turtlebot3_fake_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/elee02/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/elee02/ros2_ws/src/build/turtlebot3_fake_node
+[0.740s] -- Install configuration: ""
+[0.741s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/lib/turtlebot3_fake_node/turtlebot3_fake_node
+[0.741s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch
+[0.742s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch/turtlebot3_fake_node.launch.py
+[0.742s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch/rviz2.launch.py
+[0.742s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param
+[0.742s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/waffle_pi.yaml
+[0.743s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/burger.yaml
+[0.743s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/waffle.yaml
+[0.743s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/include/
+[0.743s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/include//turtlebot3_fake_node
+[0.743s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/include//turtlebot3_fake_node/turtlebot3_fake_node.hpp
+[0.743s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/ament_index/resource_index/package_run_dependencies/turtlebot3_fake_node
+[0.744s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/ament_index/resource_index/parent_prefix_path/turtlebot3_fake_node
+[0.744s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/ament_prefix_path.sh
+[0.745s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/ament_prefix_path.dsv
+[0.745s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/path.sh
+[0.746s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/path.dsv
+[0.746s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.bash
+[0.746s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.sh
+[0.747s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.zsh
+[0.747s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.dsv
+[0.748s] -- Installing: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/package.dsv
+[0.748s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/ament_index/resource_index/packages/turtlebot3_fake_node
+[0.749s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.749s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.750s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/turtlebot3_fake_nodeConfig.cmake
+[0.750s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/turtlebot3_fake_nodeConfig-version.cmake
+[0.751s] -- Up-to-date: /home/elee02/ros2_ws/src/install/turtlebot3_fake_node/share/turtlebot3_fake_node/package.xml
+[0.751s] Invoked command in '/home/elee02/ros2_ws/src/build/turtlebot3_fake_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/elee02/ros2_ws/install/my_robot_controller:/opt/ros/humble /usr/bin/cmake --install /home/elee02/ros2_ws/src/build/turtlebot3_fake_node
