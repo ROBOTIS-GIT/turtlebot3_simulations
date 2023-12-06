@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
   <world name="default">
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
 
     <include>
       <uri>model://ground_plane</uri>
@@ -62,7 +68,7 @@
         <uri>model://turtlebot3_dqn_world/obstacle1</uri>
       </include>
     </model>
-     
+
     <model name="turtlebot3_dqn_obstacle2">
       <plugin name="obstacle2" filename="libobstacle2.so"/>
       <include>
