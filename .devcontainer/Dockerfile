@@ -25,6 +25,6 @@ ENV TURTLEBOT3_MODEL=burger
 
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
-RUN apt update && apt-get install -y ros-foxy-rosbridge-suite 
+RUN apt update && apt-get install -y ros-foxy-rosbridge-suite ros-foxy-rosbag2-storage-mcap
 RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc
 

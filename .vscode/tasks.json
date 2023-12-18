@@ -27,7 +27,7 @@
             }
         },
         {
-            "label": "launch-empty",
+            "label": "launch",
             "type": "shell",
             "command": "source install/local_setup.bash && export TURTLEBOT3_MODEL=burger && ros2 launch turtlebot3_gazebo turtlebot3_sim_cont.launch.py",
             "problemMatcher": [],
