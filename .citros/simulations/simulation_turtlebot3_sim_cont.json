@@ -1,0 +1,14 @@
+{
+    "CPU": 4,
+    "GPU": 4,
+    "MEM": 4096,
+    "description": "Default simulation. Change the values according to your needs.",
+    "id": "f0e79f4c-aa6a-44ca-8909-4219b1d1a2ad",
+    "launch": {
+        "file": "turtlebot3_sim_cont.launch.py",
+        "package": "turtlebot3_gazebo"
+    },
+    "parameter_setup": "default_param_setup.json",
+    "storage_type": "MCAP",
+    "timeout": 600
+}

@@ -1,0 +1,85 @@
+{
+    "citros_cli_version": "0.1.7",
+    "cover": "",
+    "description": "",
+    "git": "git@github.com:citros-garden/turtlebot3.git",
+    "is_active": true,
+    "launches": [],
+    "packages": [
+        {
+            "cover": "",
+            "description": "\n    Gazebo simulation package for the TurtleBot3\n  ",
+            "git": "",
+            "launches": [
+                {
+                    "description": "",
+                    "name": "robot_state_publisher.launch.py",
+                    "path": "src/turtlebot3_gazebo/launch/robot_state_publisher.launch.py"
+                },
+                {
+                    "description": "",
+                    "name": "turtlebot3_sim_cont.launch.py",
+                    "path": "src/turtlebot3_gazebo/launch/turtlebot3_sim_cont.launch.py"
+                }
+            ],
+            "maintainer": "Will Son",
+            "maintainer_email": "willson@robotis.com",
+            "name": "turtlebot3_gazebo",
+            "nodes": [
+                {
+                    "entry_point": "",
+                    "name": "turtlebot3_drive",
+                    "parameters": [],
+                    "path": ""
+                }
+            ],
+            "package_xml": "src/turtlebot3_gazebo/package.xml",
+            "parameters": {
+                "turtlebot3_gazebo": [
+                    {
+                        "description": "Parameter loaded from config.yaml",
+                        "name": "wheels",
+                        "parameterType": "dict",
+                        "value": {
+                            "radius": 0.033,
+                            "separation": 0.16
+                        }
+                    },
+                    {
+                        "description": "Parameter loaded from config.yaml",
+                        "name": "check_forward_dist_param",
+                        "parameterType": "float",
+                        "value": 0.7
+                    },
+                    {
+                        "description": "Parameter loaded from config.yaml",
+                        "name": "check_side_dist_param",
+                        "parameterType": "float",
+                        "value": 0.6
+                    },
+                    {
+                        "description": "Parameter loaded from config.yaml",
+                        "name": "joint_states_frame",
+                        "parameterType": "str",
+                        "value": "base_footprint"
+                    },
+                    {
+                        "description": "Parameter loaded from config.yaml",
+                        "name": "odom_frame",
+                        "parameterType": "str",
+                        "value": "odom"
+                    },
+                    {
+                        "description": "Parameter loaded from config.yaml",
+                        "name": "base_frame",
+                        "parameterType": "str",
+                        "value": "base_footprint"
+                    }
+                ]
+            },
+            "path": "src/turtlebot3_gazebo",
+            "setup_py": ""
+        }
+    ],
+    "tags": []
+}

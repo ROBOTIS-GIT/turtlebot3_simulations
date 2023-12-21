@@ -1,0 +1,14 @@
+{
+    "CPU": 2,
+    "GPU": 0,
+    "MEM": 265,
+    "description": "Default simulation. Change the values according to your needs.",
+    "id": "351adee8-1a0f-46f4-a0c4-924d6fbd4f03",
+    "launch": {
+        "file": "robot_state_publisher.launch.py",
+        "package": "turtlebot3_gazebo"
+    },
+    "parameter_setup": "default_param_setup.json",
+    "storage_type": "MCAP",
+    "timeout": 60
+}
