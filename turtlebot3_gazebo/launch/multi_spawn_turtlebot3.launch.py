@@ -26,7 +26,6 @@ from launch_ros.actions import Node
 def generate_launch_description():
     TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
 
-    # Launch configuration variables specific to simulation
     x_pose = LaunchConfiguration('x_pose', default='0.0')
     y_pose = LaunchConfiguration('y_pose', default='0.0')
     robot_name = LaunchConfiguration('robot_name', default=TURTLEBOT3_MODEL)
@@ -55,10 +54,7 @@ def generate_launch_description():
     )
 
     ld = LaunchDescription()
-
-    # Declare the launch options
     ld.add_action(declare_x_position_cmd)
     ld.add_action(declare_y_position_cmd)
-    # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)
     return ld

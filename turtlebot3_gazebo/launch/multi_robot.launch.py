@@ -17,15 +17,17 @@
 # Authors: Joep Tool, HyunGyu
 
 import os
+import xml.etree.ElementTree as ET
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import GroupAction, IncludeLaunchDescription, RegisterEventHandler
-from launch_ros.actions import PushRosNamespace
+from launch.actions import GroupAction
+from launch.actions import IncludeLaunchDescription
+from launch.actions import RegisterEventHandler
 from launch.event_handlers import OnShutdown
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
-import xml.etree.ElementTree as ET
+from launch_ros.actions import PushRosNamespace
 
 
 def generate_launch_description():
@@ -92,11 +94,11 @@ def generate_launch_description():
         tree = ET.parse(urdf_path)
         root = tree.getroot()
         for odom_frame_tag in root.iter('odometry_frame'):
-            odom_frame_tag.text = f"{namespace}_{count+1}/odom"
+            odom_frame_tag.text = f'{namespace}_{count+1}/odom'
         for base_frame_tag in root.iter('robot_base_frame'):
-            base_frame_tag.text = f"{namespace}_{count+1}/base_footprint"
+            base_frame_tag.text = f'{namespace}_{count+1}/base_footprint'
         for scan_frame_tag in root.iter('frame_name'):
-            scan_frame_tag.text = f"{namespace}_{count+1}/base_scan"
+            scan_frame_tag.text = f'{namespace}_{count+1}/base_scan'
         urdf_modified = ET.tostring(tree.getroot(), encoding='unicode')
         urdf_modified = '<?xml version="1.0" ?>\n'+urdf_modified
         with open(f'{save_path}{count+1}.sdf', 'w') as file:
