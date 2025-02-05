@@ -26,49 +26,48 @@
 
 namespace gazebo
 {
-  class Obstacles: public ModelPlugin
-  {
+class Obstacles: public ModelPlugin
+{
 public:
-    void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
-    {
-      // Store the pointer to the model
-      this->model = _parent;
+  void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
+  {
+    // Store the pointer to the model
+    this->model = _parent;
 
-      // create the animation
-      gazebo::common::PoseAnimationPtr anim(
-        // name the animation "move",
-        // make it last 40 seconds,
-        // and set it on a repeat loop
-        new gazebo::common::PoseAnimation("move", 40.0, true));
+    // create the animation
+    gazebo::common::PoseAnimationPtr anim(
+      // name the animation "move",
+      // make it last 40 seconds,
+      // and set it on a repeat loop
+      new gazebo::common::PoseAnimation("move", 40.0, true));
 
-      gazebo::common::PoseKeyFrame * key;
+    gazebo::common::PoseKeyFrame * key;
 
-      // set starting location of the box
-      key = anim->CreateKeyFrame(0);
-      key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
-      key->Rotation(ignition::math::Quaterniond(0, 0, 0));
+    // set starting location of the box
+    key = anim->CreateKeyFrame(0);
+    key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
+    key->Rotation(ignition::math::Quaterniond(0, 0, 0));
 
-      key = anim->CreateKeyFrame(20);
-      key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
-      key->Rotation(ignition::math::Quaterniond(0, 0, PI));
+    key = anim->CreateKeyFrame(20);
+    key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
+    key->Rotation(ignition::math::Quaterniond(0, 0, PI));
 
-      key = anim->CreateKeyFrame(40);
-      key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
-      key->Rotation(ignition::math::Quaterniond(0, 0, 2 * PI));
+    key = anim->CreateKeyFrame(40);
+    key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
+    key->Rotation(ignition::math::Quaterniond(0, 0, 2 * PI));
 
-      // set the animation
-      _parent->SetAnimation(anim);
-    }
+    // set the animation
+    _parent->SetAnimation(anim);
+  }
 
-    // Pointer to the model
-
+// Pointer to the model
 private:
-    physics::ModelPtr model;
-    // Pointer to the update event connection
+  physics::ModelPtr model;
 
+// Pointer to the update event connection
 private:
-    event::ConnectionPtr updateConnection;
-  };
+  event::ConnectionPtr updateConnection;
+};
 // Register this plugin with the simulator
-  GZ_REGISTER_MODEL_PLUGIN(Obstacles)
-}  // namespace gazebo
+GZ_REGISTER_MODEL_PLUGIN(Obstacles)
+}// namespace gazebo
