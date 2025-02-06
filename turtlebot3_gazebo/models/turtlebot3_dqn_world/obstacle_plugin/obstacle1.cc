@@ -88,4 +88,4 @@ private:
 };
 // Register this plugin with the simulator
 GZ_REGISTER_MODEL_PLUGIN(Obstacle1)
-}// namespace gazebo
+}  // namespace gazebo
