@@ -14,9 +14,9 @@
 //
 // Author: Ryan Shim
 
-#include <ignition/math.hh>
 #include <stdio.h>
 
+#include <ignition/math.hh>
 #include <gazebo/common/common.hh>
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
@@ -79,12 +79,10 @@ public:
   }
 
 // Pointer to the model
-
 private:
   physics::ModelPtr model;
 
 // Pointer to the update event connection
-
 private:
   event::ConnectionPtr updateConnection;
 };
