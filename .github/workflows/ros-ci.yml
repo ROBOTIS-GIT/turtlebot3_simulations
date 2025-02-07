@@ -53,7 +53,7 @@ jobs:
         uses: ros-tooling/action-ros-ci@v0.3
         with:
           target-ros2-distro: ${{ matrix.ros_distribution }}
-          vcs-repo-file-url: "https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3/main/turtlebot3_ci.repos"
+          vcs-repo-file-url: "https://raw.githubusercontent.com/ROBOTIS-GIT/turtlebot3_simulations/main/turtlebot3_simulations_ci.repos"
           package-name: |
             turtlebot3_fake_node
             turtlebot3_gazebo
