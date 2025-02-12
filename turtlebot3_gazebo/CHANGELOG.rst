@@ -2,7 +2,12 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.2.6 (2202-05-26)
+2.3.0 (2025-02-12)
+* Add multi robot launch functionality
+* Change robot mesh in gazebo and rviz
+* Add TurtleBot3 autorace launch
+ 
+2.2.6 (2022-05-26)
 ------------------
 * ROS2 Humble Hawksbill supported
 
