@@ -29,7 +29,6 @@
         </geometry>
 	      <material>
           <script>
-            <!--uri>file://materials/scripts/floor.material</uri-->
             <uri>model://turtlebot3_autorace_2020/course/materials/scripts</uri>
             <uri>model://turtlebot3_autorace_2020/course/materials/textures</uri>
             <name>course</name>
