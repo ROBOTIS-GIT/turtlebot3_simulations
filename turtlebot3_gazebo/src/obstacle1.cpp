@@ -23,7 +23,7 @@ void Obstacle1::Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
   this->model = _parent;
 
   gazebo::common::PoseAnimationPtr anim(
-      new gazebo::common::PoseAnimation("move1", 160.0, true));
+    new gazebo::common::PoseAnimation("move1", 160.0, true));
 
   gazebo::common::PoseKeyFrame * key;
 

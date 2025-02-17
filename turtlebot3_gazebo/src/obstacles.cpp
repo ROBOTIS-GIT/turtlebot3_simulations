@@ -25,7 +25,7 @@ void Obstacles::Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
   gazebo::common::PoseAnimationPtr anim(
     new gazebo::common::PoseAnimation("move", 40.0, true));
 
-  gazebo::common::PoseKeyFrame *key;
+  gazebo::common::PoseKeyFrame * key;
 
   key = anim->CreateKeyFrame(0);
   key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));

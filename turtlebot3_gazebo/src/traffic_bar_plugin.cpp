@@ -60,4 +60,3 @@ void TrafficBar::OnUpdate()
   }
 }
 }  // namespace gazebo
-

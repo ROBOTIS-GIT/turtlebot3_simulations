@@ -38,7 +38,7 @@ void TrafficLight::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
   this->msg.set_parent_name(this->model->GetName());
   std::cout << this->model->GetName() << " plugin load success!" << std::endl;
   this->update_connection = event::Events::ConnectWorldUpdateBegin(
-      std::bind(&TrafficLight::OnUpdate, this));
+    std::bind(&TrafficLight::OnUpdate, this));
   this->last_time = this->world->SimTime();
 }
 void TrafficLight::OnUpdate()
