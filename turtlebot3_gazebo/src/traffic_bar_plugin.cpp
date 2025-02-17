@@ -50,11 +50,9 @@ void TrafficBar::OnUpdate()
     this->model->SetStatic(false);
 
     if (status == 0) {
-      std::cout << "Changing up" << std::endl;
       this->model->SetWorldPose(up_pose);
       status = 1;
     } else {
-      std::cout << "Changing down" << std::endl;
       this->model->SetWorldPose(down_pose);
       status = 0;
     }

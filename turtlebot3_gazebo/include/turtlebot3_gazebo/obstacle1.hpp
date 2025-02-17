@@ -1,4 +1,4 @@
-// Copyright 2025 ROBOTIS CO., LTD.
+// Copyright 2012 Open Source Robotics Foundation
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,34 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// Author: Hyungyu Kim
+// Author: Ryan Shim
 
-#ifndef TURTLEBOT3_GAZEBO__TRAFFIC_BAR_PLUGIN_HPP_
-#define TURTLEBOT3_GAZEBO__TRAFFIC_BAR_PLUGIN_HPP_
+#ifndef TURTLEBOT3_GAZEBO__OBSTACLE1_HPP_
+#define TURTLEBOT3_GAZEBO__OBSTACLE1_HPP_
 
+#include <ignition/math.hh>
+#include <gazebo/common/common.hh>
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
 
 namespace gazebo
 {
-class TrafficBar : public ModelPlugin
+class Obstacle1 : public ModelPlugin
 {
 public:
-  TrafficBar();
-  void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf) override;
-  void OnUpdate();
+  void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/) override;
 
 private:
-  double traffic_cycle;
-  int status;
-
-  common::Time last_time;
-  event::ConnectionPtr update_connection;
-  ignition::math::Pose3d down_pose;
-  ignition::math::Pose3d up_pose;
   physics::ModelPtr model;
-  physics::WorldPtr world;
+  event::ConnectionPtr updateConnection;
 };
-GZ_REGISTER_MODEL_PLUGIN(TrafficBar);
+GZ_REGISTER_MODEL_PLUGIN(Obstacle1);
 }  // namespace gazebo
-#endif  // TURTLEBOT3_GAZEBO__TRAFFIC_BAR_PLUGIN_HPP_
+#endif  // TURTLEBOT3_GAZEBO__OBSTACLE1_HPP_

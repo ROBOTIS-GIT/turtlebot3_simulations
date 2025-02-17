@@ -59,13 +59,13 @@ target_link_libraries(traffic_light_plugin ${GAZEBO_LIBRARIES})
 add_library(traffic_bar_plugin SHARED src/traffic_bar_plugin.cpp)
 target_link_libraries(traffic_bar_plugin ${GAZEBO_LIBRARIES})
 
-add_library(obstacle1 SHARED models/turtlebot3_dqn_world/obstacle_plugin/obstacle1.cc)
+add_library(obstacle1 SHARED src/obstacle1.cpp)
 target_link_libraries(obstacle1 ${GAZEBO_LIBRARIES})
 
-add_library(obstacle2 SHARED models/turtlebot3_dqn_world/obstacle_plugin/obstacle2.cc)
+add_library(obstacle2 SHARED src/obstacle2.cpp)
 target_link_libraries(obstacle2 ${GAZEBO_LIBRARIES})
 
-add_library(obstacles SHARED models/turtlebot3_dqn_world/obstacle_plugin/obstacles.cc)
+add_library(obstacles SHARED src/obstacles.cpp)
 target_link_libraries(obstacles ${GAZEBO_LIBRARIES})
 
 ################################################################################

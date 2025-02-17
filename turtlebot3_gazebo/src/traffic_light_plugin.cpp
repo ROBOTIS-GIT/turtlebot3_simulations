@@ -62,5 +62,4 @@ void TrafficLight::OnUpdate()
     this->last_time = current_time;
   }
 }
-GZ_REGISTER_MODEL_PLUGIN(TrafficLight);
 }  // namespace gazebo

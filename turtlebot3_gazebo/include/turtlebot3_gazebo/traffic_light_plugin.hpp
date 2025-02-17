@@ -46,6 +46,8 @@ private:
   gazebo::transport::PublisherPtr visPub;
   physics::ModelPtr model;
   physics::WorldPtr world;
-  };
+};
+GZ_REGISTER_MODEL_PLUGIN(TrafficLight);
 }  // namespace gazebo
+
 #endif  // TURTLEBOT3_GAZEBO__TRAFFIC_LIGHT_PLUGIN_HPP_
