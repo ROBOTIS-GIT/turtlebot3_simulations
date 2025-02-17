@@ -3,10 +3,11 @@ Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2.3.0 (2025-02-17)
-* Add multi robot launch functionality
-* Change robot mesh in gazebo and rviz
-* Add TurtleBot3 autorace launch
-* Add plugin to model of autorace2020
+* Added multi-robot launch functionality
+* Updated robot mesh in Gazebo and RViz
+* Added launch file for TurtleBot3 Autorace 2020
+* Added plugins to the models of Autorace 2020
+* Contributors: Hyungyu Kim
  
 2.2.6 (2022-05-26)
 ------------------
