@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Authors: Joep Tool, HyunGyu
+# Authors: Joep Tool, HyunGyu Kim
 
 import os
 import xml.etree.ElementTree as ET

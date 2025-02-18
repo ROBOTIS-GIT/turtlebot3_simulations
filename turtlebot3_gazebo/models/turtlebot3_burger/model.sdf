@@ -33,10 +33,14 @@
         <pose>-0.032 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_common/meshes/burger_base.dae</uri>
+            <uri>model://turtlebot3_common/meshes/bases/burger_base.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1.0</ambient>
+          <diffuse>0.3 0.3 0.3 1.0</diffuse>
+        </material>
       </visual>
     </link>
 
@@ -123,10 +127,14 @@
         <pose>-0.032 0 0.171 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_common/meshes/lds.dae</uri>
+            <uri>model://turtlebot3_common/meshes/sensors/lds.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
       </visual>
 
       <sensor name="hls_lfcd_lds" type="ray">
@@ -216,10 +224,14 @@
         <pose>0 0.08 0.023 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_common/meshes/tire.dae</uri>
+            <uri>model://turtlebot3_common/meshes/wheels/left_tire.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
       </visual>
     </link>
 
@@ -274,10 +286,14 @@
         <pose>0.0 -0.08 0.023 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://turtlebot3_common/meshes/tire.dae</uri>
+            <uri>model://turtlebot3_common/meshes/wheels/right_tire.stl</uri>
             <scale>0.001 0.001 0.001</scale>
           </mesh>
         </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1.0</ambient>
+          <diffuse>0.2 0.2 0.2 1.0</diffuse>
+        </material>
       </visual>
     </link>
 

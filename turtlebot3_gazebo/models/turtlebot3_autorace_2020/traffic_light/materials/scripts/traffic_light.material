@@ -1,0 +1,41 @@
+material traffic_light_red
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_light_red.png
+      }
+    }
+  }
+}
+
+material traffic_light_green
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_light_green.png
+      }
+    }
+  }
+}
+
+material traffic_light_yellow
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_light_yellow.png
+      }
+    }
+  }
+}

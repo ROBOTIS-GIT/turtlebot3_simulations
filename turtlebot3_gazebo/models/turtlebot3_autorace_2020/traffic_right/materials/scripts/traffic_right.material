@@ -1,0 +1,14 @@
+material traffic_right
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_right.png
+      }
+    }
+  }
+}
+
