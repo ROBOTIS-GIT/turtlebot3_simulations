@@ -5,23 +5,24 @@ Changelog for package turtlebot3_simulations
 2.3.0 (2025-02-17)
 ------------------
 * Added multi-robot launch functionality
-* Updated robot mesh in Gazebo and RViz
 * Added launch file for TurtleBot3 Autorace 2020
 * Added plugins to the models of Autorace 2020
+* Updated robot mesh in Gazebo and RViz
 * Contributors: Hyungyu Kim
 
 2.2.6 (2202-05-26)
 ------------------
-* ROS2 Humble Hawksbill supported
+* ROS 2 Humble Hawksbill supported
+* Contributors: Will Son
 
 2.2.5 (2021-08-25)
 ------------------
-* Release for ROS2 Rolling
+* Release for ROS 2 Rolling
 * Contributors: Will Son
 
 2.2.4 (2021-06-14)
 ------------------
-* Release for ROS2 Galactic
+* Release for ROS 2 Galactic
 * Separate world and robot models(#162)
 * Clean up unncessary files
 * Use turtlebot3_common mesh modeling
