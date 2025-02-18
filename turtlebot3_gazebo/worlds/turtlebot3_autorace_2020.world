@@ -2,7 +2,7 @@
 <sdf version='1.6'>
   <world name='default'>
     <scene>
-      <ambient>0 0 0 1</ambient>
+      <ambient>0.8 0.8 0.8 1</ambient>
       <shadows>0</shadows>
       <grid>0</grid>
       <background>0.7 0.7 0.7 1</background>
@@ -35,29 +35,33 @@
    
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_stop</uri>
-       <pose> -1.35 1.04 0.125 0 -0 -1.57</pose>
+      <pose> -1.35 1.04 0.125 0 -0 -1.57</pose>
     </include>    
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_pl_left</uri>
-       <pose>0.50 1.90 0.13 0 0 0</pose>
+      <pose>0.50 1.90 0.13 0 0 0</pose>
     </include>
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_construction</uri>
-       <pose> 1.0 0.04 0.125 0 -0 -1.57</pose>
+      <pose> 1.0 0.04 0.125 0 -0 -1.57</pose>
     </include>   
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_intersection</uri>
-       <pose> 1.95 -1.0 0.125 0 -0 0.0</pose>
+      <pose> 1.95 -1.0 0.125 0 -0 0.0</pose>
     </include>   
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_noentry</uri>
-       <pose> 0.95 -0.758 0.125 0 -0 0.0</pose>
+      <pose> 0.95 -0.758 0.125 0 -0 0.0</pose>
     </include>
 
+    <include>
+      <uri>model://turtlebot3_autorace_2020/traffic_right</uri>
+      <pose>1.08 -0.728 0.125 0 -0 -1.57</pose>
+    </include>
 <!--
     <include>
       <uri>model://turtlebot3_autorace_2020/checker</uri>
