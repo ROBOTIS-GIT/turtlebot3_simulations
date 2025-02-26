@@ -12,12 +12,12 @@
       <uri>model://turtlebot3_autorace_2020/course</uri>
       <pose> 0 0 0 0 0 -3.14</pose>
     </include>
-    
+
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_bar</uri>
       <pose> -0.8  1.26 0.125 0 0 -1.57</pose>
     </include>
-    
+
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_light</uri>
       <pose> 1.3 -1.95 0.13 0 0 -1.57</pose>
@@ -27,16 +27,16 @@
       <uri>model://turtlebot3_autorace_2020/traffic_parking</uri>
       <pose> 0.74 1.95 0.13 0 0 -1.57</pose>
     </include>
-    
+
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_tunnel</uri>
       <pose> -1.544 0.00 0.125 0 0 0</pose>
     </include>
-   
+
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_stop</uri>
       <pose> -1.35 1.04 0.125 0 -0 -1.57</pose>
-    </include>    
+    </include>
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_pl_left</uri>
@@ -46,12 +46,12 @@
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_construction</uri>
       <pose> 1.0 0.04 0.125 0 -0 -1.57</pose>
-    </include>   
+    </include>
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_intersection</uri>
       <pose> 1.95 -1.0 0.125 0 -0 0.0</pose>
-    </include>   
+    </include>
 
     <include>
       <uri>model://turtlebot3_autorace_2020/traffic_noentry</uri>
@@ -139,8 +139,8 @@
       <longitude_deg>0</longitude_deg>
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
-    </spherical_coordinates> 
- 
+    </spherical_coordinates>
+
     <light name='user_point_light_1' type='point'>
       <pose frame=''>-1.648146 0.604519 1 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
@@ -153,7 +153,7 @@
       </attenuation>
       <cast_shadows>0</cast_shadows>
       <direction>0 0 -1</direction>
-    </light>    
+    </light>
     <light name='user_point_light_2' type='point'>
       <pose frame=''>1.63854 1.69565 1 0 -0 0</pose>
       <diffuse>0.5 0.5 0.5 1</diffuse>
@@ -196,7 +196,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      
+
       <model name='tunnel_obstacle'>
         <pose frame=''>-1.04145 -1.12671 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -295,7 +295,7 @@
 
       <light name='sun'>
         <pose frame=''>0 0 10 0 -0 0</pose>
-      </light>      
+      </light>
       <light name='user_point_light_1'>
         <pose frame=''>-1.648146 0.604519 1 0 -0 0</pose>
       </light>
