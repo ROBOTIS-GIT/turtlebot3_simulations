@@ -46,15 +46,39 @@ def generate_launch_description():
         description='Specify namespace of the robot')
 
     start_gazebo_ros_spawner_cmd = Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
+        package='ros_gz_sim',
+        executable='create',
         arguments=[
-            '-entity', TURTLEBOT3_MODEL,
+            '-name', TURTLEBOT3_MODEL,
             '-file', urdf_path,
             '-x', x_pose,
             '-y', y_pose,
             '-z', '0.01'
         ],
+        output='screen',
+    )
+
+    bridge_params = os.path.join(
+        get_package_share_directory('turtlebot3_gazebo'),
+        'params',
+        'turtlebot3_waffle_bridge.yaml'
+    )
+
+    start_gazebo_ros_bridge_cmd = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=[
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}',
+        ],
+        output='screen',
+    )
+
+    start_gazebo_ros_image_bridge_cmd = Node(
+        package='ros_gz_image',
+        executable='image_bridge',
+        arguments=['/camera/image_raw'],
         output='screen',
     )
 
@@ -66,5 +90,7 @@ def generate_launch_description():
 
     # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)
+    ld.add_action(start_gazebo_ros_bridge_cmd)
+    ld.add_action(start_gazebo_ros_image_bridge_cmd)
 
     return ld
