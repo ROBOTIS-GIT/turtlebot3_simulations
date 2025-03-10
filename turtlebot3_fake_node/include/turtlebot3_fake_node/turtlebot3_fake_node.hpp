@@ -18,9 +18,9 @@
 #define TURTLEBOT3_FAKE_NODE__TURTLEBOT3_FAKE_NODE_HPP_
 
 #include <tf2/LinearMath/Quaternion.h>
-#include <rclcpp/rclcpp.hpp>
 #include <chrono>
 
+#include <rclcpp/rclcpp.hpp>
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 #include "nav_msgs/msg/odometry.hpp"
