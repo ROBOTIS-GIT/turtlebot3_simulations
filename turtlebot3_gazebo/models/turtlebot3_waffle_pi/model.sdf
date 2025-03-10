@@ -375,7 +375,10 @@
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>30</update_rate>
+        <topic>camera/image_raw</topic>
+        <gz_frame_id>camera_rgb_frame</gz_frame_id>
         <camera name="picam">
+          <camera_info_topic>camera/camera_info</camera_info_topic>
           <horizontal_fov>1.085595</horizontal_fov>
           <image>
               <width>640</width>
@@ -467,7 +470,7 @@
 
     <joint name="camera_rgb_joint" type="fixed">
       <parent>camera_link</parent>
-      <child>camera_rgb_optical_frame</child>
+      <child>camera_rgb_frame</child>
       <pose>0.003 0.011 0.009 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>

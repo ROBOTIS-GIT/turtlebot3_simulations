@@ -61,7 +61,7 @@ def generate_launch_description():
     bridge_params = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'),
         'params',
-        'turtlebot3_waffle_bridge.yaml'
+        model_folder+'_bridge.yaml'
     )
 
     start_gazebo_ros_bridge_cmd = Node(
@@ -89,7 +89,7 @@ def generate_launch_description():
 
     # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)
-
     ld.add_action(start_gazebo_ros_bridge_cmd)
-    ld.add_action(start_gazebo_ros_image_bridge_cmd)
+    ld.add_action(start_gazebo_ros_image_bridge_cmd) if TURTLEBOT3_MODEL != 'burger' else None
+
     return ld

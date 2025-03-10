@@ -54,7 +54,6 @@ def generate_launch_description():
         launch_arguments={'gz_args': '-g -v4 '}.items()
     )
 
-
     robot_state_publisher_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(launch_file_dir, 'robot_state_publisher.launch.py')
@@ -77,6 +76,7 @@ def generate_launch_description():
             os.path.join(
                 get_package_share_directory('turtlebot3_gazebo'),
                 'models'))
+
     ld = LaunchDescription()
 
     # Add the commands to the launch description
