@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.8">
   <model name="turtlebot3_burger">
     <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
 
@@ -381,7 +381,7 @@
 
       <!-- kinematics -->
       <wheel_separation>0.160</wheel_separation>
-      <wheel_diameter>0.066</wheel_diameter>
+      <wheel_radius>0.033</wheel_radius>
 
       <!-- limits -->
       <max_linear_acceleration>1.0</max_linear_acceleration>

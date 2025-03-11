@@ -488,7 +488,7 @@
        <wheel_radius>0.033</wheel_radius>
 
        <!-- limits -->
-       <max_linear_acceleration>0.033</max_linear_acceleration>
+       <max_linear_acceleration>1.0</max_linear_acceleration>
 
        <topic>cmd_vel</topic>
 

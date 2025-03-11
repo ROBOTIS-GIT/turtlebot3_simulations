@@ -51,7 +51,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(ros_gz_sim, 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': '-g -v4 '}.items()
+        launch_arguments={'gz_args': '-g -v4 ', 'on_exit_shutdown': 'true'}.items()
     )
 
     robot_state_publisher_cmd = IncludeLaunchDescription(
@@ -82,8 +82,8 @@ def generate_launch_description():
     # Add the commands to the launch description
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
-    ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
+    ld.add_action(robot_state_publisher_cmd)
     ld.add_action(set_env_vars_resources)
 
     return ld
