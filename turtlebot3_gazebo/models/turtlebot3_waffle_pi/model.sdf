@@ -136,7 +136,7 @@
         <always_on>true</always_on>
         <visualize>true</visualize>
         <pose>-0.064 0 0.121 0 0 0</pose>
-        <update_rate>5</update_rate>
+        <update_rate>10</update_rate>
         <topic>scan</topic>
         <gz_frame_id>base_scan</gz_frame_id>
         <lidar>
@@ -488,7 +488,7 @@
        <wheel_radius>0.033</wheel_radius>
 
        <!-- limits -->
-       <max_linear_acceleration>0.033</max_linear_acceleration>
+       <max_linear_acceleration>1.0</max_linear_acceleration>
 
        <topic>cmd_vel</topic>
 

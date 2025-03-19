@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.8">
   <model name="turtlebot3_waffle">
   <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
 
@@ -136,7 +136,7 @@
         <always_on>true</always_on>
         <visualize>true</visualize>
         <pose>-0.064 0 0.121 0 0 0</pose>
-        <update_rate>5</update_rate>
+        <update_rate>10</update_rate>
         <topic>scan</topic>
         <gz_frame_id>base_scan</gz_frame_id>
         <lidar>
