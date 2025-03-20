@@ -33,6 +33,7 @@
     <plugin
       filename="gz-sim-imu-system" name="gz::sim::systems::Imu">
     </plugin>
+
     <include>
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
     </include>
