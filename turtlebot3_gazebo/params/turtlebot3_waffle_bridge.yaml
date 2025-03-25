@@ -29,7 +29,7 @@
 # gz topic subscribed to by DiffDrive plugin
 - ros_topic_name: "cmd_vel"
   gz_topic_name: "cmd_vel"
-  ros_type_name: "geometry_msgs/msg/Twist"
+  ros_type_name: "geometry_msgs/msg/TwistStamped"
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
 
