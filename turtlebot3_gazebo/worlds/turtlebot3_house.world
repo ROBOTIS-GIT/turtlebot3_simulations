@@ -1,17 +1,8 @@
 <?xml version="1.0"?>
-<sdf version="1.6">
+<sdf version="1.8">
   <world name="default">
-
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <include>
-      <uri>model://sun</uri>
-    </include>
-
     <scene>
-      <shadows>false</shadows>
+      <shadows>0</shadows>
     </scene>
 
     <gui fullscreen='0'>
@@ -42,6 +33,14 @@
         </constraints>
       </ode>
     </physics>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
+    </include>
 
     <model name="turtlebot3_house">
       <static>1</static>
