@@ -17,25 +17,40 @@
 #ifndef TURTLEBOT3_GAZEBO__OBSTACLES_HPP_
 #define TURTLEBOT3_GAZEBO__OBSTACLES_HPP_
 
-#include <ignition/math.hh>
-#include <gazebo/common/common.hh>
-#include <gazebo/gazebo.hh>
-#include <gazebo/physics/physics.hh>
+#include <gz/sim/System.hh>
+#include <gz/sim/Model.hh>
+#include <gz/sim/EntityComponentManager.hh>
+#include <gz/sim/components/WorldPose.hh>
+#include <gz/plugin/Register.hh>
+#include <gz/math/Pose3.hh>
+#include <gz/math/Vector3.hh>
+#include <gz/math/Quaternion.hh>
+#include <chrono>
 
-#define PI 3.141592
-
-namespace gazebo
+namespace turtlebot3_gazebo
 {
-class Obstacles : public ModelPlugin
+
+class ObstaclesPlugin
+  : public gz::sim::System,
+    public gz::sim::ISystemConfigure,
+    public gz::sim::ISystemPreUpdate
 {
 public:
-  Obstacles() = default;
-  void Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/) override;
+  void Configure(
+    const gz::sim::Entity &entity,
+    const std::shared_ptr<const sdf::Element> &sdf,
+    gz::sim::EntityComponentManager &ecm,
+    gz::sim::EventManager &eventMgr) override;
+
+  void PreUpdate(
+    const gz::sim::UpdateInfo &info,
+    gz::sim::EntityComponentManager &ecm) override;
 
 private:
-  physics::ModelPtr model;
-  event::ConnectionPtr updateConnection;
+  gz::sim::Model model{gz::sim::kNullEntity};
+  std::chrono::steady_clock::time_point startTime;
 };
-GZ_REGISTER_MODEL_PLUGIN(Obstacles);
-}  // namespace gazebo
+
+}  // namespace turtlebot3_gazebo
+
 #endif  // TURTLEBOT3_GAZEBO__OBSTACLES_HPP_
