@@ -1,0 +1,132 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="pickup_desk">
+    <static>true</static>
+
+    <link name="pickup_desk_1">
+      <pose>-0.1 1 0.025 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="QR_1">
+      <pose>-0.0025 1 0.15 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.2 0.2</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker0.png</albedo_map>
+              </metal>
+            </pbr>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="pickup_desk_2">
+      <pose>-0.1 0 0.025 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="QR_2">
+      <pose>-0.0025 0 0.15 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.2 0.2</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker1.png</albedo_map>
+              </metal>
+            </pbr>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="pickup_desk_3">
+      <pose>-0.1 -1 0.025 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.2 0.2 0.05</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.5 0.5 0.5 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="QR_3">
+      <pose>-0.0025 -1 0.15 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.2 0.2</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker2.png</albedo_map>
+              </metal>
+            </pbr>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
