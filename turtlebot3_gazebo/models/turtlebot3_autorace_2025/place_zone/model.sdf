@@ -25,6 +25,28 @@
       </visual>
     </link>
 
+    <link name="Panel_1">
+      <pose>0.05 0.475 0.1 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.01 0.18 0.18</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/A.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
     <link name="place_desk_2">
       <pose>0 -0.275 0.1 0 0 0</pose>
       <collision name="collision">
@@ -43,6 +65,28 @@
         <material>
           <ambient>0.5 0.5 0.5 1</ambient>
           <diffuse>0.5 0.5 0.5 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="panel_2">
+      <pose>0.05 -0.275 0.1 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.01 0.18 0.18</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/B.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
         </material>
       </visual>
     </link>
