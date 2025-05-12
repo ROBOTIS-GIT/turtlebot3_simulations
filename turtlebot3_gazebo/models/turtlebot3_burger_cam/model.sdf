@@ -366,40 +366,6 @@
         </camera>
       </sensor>
     </link>
-      <!-- <pose>0.076 0.0 0.093 0 0 0</pose>
-      <sensor name="camera" type="wideanglecamera">
-        <always_on>true</always_on>
-        <visualize>true</visualize>
-        <update_rate>30</update_rate>
-        <topic>camera/image_raw</topic>
-        <gz_frame_id>camera_rgb_frame</gz_frame_id>
-        <camera name="pi_cam">
-          <camera_info_topic>camera/camera_info</camera_info_topic>
-          <horizontal_fov>3.183</horizontal_fov>
-          <image>
-            <width>320</width>
-            <height>240</height>
-            <format>R8G8B8</format>
-          </image>
-          <clip>
-            <near>0.03</near>
-            <far>100</far>
-          </clip>
-          <lens>
-            <type>custom</type>
-            <custom_function>
-              <c1>1.05</c1>
-              <c2>4</c2>
-              <f>1.0</f>
-              <fun>tan</fun>
-            </custom_function>
-            <scale_to_hfov>true</scale_to_hfov>
-            <cutoff_angle>3.1415</cutoff_angle>
-            <env_texture_size>512</env_texture_size>
-          </lens>
-        </camera>
-      </sensor>
-    </link> -->
 
     <joint name="base_joint" type="fixed">
       <parent>base_footprint</parent>

@@ -31,8 +31,9 @@ def generate_launch_description():
     ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
-    x_pose = LaunchConfiguration('x_pose', default='-1.35')
-    y_pose = LaunchConfiguration('y_pose', default='-1.35')
+    x_pose = LaunchConfiguration('x_pose', default='-1.225')
+    y_pose = LaunchConfiguration('y_pose', default='1.2')
+    Yaw_pose = LaunchConfiguration('yaw_pose', default='1.57')
 
     world = os.path.join(
         get_package_share_directory('turtlebot3_gazebo'),
@@ -67,7 +68,8 @@ def generate_launch_description():
         ),
         launch_arguments={
             'x_pose': x_pose,
-            'y_pose': y_pose
+            'y_pose': y_pose,
+            'yaw_pose': Yaw_pose
         }.items()
     )
 

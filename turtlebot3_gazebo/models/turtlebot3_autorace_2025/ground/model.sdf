@@ -28,6 +28,11 @@
                     </plane>
                 </geometry>
                 <material>
+                    <pbr>
+                      <metal>
+                        <albedo_map>model://turtlebot3_autorace_2025/ground/materials/textures/ground.png</albedo_map>
+                      </metal>
+                    </pbr>
                     <ambient>0.3 0.3 0.3 1</ambient>
                     <diffuse>0.7 0.7 0.7 1</diffuse>
                     <specular>0.01 0.01 0.01 1</specular>

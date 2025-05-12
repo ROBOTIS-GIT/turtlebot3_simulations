@@ -4,7 +4,7 @@
     <static>true</static>
 
     <link name="place_desk_1">
-      <pose>0 0.47s5 0.1 0 0 0</pose>
+      <pose>0 0.475 0.1 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>

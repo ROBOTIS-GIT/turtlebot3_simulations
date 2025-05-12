@@ -112,10 +112,10 @@
                 <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/roboeats.png</albedo_map>
               </metal>
             </pbr>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-          <ambient>1.0 1.0 0.0 1</ambient>
-          <diffuse>1.0 1.0 0.0 1</diffuse>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
         </material>
       </visual>
     </link>
@@ -143,18 +143,18 @@
     </link>
 
     <link name="left_obstacle_wall_2">
-      <pose>0 0.4125 0.2 0 0 0</pose>
+      <pose>0 0.525 0.2 0 0 0</pose>
       <collision name="collision">
         <geometry>
           <box>
-            <size>0.01 0.325 0.4</size>
+            <size>0.01 0.55 0.4</size>
           </box>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <box>
-            <size>0.01 0.325 0.4</size>
+            <size>0.01 0.55 0.4</size>
           </box>
         </geometry>
         <material>
