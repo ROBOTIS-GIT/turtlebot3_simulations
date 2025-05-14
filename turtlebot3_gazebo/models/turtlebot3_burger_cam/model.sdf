@@ -8,14 +8,14 @@
     <link name="base_link">
 
       <inertial>
-        <pose>-0.032 0 0.070 0 0 0</pose>
+        <pose>-0.064 0 0.070 0 0 0</pose>
         <inertia>
-          <ixx>7.2397393e-01</ixx>
-          <ixy>4.686399e-10</ixy>
-          <ixz>-1.09525703e-08</ixz>
-          <iyy>7.2397393e-01</iyy>
-          <iyz>2.8582649e-09</iyz>
-          <izz>6.53050163e-01</izz>
+          <ixx>1.9527e-02</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.9527e-02</iyy>
+          <iyz>0</iyz>
+          <izz>1.9527e-02</izz>
         </inertia>
         <mass>8.2573504e-01</mass>
       </inertial>
@@ -24,7 +24,7 @@
         <pose>-0.032 0 0.070 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.140 0.140 0.140</size>
+            <size>0.14 0.14 0.14</size>
           </box>
         </geometry>
       </collision>
@@ -98,12 +98,12 @@
       <inertial>
         <pose>-0.020 0 0.161 0 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
+          <ixx>0.0001</ixx>
           <ixy>0.000</ixy>
           <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
+          <iyy>0.0001</iyy>
           <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <izz>0.0001</izz>
         </inertia>
         <mass>0.114</mass>
       </inertial>
@@ -167,14 +167,14 @@
       <inertial>
         <pose>0 0.08 0.023 -1.57 0 0</pose>
         <inertia>
-          <ixx>1.8158194e-03</ixx>
-          <ixy>-9.3392e-12</ixy>
-          <ixz>1.04909e-11</ixz>
-          <iyy>3.2922126e-03</iyy>
-          <iyz>5.75694e-11</iyz>
-          <izz>1.8158194e-03</izz>
+          <ixx>5.445e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.445e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.089e-04</izz>
         </inertia>
-        <mass>2.8498940e-02</mass>
+        <mass>0.1</mass>
       </inertial>
 
       <collision name="wheel_left_collision">
@@ -229,14 +229,14 @@
       <inertial>
         <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
         <inertia>
-          <ixx>1.8158194e-03</ixx>
-          <ixy>-9.3392e-12</ixy>
-          <ixz>1.04909e-11</ixz>
-          <iyy>3.2922126e-03</iyy>
-          <iyz>5.75694e-11</iyz>
-          <izz>1.8158194e-03</izz>
+          <ixx>5.445e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.445e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.089e-04</izz>
         </inertia>
-        <mass>2.8498940e-02</mass>
+        <mass>0.1</mass>
       </inertial>
 
       <collision name="wheel_right_collision">
@@ -291,12 +291,12 @@
       <inertial>
         <mass>0.005</mass>
         <inertia>
-          <ixx>0.001</ixx>
+          <ixx>0.00001</ixx>
           <ixy>0.000</ixy>
           <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
+          <iyy>0.00001</iyy>
           <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <izz>0.00001</izz>
         </inertia>
       </inertial>
       <collision name='collision'>
