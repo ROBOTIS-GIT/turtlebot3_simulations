@@ -2,7 +2,57 @@
 <sdf version="1.8">
   <model name="place_zone">
     <static>true</static>
-    <link name="place_desk_1">
+    <link name="door_1">
+      <pose>-0.195 1.25 0.2 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.01 0.2 0.4</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.01 0.2 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/door.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <link name="panel_1">
+      <pose>-0.19 1.25 0.33 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.12 0.03</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/103.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <!-- <link name="place_desk_1">
       <pose>0 1.25 0.1 0 0 0</pose>
       <collision name="collision">
         <geometry>
@@ -44,9 +94,61 @@
             <emissive>0 0 0 1</emissive>
         </material>
       </visual>
+    </link> -->
+
+
+    <link name="door_2">
+      <pose>-0.195 0.8 0.2 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.01 0.2 0.4</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.01 0.2 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/door.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
     </link>
 
-    <link name="place_desk_2">
+    <link name="panel_2">
+      <pose>-0.19 0.8 0.33 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.12 0.03</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/102.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- <link name="place_desk_2">
       <pose>0 0.8 0.1 0 0 0</pose>
       <collision name="collision">
         <geometry>
@@ -88,9 +190,60 @@
             <emissive>0 0 0 1</emissive>
         </material>
       </visual>
+    </link> -->
+
+    <link name="door_3">
+      <pose>-0.195 0.35 0.2 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.01 0.2 0.4</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.01 0.2 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/door.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
     </link>
 
-    <link name="place_desk_3">
+    <link name="panel_3">
+      <pose>-0.19 0.35 0.33 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.005 0.12 0.03</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/place_zone/materials/textures/101.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- <link name="place_desk_3">
       <pose>0 0.35 0.1 0 0 0</pose>
       <collision name="collision">
         <geometry>
@@ -132,6 +285,6 @@
             <emissive>0 0 0 1</emissive>
         </material>
       </visual>
-    </link>
+    </link> -->
   </model>
 </sdf>
