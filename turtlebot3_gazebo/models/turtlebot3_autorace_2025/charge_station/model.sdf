@@ -19,8 +19,8 @@
           </box>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5 1</ambient>
-          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.1 0.1 0.1 0.7</ambient>
+          <diffuse>0.1 0.1 0.1 0.7</diffuse>
         </material>
       </visual>
     </link>
@@ -41,8 +41,8 @@
           </box>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5 1</ambient>
-          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.1 0.1 0.1 0.7</ambient>
+          <diffuse>0.1 0.1 0.1 0.7</diffuse>
         </material>
       </visual>
     </link>
@@ -63,8 +63,8 @@
           </box>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5 1</ambient>
-          <diffuse>0.5 0.5 0.5 1</diffuse>
+          <ambient>0.1 0.1 0.1 0.7</ambient>
+          <diffuse>0.1 0.1 0.1 0.7</diffuse>
         </material>
       </visual>
     </link>
