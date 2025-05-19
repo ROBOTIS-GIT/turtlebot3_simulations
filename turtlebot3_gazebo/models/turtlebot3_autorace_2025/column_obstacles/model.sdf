@@ -3,172 +3,63 @@
   <model name="column_obstacles">
     <static>true</static>
 
-    <link name="column_1">
-      <pose>0.4 0.425 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
+    <model name="bollard_1">
+      <include>
+        <pose>0.4 0.425 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
 
-    <link name="column_2">
-      <pose>0.4 0.125 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
+    <model name="bollard_2">
+      <include>
+        <pose>0.4 0 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
+    <model name="bollard_3">
+      <include>
+        <pose>0.4 -0.425 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
 
-    <link name="column_3">
-      <pose>0.4 -0.425 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
+    <model name="bollard_4">
+      <include>
+        <pose>0 0.275 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
+    <model name="bollard_5">
+      <include>
+        <pose>0 0 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
 
-    <link name="column_4">
-      <pose>0.1 0.275 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
+    <model name="bollard_6">
+      <include>
+        <pose>0 -0.275 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
 
-    <link name="column_5">
-      <pose>0.1 -0.225 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
-
-    <link name="column_6">
-      <pose>-0.4 -0.125 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
-
-    <link name="column_7">
-      <pose>-0.4 0.125 0.2 0 0 0</pose>
-      <collision name="collision">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <cylinder>
-            <radius>0.1</radius>
-            <length>0.4</length>
-          </cylinder>
-        </geometry>
-        <material>
-          <ambient>1 1 1 1</ambient>
-          <diffuse>1 1 1 1</diffuse>
-        </material>
-      </visual>
-    </link>
+    <model name="bollard_7">
+      <include>
+        <pose>-0.4 0.425 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
+    <model name="bollard_8">
+      <include>
+        <pose>-0.4 0 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
+    <model name="bollard_9">
+      <include>
+        <pose>-0.4 -0.425 0.2 0 0 0</pose>
+        <uri>model://turtlebot3_autorace_2025/column_obstacles/bollard</uri>
+      </include>
+    </model>
   </model>
 </sdf>
