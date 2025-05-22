@@ -31,20 +31,18 @@ include_directories(
   include
 )
 
-set(dependencies
-  "geometry_msgs"
-  "nav_msgs"
-  "rclcpp"
-  "sensor_msgs"
-  "tf2"
-  "tf2_msgs"
-  "turtlebot3_msgs"
-)
-
 set(EXEC_NAME "turtlebot3_fake_node")
 
 add_executable(${EXEC_NAME} src/turtlebot3_fake_node.cpp)
-ament_target_dependencies(${EXEC_NAME} ${dependencies})
+target_link_libraries(${EXEC_NAME}
+  ${geometry_msgs_TARGETS}
+  ${nav_msgs_TARGETS}
+  rclcpp::rclcpp
+  ${sensor_msgs_TARGETS}
+  tf2::tf2
+  ${tf2_msgs_TARGETS}
+  ${turtlebot3_msgs_TARGETS}
+)
 
 ################################################################################
 # Install
@@ -65,11 +63,13 @@ install(DIRECTORY include/
 # Macro for ament package
 ################################################################################
 ament_export_include_directories(include)
-ament_export_dependencies(geometry_msgs)
-ament_export_dependencies(nav_msgs)
-ament_export_dependencies(rclcpp)
-ament_export_dependencies(sensor_msgs)
-ament_export_dependencies(tf2)
-ament_export_dependencies(tf2_msgs)
-ament_export_dependencies(turtlebot3_msgs)
+ament_export_dependencies(
+  geometry_msgs
+  nav_msgs
+  rclcpp
+  sensor_msgs
+  tf2
+  tf2_msgs
+  turtlebot3_msgs
+)
 ament_package()
