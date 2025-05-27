@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="order_panel">
+    <static>true</static>
+
+    <link name="panel">
+      <pose>0 -0.0005 0.2 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.2 0.001 0.3</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/order_panel/materials/textures/order_image.png</albedo_map>
+              </metal>
+            </pbr>
+          <ambient>1 1 1 1</ambient>
+          <diffuse>1 1 1 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

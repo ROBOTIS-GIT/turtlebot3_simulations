@@ -100,16 +100,93 @@
           </box>
         </geometry>
       </collision>
-      <visual name="visual">
+      <visual name="up">
+        <pose>0 0 0.19995 0 0 0</pose>
         <geometry>
           <box>
-            <size>1.0 0.5 0.4</size>
+            <size>1 0.5 0.0001</size>
           </box>
         </geometry>
         <material>
             <pbr>
               <metal>
-                <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/roboeats.png</albedo_map>
+                <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/direction.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="bottom">
+        <pose>-0.49995 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.5 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/arrow.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="top">
+        <pose>0.49995 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0001 0.5 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/arrow.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="left">
+        <pose>0 0.24995 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 0.0001 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/arrow.png</albedo_map>
+              </metal>
+            </pbr>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <visual name="right">
+        <pose>0 -0.24995 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1 0.0001 0.4</size>
+          </box>
+        </geometry>
+        <material>
+            <pbr>
+              <metal>
+                <albedo_map>model://turtlebot3_autorace_2025/stadium/materials/textures/arrow.png</albedo_map>
               </metal>
             </pbr>
             <ambient>1 1 1 1</ambient>
