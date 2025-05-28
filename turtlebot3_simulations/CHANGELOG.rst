@@ -2,6 +2,10 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.1 (2025-05-28)
+------------------
+* Moved the TurtleBot3 Manipulation Gazebo simulation from the turtlebot3_manipulation_bringup package
+
 2.3.0 (2025-02-17)
 ------------------
 * Added multi-robot launch functionality
