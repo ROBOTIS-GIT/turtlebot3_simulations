@@ -39,18 +39,16 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
-set(dependencies
-  "geometry_msgs"
-  "nav_msgs"
-  "rclcpp"
-  "sensor_msgs"
-  "tf2"
-)
-
 set(EXEC_NAME "turtlebot3_drive")
 
 add_executable(${EXEC_NAME} src/turtlebot3_drive.cpp)
-ament_target_dependencies(${EXEC_NAME} ${dependencies})
+target_link_libraries(${EXEC_NAME}
+  ${geometry_msgs_TARGETS}
+  ${nav_msgs_TARGETS}
+  ${sensor_msgs_TARGETS}
+  rclcpp::rclcpp
+  tf2::tf2
+)
 
 # add_library(traffic_light_plugin SHARED src/traffic_light_plugin.cpp)
 # target_link_libraries(traffic_light_plugin ${GAZEBO_LIBRARIES})
@@ -86,10 +84,12 @@ install(DIRECTORY include/
 # Macro for ament package
 ################################################################################
 ament_export_include_directories(include)
-ament_export_dependencies(gazebo_ros_pkgs)
-ament_export_dependencies(geometry_msgs)
-ament_export_dependencies(nav_msgs)
-ament_export_dependencies(rclcpp)
-ament_export_dependencies(sensor_msgs)
-ament_export_dependencies(tf2)
+ament_export_dependencies(
+  gazebo_ros_pkgs
+  geometry_msgs
+  nav_msgs
+  rclcpp
+  sensor_msgs
+  tf2
+)
 ament_package()
