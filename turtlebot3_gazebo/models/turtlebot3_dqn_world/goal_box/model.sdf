@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<sdf version='1.8'>
+  <model name='goal_box'>
+    <static>true</static>
+    <pose>0 0 0.0005 0 0 0</pose>
+    <link name='goal_box'>
+      <pose>0 0 0 0 0 0</pose>
+      <visual name='goal_box_visual'>
+        <geometry>
+          <cylinder>
+            <radius>0.3</radius>
+            <length>0.001</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
