@@ -1,0 +1,34 @@
+model {
+  file: "model.sdf"
+}
+name: "RJ_Rabbit_Easter_Basket_Blue"
+description: "R.J Rabbit Easter Basket, Blue"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "R.J Rabbit"
+}
+annotations {
+  key: "gtin"
+  value: "00023167023330"
+}
+annotations {
+  key: "sku"
+  value: "00023167023330"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+}
