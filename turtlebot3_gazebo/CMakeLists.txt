@@ -50,25 +50,32 @@ target_link_libraries(${EXEC_NAME}
   tf2::tf2
 )
 
-# add_library(traffic_light_plugin SHARED src/traffic_light_plugin.cpp)
-# target_link_libraries(traffic_light_plugin ${GAZEBO_LIBRARIES})
+ament_target_dependencies(turtlebot3_drive ${dependencies})
 
-# add_library(traffic_bar_plugin SHARED src/traffic_bar_plugin.cpp)
-# target_link_libraries(traffic_bar_plugin ${GAZEBO_LIBRARIES})
+set(OBSTACLE_LIBS
+  obstacles
+  obstacle1
+  obstacle2
+)
 
-# add_library(obstacle1 SHARED src/obstacle1.cpp)
-# target_link_libraries(obstacle1 ${GAZEBO_LIBRARIES})
-
-# add_library(obstacle2 SHARED src/obstacle2.cpp)
-# target_link_libraries(obstacle2 ${GAZEBO_LIBRARIES})
-
-# add_library(obstacles SHARED src/obstacles.cpp)
-# target_link_libraries(obstacles ${GAZEBO_LIBRARIES})
+foreach(lib ${OBSTACLE_LIBS})
+  add_library(${lib} SHARED src/${lib}.cpp)
+  target_include_directories(${lib}
+    PUBLIC ${gz-sim8_INCLUDE_DIRS}
+  )
+  target_link_libraries(${lib}
+    ${gz-sim8_LIBRARIES}
+  )
+endforeach()
 
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS ${EXEC_NAME}
+install(TARGETS
+  ${EXEC_NAME}
+  obstacles
+  obstacle1
+  obstacle2
   DESTINATION lib/${PROJECT_NAME}
 )
 
