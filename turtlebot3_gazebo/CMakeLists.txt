@@ -26,6 +26,8 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(gz-sim REQUIRED)
+find_package(gz_sim_vendor REQUIRED)
 
 ################################################################################
 # Build
