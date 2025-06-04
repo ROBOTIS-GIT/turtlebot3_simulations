@@ -2,6 +2,10 @@
 Changelog for package turtlebot3_fake
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.4 (2025-06-04)
+------------------
+* None
+
 2.3.3 (2025-05-29)
 ------------------
 * Deprecate ament_include_dependency usage in CMakeLists.txt, related PR(https://github.com/ROBOTIS-GIT/turtlebot3_simulations/pull/234)
