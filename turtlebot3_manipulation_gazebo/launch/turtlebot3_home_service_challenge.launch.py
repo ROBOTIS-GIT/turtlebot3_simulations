@@ -30,7 +30,7 @@ def generate_launch_description():
     world = LaunchConfiguration(
         'world',
         default=PathJoinSubstitution([
-            FindPackageShare('turtlebot3_gazebo'),
+            FindPackageShare('turtlebot3_manipulation_gazebo'),
             'worlds',
             'turtlebot3_home_service_challenge.world'
         ])

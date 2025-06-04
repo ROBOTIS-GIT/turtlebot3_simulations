@@ -13,7 +13,7 @@ find_package(ament_cmake REQUIRED)
 # Install
 ################################################################################
 install(
-  DIRECTORY config gazebo launch ros2_control rviz urdf
+  DIRECTORY config gazebo launch ros2_control rviz urdf worlds models
   DESTINATION share/${PROJECT_NAME}
 )
 
