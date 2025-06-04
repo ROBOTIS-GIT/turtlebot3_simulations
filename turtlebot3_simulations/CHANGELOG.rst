@@ -2,6 +2,11 @@
 Changelog for package turtlebot3_simulations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.4 (2025-06-04)
+------------------
+* Added turtlebot3_machine_learning world and plugin
+* Contributors: ChanHyeong Lee
+
 2.3.3 (2025-05-29)
 ------------------
 * Deprecate ament_include_dependency usage in CMakeLists.txt, related PR(https://github.com/ROBOTIS-GIT/turtlebot3_simulations/pull/234)
