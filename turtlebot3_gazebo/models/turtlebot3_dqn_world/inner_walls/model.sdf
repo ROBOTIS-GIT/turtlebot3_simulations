@@ -2,7 +2,7 @@
 <sdf version='1.8'>
   <model name='inner_walls'>
     <pose>0 0 0 0 0 0</pose>
-
+    <static>true</static>
     <link name='inner_wall_1'>
       <pose>-2.0 -1.5 0.25 0 0 0</pose>
       <collision name='inner_wall_1_collision'>
