@@ -26,19 +26,33 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
-find_package(gz-sim REQUIRED)
 find_package(gz_sim_vendor REQUIRED)
+find_package(PkgConfig REQUIRED)
+
+pkg_check_modules(GZ_SIM REQUIRED gz-sim8)
 
 ################################################################################
 # Build
 ################################################################################
 link_directories(
   ${GAZEBO_LIBRARY_DIRS}
+  ${GZ_SIM_LIBRARY_DIRS}
 )
 
 include_directories(
   include
   ${GAZEBO_INCLUDE_DIRS}
+  ${gz_sim_vendor_INCLUDE_DIRS}
+  ${GZ_SIM_INCLUDE_DIRS}
+)
+
+set(dependencies
+  geometry_msgs
+  nav_msgs
+  rclcpp
+  sensor_msgs
+  tf2
+  gz_sim_vendor
 )
 
 set(EXEC_NAME "turtlebot3_drive")
@@ -52,7 +66,7 @@ target_link_libraries(${EXEC_NAME}
   tf2::tf2
 )
 
-ament_target_dependencies(turtlebot3_drive ${dependencies})
+ament_target_dependencies(${EXEC_NAME} ${dependencies})
 
 set(OBSTACLE_LIBS
   obstacles
@@ -63,11 +77,12 @@ set(OBSTACLE_LIBS
 foreach(lib ${OBSTACLE_LIBS})
   add_library(${lib} SHARED src/${lib}.cpp)
   target_include_directories(${lib}
-    PUBLIC ${gz-sim8_INCLUDE_DIRS}
+    PUBLIC include
   )
   target_link_libraries(${lib}
-    ${gz-sim8_LIBRARIES}
+    ${GZ_SIM_LIBRARIES}
   )
+  ament_target_dependencies(${lib} gz_sim_vendor)
 endforeach()
 
 ################################################################################
