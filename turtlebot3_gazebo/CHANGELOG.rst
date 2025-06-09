@@ -2,7 +2,7 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.3.4 (2025-06-04)
+2.3.5 (2025-06-04)
 ------------------
 * Added turtlebot3_machine_learning world and plugin
 * Contributors: ChanHyeong Lee
