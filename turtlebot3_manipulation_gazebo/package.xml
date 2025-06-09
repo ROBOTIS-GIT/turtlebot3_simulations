@@ -8,9 +8,9 @@
   </description>
   <maintainer email="pyo@robotis.com">Pyo</maintainer>
   <license>Apache 2.0</license>
-  <url type="website">https://emanual.robotis.com/docs/en/platform/turtlebot3/manipulation/</url>
-  <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3_manipulation</url>
-  <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3_manipulation/issues</url>
+  <url type="website">http://turtlebot3.robotis.com</url>
+  <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3_simulations</url>
+  <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues</url>
   <author email="thlim@robotis.com">Darby Lim</author>
   <author email="hjkim@robotis.com">Hye-jong KIM</author>
   <buildtool_depend>ament_cmake</buildtool_depend>
