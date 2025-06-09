@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>turtlebot3_fake_node</name>
-  <version>2.3.3</version>
+  <version>2.3.5</version>
   <description>
     Package for TurtleBot3 fake node. With this package, simple tests can be done without a robot.
     You can do simple tests using this package on rviz without real robots.
