@@ -17,14 +17,14 @@ jobs:
       fail-fast: false
       matrix:
         ros_distribution:
-          - humble
+          # - humble
           - jazzy
           - rolling
         include:
           # ROS 2 Humble Hawksbill
-          - docker_image: ubuntu:jammy
-            ros_distribution: humble
-            ros_version: 2
+          # - docker_image: ubuntu:jammy
+          #   ros_distribution: humble
+          #   ros_version: 2
           # ROS 2 Jazzy Jalisco
           - docker_image: ubuntu:noble
             ros_distribution: jazzy
