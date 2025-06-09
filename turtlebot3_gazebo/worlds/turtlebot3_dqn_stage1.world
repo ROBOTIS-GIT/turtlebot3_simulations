@@ -1,26 +1,24 @@
 <?xml version="1.0"?>
-<sdf version="1.6">
-  <world name="default">
+<sdf version="1.8">
+  <world name="dqn">
 
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <include>
-      <uri>model://sun</uri>
-    </include>
-
-    <scene>
-      <shadows>false</shadows>
-    </scene>
-
-    <gui fullscreen='0'>
-      <camera name='user_camera'>
-        <pose frame=''>0.319654 -0.235002 9.29441 0 1.5138 0.009599</pose>
-        <view_controller>orbit</view_controller>
-        <projection_type>perspective</projection_type>
-      </camera>
-    </gui>
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
 
     <physics type="ode">
       <real_time_update_rate>1000.0</real_time_update_rate>
@@ -42,13 +40,30 @@
         </constraints>
       </ode>
     </physics>
-    
-    <model name="turtlebot3_dqn_world">
-      <static>1</static>
-      <include>
-        <uri>model://turtlebot3_dqn_world</uri>
-      </include>
-    </model>
+
+    <include>
+      <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Ground Plane</uri>
+    </include>
+    <light type="directional" name="sun">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+      <model name="turtlebot3_dqn_world">
+        <static>true</static>
+        <include>
+          <uri>model://turtlebot3_dqn_world</uri>
+        </include>
+      </model>
 
   </world>
 </sdf>

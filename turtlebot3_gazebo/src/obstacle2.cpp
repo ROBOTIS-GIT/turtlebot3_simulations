@@ -12,69 +12,88 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-// Author: Ryan Shim
+// Author: Ryan Shim, ChanHyeong Lee
 
 #include "turtlebot3_gazebo/obstacle2.hpp"
 
-namespace gazebo
+#include <gz/math/Pose3.hh>
+#include <gz/plugin/Register.hh>
+#include <sdf/Element.hh>
+
+namespace turtlebot3_gazebo
 {
-void Obstacle2::Load(physics::ModelPtr _parent, sdf::ElementPtr /*_sdf*/)
+
+void Obstacle2Plugin::Configure(
+  const gz::sim::Entity & entity,
+  const std::shared_ptr<const sdf::Element> &,
+  gz::sim::EntityComponentManager &,
+  gz::sim::EventManager &)
 {
-  this->model = _parent;
+  this->model = gz::sim::Model(entity);
+  this->startTime = std::chrono::steady_clock::now();
 
-  gazebo::common::PoseAnimationPtr anim(
-    new gazebo::common::PoseAnimation("move2", 140.0, true));
+  this->waypoints = {
+    {-2.0, -2.0, 0.25},
+    {-1.3, -1.8, 0.25},
+    {0.5, 2.0, 0.25},
+    {-2.0, 1.5, 0.25},
+    {1.5, -0.2, 0.25},
+    {1.5, -2.0, 0.25},
+    {0.0, -1.5, 0.25},
+    {-0.5, -1.0, 0.25},
+    {-1.0, -1.5, 0.25},
+    {-1.5, -1.9, 0.25},
+    {-2.0, -2.0, 0.25}
+  };
 
-  gazebo::common::PoseKeyFrame * key;
+  this->segmentDistances.clear();
+  this->totalDistance = 0.0;
 
-  key = anim->CreateKeyFrame(0);
-  key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(10);
-  key->Translation(ignition::math::Vector3d(0.7, 0.2, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(40);
-  key->Translation(ignition::math::Vector3d(2.5, 3.5, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(55);
-  key->Translation(ignition::math::Vector3d(0.3, 3.5, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(85);
-  key->Translation(ignition::math::Vector3d(3.5, 1.8, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(100);
-  key->Translation(ignition::math::Vector3d(3.5, 0.0, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(110);
-  key->Translation(ignition::math::Vector3d(2.0, 0.5, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(115);
-  key->Translation(ignition::math::Vector3d(1.5, 1.0, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(120);
-  key->Translation(ignition::math::Vector3d(1.0, 0.5, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(125);
-  key->Translation(ignition::math::Vector3d(0.5, 0.1, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(130);
-  key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  key = anim->CreateKeyFrame(140);
-  key->Translation(ignition::math::Vector3d(0.0, 0.0, 0.0));
-  key->Rotation(ignition::math::Quaterniond(0, 0, 0));
-
-  _parent->SetAnimation(anim);
+  for (size_t i = 0; i < waypoints.size() - 1; ++i) {
+    double dist = (waypoints[i + 1] - waypoints[i]).Length();
+    this->segmentDistances.push_back(dist);
+    this->totalDistance += dist;
+  }
 }
-}  // namespace gazebo
+
+void Obstacle2Plugin::PreUpdate(
+  const gz::sim::UpdateInfo &,
+  gz::sim::EntityComponentManager & ecm)
+{
+  if (!this->model.Valid(ecm)) {return;}
+
+  auto now = std::chrono::steady_clock::now();
+  std::chrono::duration<double> elapsed = now - this->startTime;
+
+  double travelDist = std::fmod(elapsed.count() * this->speed, this->totalDistance);
+
+  size_t idx = 0;
+  double acc = 0.0;
+
+  while (idx < segmentDistances.size() && acc + segmentDistances[idx] < travelDist) {
+    acc += segmentDistances[idx];
+    ++idx;
+  }
+
+  if (idx >= segmentDistances.size()) {return;}
+
+  double localT = (travelDist - acc) / segmentDistances[idx];
+  gz::math::Vector3d start = waypoints[idx];
+  gz::math::Vector3d end = waypoints[idx + 1];
+  gz::math::Vector3d currentPos = start + (end - start) * localT;
+
+  gz::math::Pose3d pose(currentPos, gz::math::Quaterniond::Identity);
+  this->model.SetWorldPoseCmd(ecm, pose);
+}
+
+}  // namespace turtlebot3_gazebo
+
+GZ_ADD_PLUGIN(
+  turtlebot3_gazebo::Obstacle2Plugin,
+  gz::sim::System,
+  gz::sim::ISystemConfigure,
+  gz::sim::ISystemPreUpdate)
+
+GZ_ADD_PLUGIN_ALIAS(
+  turtlebot3_gazebo::Obstacle2Plugin,
+  "turtlebot3_gazebo::Obstacle2Plugin")

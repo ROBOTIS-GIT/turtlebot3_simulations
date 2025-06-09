@@ -1,7 +1,7 @@
 ################################################################################
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 project(turtlebot3_gazebo)
 
 if(NOT CMAKE_CXX_STANDARD)
@@ -26,17 +26,26 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(gz_math_vendor REQUIRED)
+find_package(gz-math REQUIRED)
+find_package(gz_sim_vendor REQUIRED)
+find_package(gz-sim REQUIRED)
+find_package(gz_plugin_vendor REQUIRED)
+find_package(gz-plugin REQUIRED)
 
 ################################################################################
 # Build
 ################################################################################
 link_directories(
   ${GAZEBO_LIBRARY_DIRS}
+  ${GZ_SIM_LIBRARY_DIRS}
 )
 
 include_directories(
   include
   ${GAZEBO_INCLUDE_DIRS}
+  ${gz_sim_vendor_INCLUDE_DIRS}
+  ${GZ_SIM_INCLUDE_DIRS}
 )
 
 set(EXEC_NAME "turtlebot3_drive")
@@ -50,25 +59,29 @@ target_link_libraries(${EXEC_NAME}
   tf2::tf2
 )
 
-# add_library(traffic_light_plugin SHARED src/traffic_light_plugin.cpp)
-# target_link_libraries(traffic_light_plugin ${GAZEBO_LIBRARIES})
+set(OBSTACLE_LIBS
+  obstacles
+  obstacle1
+  obstacle2
+)
 
-# add_library(traffic_bar_plugin SHARED src/traffic_bar_plugin.cpp)
-# target_link_libraries(traffic_bar_plugin ${GAZEBO_LIBRARIES})
-
-# add_library(obstacle1 SHARED src/obstacle1.cpp)
-# target_link_libraries(obstacle1 ${GAZEBO_LIBRARIES})
-
-# add_library(obstacle2 SHARED src/obstacle2.cpp)
-# target_link_libraries(obstacle2 ${GAZEBO_LIBRARIES})
-
-# add_library(obstacles SHARED src/obstacles.cpp)
-# target_link_libraries(obstacles ${GAZEBO_LIBRARIES})
+foreach(lib ${OBSTACLE_LIBS})
+  add_library(${lib} SHARED src/${lib}.cpp)
+  target_link_libraries(${lib}
+    PUBLIC
+    gz-sim::gz-sim
+    gz-math::gz-math
+  )
+endforeach()
 
 ################################################################################
 # Install
 ################################################################################
-install(TARGETS ${EXEC_NAME}
+install(TARGETS
+  ${EXEC_NAME}
+  obstacles
+  obstacle1
+  obstacle2
   DESTINATION lib/${PROJECT_NAME}
 )
 

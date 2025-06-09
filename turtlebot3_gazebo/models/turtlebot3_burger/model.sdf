@@ -386,14 +386,14 @@
       <!-- limits -->
       <max_linear_acceleration>1.0</max_linear_acceleration>
 
-       <topic>cmd_vel</topic>
+      <topic>cmd_vel</topic>
 
-       <odom_topic>odom</odom_topic>
-       <frame_id>odom</frame_id>
-       <child_frame_id>base_footprint</child_frame_id>
-       <odom_publisher_frequency>30</odom_publisher_frequency>
+      <odom_topic>odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+      <odom_publisher_frequency>30</odom_publisher_frequency>
 
-       <tf_topic>/tf</tf_topic>
+      <tf_topic>/tf</tf_topic>
 
     </plugin>
 
