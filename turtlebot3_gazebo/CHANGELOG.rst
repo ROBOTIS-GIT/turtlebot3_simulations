@@ -2,6 +2,10 @@
 Changelog for package turtlebot3_gazebo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.3.4 (2025-05-28)
+------------------
+* None
+
 2.3.0 (2025-02-17)
 ------------------
 * Added multi-robot launch functionality
