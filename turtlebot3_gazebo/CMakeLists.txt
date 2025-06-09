@@ -1,7 +1,7 @@
 ################################################################################
 # Set minimum required version of cmake, project name and compile options
 ################################################################################
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.8)
 project(turtlebot3_gazebo)
 
 if(NOT CMAKE_CXX_STANDARD)
@@ -26,10 +26,12 @@ find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
+find_package(gz_math_vendor REQUIRED)
+find_package(gz-math REQUIRED)
 find_package(gz_sim_vendor REQUIRED)
-find_package(PkgConfig REQUIRED)
-
-pkg_check_modules(GZ_SIM REQUIRED gz-sim8)
+find_package(gz-sim REQUIRED)
+find_package(gz_plugin_vendor REQUIRED)
+find_package(gz-plugin REQUIRED)
 
 ################################################################################
 # Build
@@ -46,15 +48,6 @@ include_directories(
   ${GZ_SIM_INCLUDE_DIRS}
 )
 
-set(dependencies
-  geometry_msgs
-  nav_msgs
-  rclcpp
-  sensor_msgs
-  tf2
-  gz_sim_vendor
-)
-
 set(EXEC_NAME "turtlebot3_drive")
 
 add_executable(${EXEC_NAME} src/turtlebot3_drive.cpp)
@@ -66,8 +59,6 @@ target_link_libraries(${EXEC_NAME}
   tf2::tf2
 )
 
-ament_target_dependencies(${EXEC_NAME} ${dependencies})
-
 set(OBSTACLE_LIBS
   obstacles
   obstacle1
@@ -76,13 +67,11 @@ set(OBSTACLE_LIBS
 
 foreach(lib ${OBSTACLE_LIBS})
   add_library(${lib} SHARED src/${lib}.cpp)
-  target_include_directories(${lib}
-    PUBLIC include
-  )
   target_link_libraries(${lib}
-    ${GZ_SIM_LIBRARIES}
+    PUBLIC
+    gz-sim::gz-sim
+    gz-math::gz-math
   )
-  ament_target_dependencies(${lib} gz_sim_vendor)
 endforeach()
 
 ################################################################################

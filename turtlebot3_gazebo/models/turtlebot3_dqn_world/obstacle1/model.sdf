@@ -2,6 +2,7 @@
 <sdf version='1.8'>
   <model name="obstacle1">
     <pose>2 2 0.25 0 0 0</pose>
+    <static>false</static>
     <link name="link">
       <collision name="obstacle1_collision">
         <geometry>

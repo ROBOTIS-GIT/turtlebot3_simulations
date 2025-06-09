@@ -23,6 +23,8 @@
   <depend>ros_gz_image</depend>
   <depend>ros_gz_sim</depend>
   <depend>gz_sim_vendor</depend>
+  <depend>gz_plugin_vendor</depend>
+  <depend>gz_math_vendor</depend>
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
   <export>
