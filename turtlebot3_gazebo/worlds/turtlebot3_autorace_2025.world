@@ -61,7 +61,8 @@
     </include>
 
     <include>
-      <pose>-1.325 1.325 0 0 0 0</pose>
+      <!-- <pose>-1.325 1.325 0 0 0 0</pose> -->
+      <pose>-1.225 1.225 0 0 0 0</pose>
       <uri>model://turtlebot3_autorace_2025/charge_station</uri>
     </include>
 
