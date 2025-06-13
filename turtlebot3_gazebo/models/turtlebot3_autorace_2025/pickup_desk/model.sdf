@@ -126,7 +126,7 @@
         <material>
             <pbr>
               <metal>
-                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker1.png</albedo_map>
+                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker0.png</albedo_map>
               </metal>
             </pbr>
           <ambient>1 1 1 1</ambient>
@@ -192,7 +192,7 @@
         <material>
             <pbr>
               <metal>
-                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker2.png</albedo_map>
+                <albedo_map>model://turtlebot3_autorace_2025/pickup_desk/materials/textures/marker0.png</albedo_map>
               </metal>
             </pbr>
           <ambient>1 1 1 1</ambient>
