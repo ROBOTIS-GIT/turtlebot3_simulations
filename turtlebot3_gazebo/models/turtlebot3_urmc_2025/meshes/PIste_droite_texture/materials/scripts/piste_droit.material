@@ -1,0 +1,14 @@
+material piste_droit
+{
+    technique
+    {
+        pass
+        {
+            texture_unit
+            {
+                texture test_bande.png
+                scale 1 1
+            }
+        }
+    }
+}
