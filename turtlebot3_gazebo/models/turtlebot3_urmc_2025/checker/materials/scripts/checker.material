@@ -1,0 +1,14 @@
+material checker
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture checker.png
+      }
+    }
+  }
+}
+

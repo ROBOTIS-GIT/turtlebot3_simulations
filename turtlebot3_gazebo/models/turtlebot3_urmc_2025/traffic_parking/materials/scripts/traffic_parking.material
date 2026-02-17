@@ -1,0 +1,14 @@
+material traffic_parking
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_parking.png
+      }
+    }
+  }
+}
+

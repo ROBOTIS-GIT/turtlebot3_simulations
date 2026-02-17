@@ -1,0 +1,14 @@
+material traffic_stop
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture traffic_stop.png
+      }
+    }
+  }
+}
+
