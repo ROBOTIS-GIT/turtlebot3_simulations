@@ -21,7 +21,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include "geometry_msgs/msg/transform_stamped.hpp"
-#include "geometry_msgs/msg/twist.hpp"
+#include "geometry_msgs/msg/twist_stamped.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
 #include <tf2/LinearMath/Quaternion.hpp>
@@ -51,7 +51,7 @@ private:
   rclcpp::Publisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_pub_;
 
   // ROS topic subscribers
-  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
+  rclcpp::Subscription<geometry_msgs::msg::TwistStamped>::SharedPtr cmd_vel_sub_;
 
 
   nav_msgs::msg::Odometry odom_;
@@ -72,7 +72,7 @@ private:
   // Function prototypes
   void init_parameters();
   void init_variables();
-  void command_velocity_callback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg);
+  void command_velocity_callback(const geometry_msgs::msg::TwistStamped::SharedPtr cmd_vel_msg);
   void update_callback();
   bool update_odometry(const rclcpp::Duration & diff_time);
   void update_joint_state();

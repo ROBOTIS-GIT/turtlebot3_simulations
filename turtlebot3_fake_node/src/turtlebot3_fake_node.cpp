@@ -45,7 +45,7 @@ Turtlebot3Fake::Turtlebot3Fake()
   tf_pub_ = this->create_publisher<tf2_msgs::msg::TFMessage>("tf", qos);
 
   // Initialise subscribers
-  cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
+  cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::TwistStamped>(
     "cmd_vel", \
     qos, \
     std::bind(
@@ -133,12 +133,12 @@ void Turtlebot3Fake::init_variables()
 ** Callback functions for ROS subscribers
 ********************************************************************************/
 void Turtlebot3Fake::command_velocity_callback(
-  const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
+  const geometry_msgs::msg::TwistStamped::SharedPtr cmd_vel_msg)
 {
   last_cmd_vel_time_ = this->now();
 
-  goal_linear_velocity_ = cmd_vel_msg->linear.x;
-  goal_angular_velocity_ = cmd_vel_msg->angular.z;
+  goal_linear_velocity_ = cmd_vel_msg->twist.linear.x;
+  goal_angular_velocity_ = cmd_vel_msg->twist.angular.z;
 
   wheel_speed_cmd_[LEFT] = goal_linear_velocity_ - (goal_angular_velocity_ * wheel_seperation_ / 2);
   wheel_speed_cmd_[RIGHT] = goal_linear_velocity_ + \
