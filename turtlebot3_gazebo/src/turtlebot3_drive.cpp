@@ -13,6 +13,8 @@
 // limitations under the License.
 //
 // Authors: Taehun Lim (Darby), Ryan Shim
+//
+// Modified by: Pedro Ribeiro to use TwistStamped, instead of Twist.
 
 #include "turtlebot3_gazebo/turtlebot3_drive.hpp"
 
@@ -97,9 +99,11 @@ void Turtlebot3Drive::scan_callback(const sensor_msgs::msg::LaserScan::SharedPtr
 
 void Turtlebot3Drive::update_cmd_vel(double linear, double angular)
 {
-  geometry_msgs::msg::Twist cmd_vel;
-  cmd_vel.linear.x = linear;
-  cmd_vel.angular.z = angular;
+  geometry_msgs::msg::TwistStamped cmd_vel;
+  cmd_vel.header.stamp = this->now();
+  cmd_vel.header.frame_id = "base_link";
+  cmd_vel.twist.linear.x = linear;
+  cmd_vel.twist.angular.z = angular;
 
   cmd_vel_pub_->publish(cmd_vel);
 }

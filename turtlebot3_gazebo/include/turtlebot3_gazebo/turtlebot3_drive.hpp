@@ -17,7 +17,7 @@
 #ifndef TURTLEBOT3_GAZEBO__TURTLEBOT3_DRIVE_HPP_
 #define TURTLEBOT3_GAZEBO__TURTLEBOT3_DRIVE_HPP_
 
-#include <geometry_msgs/msg/twist.hpp>
+#include <geometry_msgs/msg/twist_stamped.hpp>
 #include <nav_msgs/msg/odometry.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/laser_scan.hpp>
@@ -47,7 +47,7 @@ public:
 
 private:
   // ROS topic publishers
-  rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_pub_;
+  rclcpp::Publisher<geometry_msgs::msg::TwistStamped>::SharedPtr cmd_vel_pub_;
 
   // ROS topic subscribers
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_sub_;
